@@ -39,22 +39,6 @@
 
             </ul>
         </li>
-        <li>
-            <a href="maps.php">
-                <i class="fa fa-map-marker"></i><span class="link-title">
-                                    Ubicacion
-                                  </span>
-            </a>
-        </li>
-        <li class="nav-divider"></li>
-        <li>
-            <a href="login.php">
-                <i class="fa fa-sign-in"></i>
-                <span class="link-title">
-                            Login Page
-                            </span>
-            </a>
-        </li>
 
     </ul>
     <!-- /#menu -->

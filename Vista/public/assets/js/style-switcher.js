@@ -133,7 +133,7 @@ StyleSwitcher.prototype.build = function () {
         switchDiv.toggleClass('open');
         $(this).find('i').toggleClass('fa-spin');
     }).append(h5Ai);
-    var h5 = $('<h5 />').html('Colores para Menu').append(h5A);
+    var h5 = $('<h5 />').html('Style Switcher').append(h5A);
     var colorList = $('<ul />').addClass('options').attr('data-type', 'colors');
     var colors = [
         {
@@ -250,7 +250,7 @@ StyleSwitcher.prototype.build = function () {
 
     var styleSwitcherWrap = $('<div />')
         .addClass('style-switcher-wrap')
-        .append($('<h6 />').html('Fondo'), colorList, $('<hr/>'));
+        .append($('<h6 />').html('Background Colors'), colorList, $('<hr/>'));
 
     var fgwbtn = $('<input/>').attr({
         'type': 'radio',
@@ -269,7 +269,7 @@ StyleSwitcher.prototype.build = function () {
     });
     var fontBlack = $('<label/>').addClass('btn btn-xs btn-danger').html('Black').append(fgbbtn);
     var fgBtnGroup = $('<div/>').addClass('btn-group').attr('data-toggle', 'buttons').append(fontWhite, fontBlack);
-    styleSwitcherWrap.append($('<div/>').addClass('options-link').append($('<h6/>').html('Texto'), fgBtnGroup));
+    styleSwitcherWrap.append($('<div/>').addClass('options-link').append($('<h6/>').html('Font Colors'), fgBtnGroup));
     var patternList = $('<ul />').addClass('options').attr('data-type', 'pattern');
     var patternImages = [
         {
