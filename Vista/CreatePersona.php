@@ -21,7 +21,7 @@
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="assets/lib/font-awesome/css/font-awesome.css">
-    
+
     <!-- Metis core stylesheet -->
     <link rel="stylesheet" href="assets/css/main.css">
     
@@ -69,13 +69,14 @@
                 <!-- /#top -->
                 <?php require ("snippers/MenuIzquierdo.php");?>
                     <!-- /#left -->
-                <div id="content">
+                 <div id="content">
                     <div class="outer">
                         <div class="inner bg-light lter">
                             <style>
                                 .form-control.col-lg-6 {
                                     width: 50% !important;
                                 }
+
                             </style>
                 <div id="content">
                     <div class="row">
@@ -102,6 +103,45 @@
                                 </header>
                                 <div id="collapse2" class="body">
                                     <form class="form-horizontal" id="popup-validation">
+                                        <div class="form-group">
+                                            <label class="control-label col-lg-4">Tipo Documento</label>
+                                            <div class="col-lg-4">
+                                                <select name="sport" id="sport" class="validate[required] form-control">
+                                                    <option value="C.C">Cedula Ciudadina</option>
+                                                    <option value="T.I">Tarjeta Identidad</option>
+                                                    <option value="R.C">Registro Civil</option>
+                                                    <option value="C.E">Cedula Extranjera</option>
+                                                    <option value="Otros">Otros</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="control-label col-lg-4">N° Documento</label>
+
+                                            <div class=" col-lg-4">
+                                                <input value="Documento" class="validate[required,custom[ipv4]] form-control" type="text"
+                                                       name="Documento" id="Documento"/>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <label class="control-label col-lg-4">Foto</label>
+                                            <div class="col-lg-8">
+                                                <div class="fileinput fileinput-new" data-provides="fileinput">
+                                                    <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
+                                                        <img data-src="holder.js/100%x100%" alt="...">
+                                                    </div>
+                                                    <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>
+                                                    <div>
+                                                        <span class="btn btn-default btn-file"><span class="fileinput-new">Select image</span><span class="fileinput-exists">Change</span><input type="file" name="..."></span>
+                                                        <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
 
                                         <div class="form-group">
                                             <label class="control-label col-lg-4">Required</label>
@@ -110,17 +150,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="form-group">
-                                            <label class="control-label col-lg-4">Select</label>
-                                            <div class="col-lg-4">
-                                                <select name="sport" id="sport" class="validate[required] form-control">
-                                                    <option value="">Choose a sport</option>
-                                                    <option value="option1">Tennis</option>
-                                                    <option value="option2">Football</option>
-                                                    <option value="option3">Golf</option>
-                                                </select>
-                                            </div>
-                                        </div>
+
                                         <div class="form-group">
                                             <label class="control-label col-lg-4">Browser Default</label>
                                             <div class="col-lg-8"><input type="file"></div>
@@ -183,22 +213,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="form-group">
-                                            <label class="control-label col-lg-4">Pre Defined Image</label>
-                                            <div class="col-lg-8">
-                                                <div class="fileinput fileinput-new" data-provides="fileinput">
-                                                    <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
-                                                        <img data-src="holder.js/100%x100%" alt="...">
-                                                    </div>
-                                                    <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>
-                                                    <div>
-                                                        <span class="btn btn-default btn-file"><span class="fileinput-new">Select image</span><span class="fileinput-exists">Change</span><input type="file" name="..."></span>
-                                                        <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
-                                                    </div>
-                                                </div>
 
-                                            </div>
-                                        </div>
 
                                         <div class="form-group">
                                             <label class="control-label col-lg-4">Maximum field size, optional</label>
@@ -220,14 +235,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="form-group">
-                                            <label class="control-label col-lg-4">IP</label>
 
-                                            <div class=" col-lg-4">
-                                                <input value="192.168.3." class="validate[required,custom[ipv4]] form-control" type="text"
-                                                       name="ip" id="ip"/>
-                                            </div>
-                                        </div>
 
                                         <div class="form-group">
                                             <label class="control-label col-lg-4">Date</label>
@@ -265,8 +273,7 @@
                         <!-- /.inner -->
                     </div>
                     <!-- /.outer -->
-                </div>
-            </div>
+                </d
             <!-- /#wrap -->
             <footer class="Footer bg-dark dker">
                 <p>2017 &copy; Metis Bootstrap Admin Template v2.4.2</p>
@@ -303,6 +310,12 @@
             <script src="assets/lib/jquery/jquery.js"></script>
 
 
+                     <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+                     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js"></script>
+                     <script src="//cdnjs.cloudflare.com/ajax/libs/holder/2.4.1/holder.js"></script>
+                     <script src="//cdnjs.cloudflare.com/ajax/libs/Uniform.js/2.1.2/jquery.uniform.min.js"></script>
+                     <script src="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js"></script>
+                     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
             <!--Bootstrap -->
             <script src="assets/lib/bootstrap/js/bootstrap.js"></script>
             <!-- MetisMenu -->
