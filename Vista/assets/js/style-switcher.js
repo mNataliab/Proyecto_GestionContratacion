@@ -250,7 +250,7 @@ StyleSwitcher.prototype.build = function () {
 
     var styleSwitcherWrap = $('<div />')
         .addClass('style-switcher-wrap')
-        .append($('<h6 />').html('Background Colors'), colorList, $('<hr/>'));
+        .append($('<h6 />').html('Color de fondo'), colorList, $('<hr/>'));
 
     var fgwbtn = $('<input/>').attr({
         'type': 'radio',
@@ -393,17 +393,17 @@ StyleSwitcher.prototype.build = function () {
         $this.storageManager.setBgImage($this.patternImage);
         $this.showChange();
     });
-    styleSwitcherWrap.append($('<div/>').addClass('pattern').append($('<h6/>').html('Background Pattern'), patternList
+    styleSwitcherWrap.append($('<div/>').addClass('pattern').append($('<h6/>').html('Color de fondo'), patternList
         )
     );
     var resetLink = $('<a/>').html('Reset').attr('href', '#').on(Metis.buttonPressedEvent, function (e) {
         $this.reset();
         e.preventDefault();
-    });
+    });/*
     var cssLink = $('<a/>').html('Get CSS').attr('href', '#').on(Metis.buttonPressedEvent, function (e) {
         e.preventDefault();
         $this.getCss();
-    });
+    });*/
     styleSwitcherWrap.append($('<div/>').addClass('options-link').append($('<hr/>'), resetLink, cssLink
         )
     );

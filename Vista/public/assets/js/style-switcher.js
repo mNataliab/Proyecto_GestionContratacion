@@ -399,11 +399,11 @@ StyleSwitcher.prototype.build = function () {
     var resetLink = $('<a/>').html('Reset').attr('href', '#').on(Metis.buttonPressedEvent, function (e) {
         $this.reset();
         e.preventDefault();
-    });
+    });/*
     var cssLink = $('<a/>').html('Get CSS').attr('href', '#').on(Metis.buttonPressedEvent, function (e) {
         e.preventDefault();
         $this.getCss();
-    });
+    });*/
     styleSwitcherWrap.append($('<div/>').addClass('options-link').append($('<hr/>'), resetLink, cssLink
         )
     );
