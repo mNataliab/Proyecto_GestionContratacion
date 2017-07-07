@@ -103,6 +103,22 @@
                                 </header>
                                 <div id="collapse2" class="body">
                                     <form class="form-horizontal" id="popup-validation">
+
+
+                                        <div class="form-group">
+                                            <label class="control-label col-lg-4">Nombre</label>
+                                            <div class="col-lg-4">
+                                                <input type="text" class="validate[required] form-control" name="req" id="req">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="control-label col-lg-4">Apellido</label>
+                                            <div class="col-lg-4">
+                                                <input type="text" class="validate[required] form-control" name="req" id="req">
+                                            </div>
+                                        </div>
+
                                         <div class="form-group">
                                             <label class="control-label col-lg-4">Tipo Documento</label>
                                             <div class="col-lg-4">
@@ -120,61 +136,49 @@
                                             <label class="control-label col-lg-4">N° Documento</label>
 
                                             <div class=" col-lg-4">
-                                                <input value="Documento" class="validate[required,custom[ipv4]] form-control" type="text"
+                                                <input class="validate[required,custom[ipv4]] form-control" type="text"
                                                        name="Documento" id="Documento"/>
                                             </div>
                                         </div>
 
 
                                         <div class="form-group">
-                                            <label class="control-label col-lg-4">Foto</label>
-                                            <div class="col-lg-8">
-                                                <div class="fileinput fileinput-new" data-provides="fileinput">
+                                            <label class="control-label col-lg-4">Fecha Nacimiento</label>
 
-                                                    <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>
-                                                    <div>
-                                                        <span ><span class="fileinput-new">Select image</span><span class="fileinput-exists">Change</span><input type="file" name="..."></span>
-                                                        <br>
-                                                        <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
-                                                    </div>
-                                                </div>
-
+                                            <div class=" col-lg-4">
+                                                <input value="2017-12-01" class="validate[required,custom[date]] form-control" type="text"
+                                                       name="date3" id="date3"/>
+                                                <span class="help-block">Solamente YYYY-mm-dd</span>
                                             </div>
                                         </div>
 
                                         <div class="form-group">
-                                            <label class="control-label col-lg-4">Required</label>
+                                            <label class="control-label col-lg-4">Genero</label>
                                             <div class="col-lg-4">
-                                                <input type="text" class="validate[required] form-control" name="req" id="req">
-                                            </div>
-                                        </div>
-
-
-                                        <div class="form-group">
-                                            <label class="control-label col-lg-4">Browser Default</label>
-                                            <div class="col-lg-8"><input type="file"></div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="control-label col-lg-4">Multiple Select</label>
-
-                                            <div class="col-lg-4">
-                                                <select name="sport2" id="sport2" multiple class="validate[required] form-control">
-                                                    <option value="">Choose a sport</option>
-                                                    <option value="option1">Tennis</option>
-                                                    <option value="option2">Football</option>
-                                                    <option value="option3">Golf</option>
+                                                <select name="sport" id="sport" class="validate[required] form-control">
+                                                    <option value="Masculino">Masculino</option>
+                                                    <option value="Femenino">Femenino</option>
                                                 </select>
                                             </div>
                                         </div>
 
                                         <div class="form-group">
-                                            <label class="control-label col-lg-4">Url</label>
+                                            <label class="control-label col-lg-4">Telefono</label>
 
                                             <div class=" col-lg-4">
-                                                <input value="http://" class="validate[required,custom[url]] form-control" type="text"
-                                                       name="url1" id="url1"/>
+                                                <input value="-33.87a" class="validate[required,custom[number]] form-control" type="text"
+                                                       name="numbe2r" id="number2"/>
+                                                <span class="help-block">a signed floating number, ie: -3849.354, 38.00, 38, .77</span>
                                             </div>
                                         </div>
+
+                                        <div class="form-group">
+                                            <label class="control-label col-lg-4">Direccion</label>
+                                            <div class="col-lg-4">
+                                                <input type="text" class="validate[required] form-control" name="req" id="req">
+                                            </div>
+                                        </div>
+
 
                                         <div class="form-group">
                                             <label class="control-label col-lg-4">E-mail</label>
@@ -186,75 +190,88 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label class="control-label col-lg-4">Password</label>
+                                            <label class="control-label col-lg-4">Usuario</label>
+                                            <div class="col-lg-4">
+                                                <input type="text" class="validate[required] form-control" name="req" id="req">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="control-label col-lg-4">Contraseña</label>
 
                                             <div class=" col-lg-4">
                                                 <input class="validate[required] form-control" type="password" name="pass1" id="pass1"/>
                                             </div>
                                         </div>
+
                                         <div class="form-group">
-                                            <label class="control-label col-lg-4">Confirm Password</label>
+                                            <label class="control-label col-lg-4">Confirmar Contraseña</label>
 
                                             <div class=" col-lg-4">
                                                 <input class="validate[required,equals[pass1]] form-control" type="password" name="pass2"
                                                        id="pass2"/>
                                             </div>
                                         </div>
-
-
-
                                         <div class="form-group">
-                                            <label class="control-label col-lg-4">Minimum field size (6)</label>
-
-                                            <div class=" col-lg-4">
-                                                <input value="" class="validate[required,minSize[6]] form-control" type="text" name="minsize1"
-                                                       id="minsize1"/>
-                                            </div>
-                                        </div>
-
-
-
-                                        <div class="form-group">
-                                            <label class="control-label col-lg-4">Maximum field size, optional</label>
-
-                                            <div class=" col-lg-4">
-                                                <input value="0123456789" class="validate[optional,maxSize[6]] form-control" type="text"
-                                                       name="maxsize1" id="maxsize1"/>
-                                                <span class="help-block">note that the field is optional - it won't fail if it has no value</span>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label class="control-label col-lg-4">Number</label>
+                                            <label class="control-label col-lg-4">Numero de Registro Profesional</label>
 
                                             <div class=" col-lg-4">
                                                 <input value="-33.87a" class="validate[required,custom[number]] form-control" type="text"
                                                        name="numbe2r" id="number2"/>
-                                                <span class="help-block">a signed floating number, ie: -3849.354, 38.00, 38, .77</span>
+                                                <span class="help-block"></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-lg-4">Cargo</label>
+                                            <div class="col-lg-4">
+                                                <select name="sport" id="sport" class="validate[required] form-control">
+                                                    <option value="General">General</option>
+                                                    <option value="Subgeneral">Subgeneral</option>
+                                                    <option value="Secreterai@">Secretari@</option>
+                                                    <option value="Administrador">Administrador</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="control-label col-lg-4">Contrato</label>
+                                            <div class="col-lg-8"><input type="file"></div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="control-label col-lg-4">Foto</label>
+                                            <div class="col-lg-8">
+                                                <div class="fileinput fileinput-new" data-provides="fileinput">
+
+                                                    <div aria-required="true" class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;" ></div>
+                                                    <div>
+                                                        <span ><span class="fileinput-new"></span><span class="fileinput-exists"></span><input type="file" name="..."></span>
+                                                        <br>
+                                                        <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Cambiar imagen</a>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <label class="control-label col-lg-4">Estado</label>
+                                            <div class="col-lg-4">
+                                                <input type="text" class="validate[required] form-control" name="req" id="req" value="Activo" readonly >
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="control-label col-lg-4">Secretaria</label>
+                                            <div class="col-lg-4">
+                                                <select name="sport" id="sport" class="validate[required] form-control">
+                                                </select>
                                             </div>
                                         </div>
 
 
 
-                                        <div class="form-group">
-                                            <label class="control-label col-lg-4">Date</label>
-
-                                            <div class=" col-lg-4">
-                                                <input value="201-12-01" class="validate[required,custom[date]] form-control" type="text"
-                                                       name="date3" id="date3"/>
-                                                <span class="help-block">ISO 8601 dates only YYYY-mm-dd</span>
-                                            </div>
-                                        </div>
-
-
-                                        <div class="form-group">
-                                            <label class="control-label col-lg-4">Date Earlier</label>
-
-                                            <div class=" col-lg-4">
-                                                <input value="2012/12/16" class="validate[custom[date],past[2012/09/13]] form-control"
-                                                       type="text" name="past" id="past"/>
-                                                <span class="help-block">Please enter a date ealier than 2012/09/13</span>
-                                            </div>
                                         </div>
 
                                         <div class="form-actions no-margin-bottom">
@@ -323,6 +340,7 @@
             <script src="assets/lib/onoffcanvas/onoffcanvas.js"></script>
             <!-- Screenfull -->
             <script src="assets/lib/screenfull/screenfull.js"></script>
+                <script src="assets/lib/jquery-validation/jquery.validate.js"></script>
 
 
             <!-- Metis core scripts -->
@@ -332,6 +350,10 @@
 
 
             <script src="assets/js/style-switcher.js"></script>
+
+
+
+                <script src="assets/js/style-switcher.js"></script>
         </body>
 
 </html>
