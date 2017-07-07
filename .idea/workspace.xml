@@ -67,7 +67,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PersonaController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PersonaController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Controlador/PersonaController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="378">
@@ -96,11 +96,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MenuSuperior.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MenuSuperior.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Vista/snippers/MenuSuperior.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="714">
-              <caret line="42" column="78" lean-forward="false" selection-start-line="42" selection-start-column="78" selection-end-line="42" selection-end-column="78" />
+            <state relative-caret-position="255">
+              <caret line="15" column="82" lean-forward="true" selection-start-line="15" selection-start-column="82" selection-end-line="15" selection-end-column="82" />
               <folding />
             </state>
           </provider>
@@ -165,11 +165,11 @@
         <option value="$PROJECT_DIR$/Vista/snippers/verificarSession.php" />
         <option value="$PROJECT_DIR$/Vista/snippers/MenuIzquierdo.php" />
         <option value="$PROJECT_DIR$/Modelo/Persona.php" />
-        <option value="$PROJECT_DIR$/Vista/snippers/MenuSuperior.php" />
         <option value="$PROJECT_DIR$/Controlador/PersonaController.php" />
         <option value="$PROJECT_DIR$/Vista/assets/custom.js" />
         <option value="$PROJECT_DIR$/Vista/assets/js/custom.js" />
         <option value="$PROJECT_DIR$/Vista/login.php" />
+        <option value="$PROJECT_DIR$/Vista/snippers/MenuSuperior.php" />
       </list>
     </option>
   </component>
@@ -244,46 +244,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="snippers" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Proyecto_GestionContratacion" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Proyecto_GestionContratacion" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Vista" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Proyecto_GestionContratacion" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Proyecto_GestionContratacion" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Vista" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -402,12 +362,12 @@
       <workItem from="1499349151072" duration="134000" />
       <workItem from="1499349634825" duration="6045000" />
       <workItem from="1499368184205" duration="9796000" />
-      <workItem from="1499411265554" duration="623000" />
+      <workItem from="1499411265554" duration="1334000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16598000" />
+    <option name="totallyTimeSpent" value="17309000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1378" height="744" extended-state="0" />
@@ -536,6 +496,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1598">
           <caret line="94" column="110" lean-forward="false" selection-start-line="94" selection-start-column="110" selection-end-line="94" selection-end-column="110" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -621,6 +582,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1598">
           <caret line="94" column="110" lean-forward="false" selection-start-line="94" selection-start-column="110" selection-end-line="94" selection-end-column="110" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -706,14 +668,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Vista/snippers/MenuSuperior.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="42" column="78" lean-forward="false" selection-start-line="42" selection-start-column="78" selection-end-line="42" selection-end-column="78" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Vista/snippers/verificarSession.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -766,6 +720,14 @@
             <marker date="1499405206661" expanded="true" signature="3163:3227" ph="SELECT * FRO... Paciente" />
             <marker date="1499405206661" expanded="true" signature="3307:3406" ph="SELECT * FRO... Paciente" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vista/snippers/MenuSuperior.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="82" lean-forward="true" selection-start-line="15" selection-start-column="82" selection-end-line="15" selection-end-column="82" />
+          <folding />
         </state>
       </provider>
     </entry>
