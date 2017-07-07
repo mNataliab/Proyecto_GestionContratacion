@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="88eedd59-53af-41eb-ba40-ec9a20d9022c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analisis/Modelado/ModeladoProyecto.mwb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analisis/Modelado/ModeladoProyecto.mwb.bak" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Analisis/ModeladoProyecto.mwb" afterPath="$PROJECT_DIR$/Analisis/ModeladoProyecto.mwb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Vista/CreatePersona.php" afterPath="$PROJECT_DIR$/Vista/CreatePersona.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Vista/snippers/MenuIzquierdo.php" afterPath="$PROJECT_DIR$/Vista/snippers/MenuIzquierdo.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -35,11 +32,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MenuIzquierdo.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MenuIzquierdo.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Vista/snippers/MenuIzquierdo.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="359">
-              <caret line="32" column="16" lean-forward="true" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
+            <state relative-caret-position="461">
+              <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -65,31 +62,35 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="CreatePersona.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Vista/CreatePersona.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="123" column="0" lean-forward="true" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
+              <folding>
+                <element signature="n#style#0;n#nav#0;n#div#1;n#header#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="form-validation.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Vista/public/form-validation.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="241">
+              <caret line="654" column="44" lean-forward="true" selection-start-line="654" selection-start-column="44" selection-end-line="654" selection-end-column="44" />
+              <folding>
+                <element signature="n#style#0;n#nav#0;n#div#1;n#header#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="form-general.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Vista/public/form-general.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="479">
-              <caret line="625" column="6" lean-forward="true" selection-start-line="518" selection-start-column="0" selection-end-line="625" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CreatePersona.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Vista/CreatePersona.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="161" column="30" lean-forward="false" selection-start-line="161" selection-start-column="30" selection-end-line="161" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="menuIzquierdo.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../EjemploMVCVeterinaria/Vista/snippers/menuIzquierdo.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="377">
+              <caret line="518" column="0" lean-forward="false" selection-start-line="518" selection-start-column="0" selection-end-line="625" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -128,8 +129,9 @@
         <option value="$PROJECT_DIR$/Vista/maps.php" />
         <option value="$PROJECT_DIR$/Vista/index.php" />
         <option value="$PROJECT_DIR$/Vista/snippers/MenuSuperior.php" />
-        <option value="$PROJECT_DIR$/Vista/CreatePersona.php" />
         <option value="$PROJECT_DIR$/Vista/snippers/MenuIzquierdo.php" />
+        <option value="$PROJECT_DIR$/Vista/public/form-validation.html" />
+        <option value="$PROJECT_DIR$/Vista/CreatePersona.php" />
       </list>
     </option>
   </component>
@@ -142,8 +144,7 @@
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1378" />
+    <option name="width" value="1380" />
     <option name="height" value="744" />
   </component>
   <component name="ProjectView">
@@ -292,18 +293,26 @@
       <workItem from="1499349151072" duration="134000" />
       <workItem from="1499349634825" duration="6045000" />
       <workItem from="1499368184205" duration="663000" />
-      <workItem from="1499389414579" duration="1635000" />
+      <workItem from="1499389414579" duration="4406000" />
     </task>
+    <task id="LOCAL-00001" summary="formulario">
+      <created>1499391460874</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1499391460874</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8477000" />
+    <option name="totallyTimeSpent" value="11248000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1378" height="744" extended-state="0" />
+    <frame x="-8" y="0" width="1380" height="744" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1534508" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15322581" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -445,14 +454,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../EjemploMVCVeterinaria/Vista/snippers/menuIzquierdo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../EjemploMVCVeterinaria/Vista/editarEspecialidad.php" />
     <entry file="file://$PROJECT_DIR$/Vista/assets/css/style-switcher.css">
       <provider selected="true" editor-type-id="text-editor">
@@ -492,6 +493,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Vista/snippers/MenuIzquierdo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="461">
+          <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vista/public/assets/lib/bootstrap/css/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="3084" column="1" lean-forward="false" selection-start-line="3084" selection-start-column="1" selection-end-line="3084" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Vista/maps.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="573">
@@ -500,27 +517,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../EjemploMVCVeterinaria/Vista/snippers/menuIzquierdo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Vista/public/form-general.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="479">
-          <caret line="625" column="6" lean-forward="true" selection-start-line="518" selection-start-column="0" selection-end-line="625" selection-end-column="6" />
+        <state relative-caret-position="377">
+          <caret line="518" column="0" lean-forward="false" selection-start-line="518" selection-start-column="0" selection-end-line="625" selection-end-column="6" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vista/public/form-validation.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="654" column="44" lean-forward="true" selection-start-line="654" selection-start-column="44" selection-end-line="654" selection-end-column="44" />
+          <folding>
+            <element signature="n#style#0;n#nav#0;n#div#1;n#header#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Vista/CreatePersona.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="161" column="30" lean-forward="false" selection-start-line="161" selection-start-column="30" selection-end-line="161" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Vista/snippers/MenuIzquierdo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="32" column="16" lean-forward="true" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
-          <folding />
+        <state relative-caret-position="408">
+          <caret line="123" column="0" lean-forward="true" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#nav#0;n#div#1;n#header#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

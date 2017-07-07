@@ -67,122 +67,162 @@
                 <?php require ("snippers/MenuIzquierdo.php");?>
                     <!-- /#left -->
                 <div id="content">
-                    <div class="outer">
-                        <div class="inner bg-light lter">
-                            <div class="col-lg-6">
-                                <div class="box dark">
-                                    <header>
-                                        <div class="icons"><i class="fa fa-edit"></i></div>
-                                        <h5>Input Text Fields</h5>
-                                        <!-- .toolbar -->
-                                        <div class="toolbar">
-                                            <nav style="padding: 8px;">
-                                                <a href="javascript:;" class="btn btn-default btn-xs collapse-box">
-                                                    <i class="fa fa-minus"></i>
-                                                </a>
-                                                <a href="javascript:;" class="btn btn-default btn-xs full-box">
-                                                    <i class="fa fa-expand"></i>
-                                                </a>
-                                                <a href="javascript:;" class="btn btn-danger btn-xs close-box">
-                                                    <i class="fa fa-times"></i>
-                                                </a>
-                                            </nav>
-                                        </div>            <!-- /.toolbar -->
-                                    </header>
-                                    <div id="div-1" class="body">
-                                        <form class="form-horizontal">
+                    <div class="box">
+                        <header class="dark">
+                            <div class="icons"><i class="fa fa-check"></i></div>
+                            <h5>Popup Validation</h5>
+                            <!-- .toolbar -->
+                            <div class="toolbar">
+                                <nav style="padding: 8px;">
+                                    <a href="javascript:;" class="btn btn-default btn-xs collapse-box">
+                                        <i class="fa fa-minus"></i>
+                                    </a>
+                                    <a href="javascript:;" class="btn btn-default btn-xs full-box">
+                                        <i class="fa fa-expand"></i>
+                                    </a>
+                                    <a href="javascript:;" class="btn btn-danger btn-xs close-box">
+                                        <i class="fa fa-times"></i>
+                                    </a>
+                                </nav>
+                            </div>            <!-- /.toolbar -->
 
-                                            <div class="form-group">
-                                                <label for="text1" class="control-label col-lg-4">Normal Input Field</label>
+                        </header>
+                        <div id="collapse2" class="body">
+                            <form class="form-horizontal" id="popup-validation">
 
-                                                <div class="col-lg-8">
-                                                    <input type="text" id="text1" placeholder="Email" class="form-control">
-                                                </div>
-                                            </div>
-                                            <!-- /.form-group -->
-
-                                            <div class="form-group">
-                                                <label for="pass1" class="control-label col-lg-4">Password Field</label>
-
-                                                <div class="col-lg-8">
-                                                    <input class="form-control" type="password" id="pass1"
-                                                           data-original-title="Please use your secure password" data-placement="top"/>
-                                                </div>
-                                            </div>
-                                            <!-- /.form-group -->
-
-                                            <div class="form-group">
-                                                <label class="control-label col-lg-4">Read only input</label>
-
-                                                <div class="col-lg-8">
-                                                    <input type="text" value="read only" readonly class="form-control">
-                                                </div>
-                                            </div>
-                                            <!-- /.form-group -->
-
-                                            <div class="form-group">
-                                                <label class="control-label col-lg-4">Disabled input</label>
-
-                                                <div class="col-lg-8">
-                                                    <input type="text" value="disabled" disabled class="form-control">
-                                                </div>
-                                            </div>
-                                            <!-- /.form-group -->
-
-                                            <div class="form-group">
-                                                <label for="text2" class="control-label col-lg-4">With Placeholder</label>
-
-                                                <div class="col-lg-8">
-                                                    <input type="text" id="text2" placeholder="placeholder text" class="form-control">
-                                                </div>
-                                            </div>
-                                            <!-- /.form-group -->
-
-                                            <div class="form-group">
-                                                <label for="limiter" class="control-label col-lg-4">Input limiter</label>
-
-                                                <div class="col-lg-8">
-                                                    <textarea id="limiter" class="form-control"></textarea>
-                                                </div>
-                                            </div>
-                                            <!-- /.row -->
-
-                                            <div class="form-group">
-                                                <label for="text4" class="control-label col-lg-4">Default Textarea</label>
-
-                                                <div class="col-lg-8">
-                                                    <textarea id="text4" class="form-control"></textarea>
-                                                </div>
-                                            </div>
-                                            <!-- /.form-group -->
-
-                                            <div class="form-group">
-                                                <label for="autosize" class="control-label col-lg-4">Textarea With Autosize</label>
-
-                                                <div class="col-lg-8">
-                                                    <textarea id="autosize" class="form-control"></textarea>
-                                                </div>
-                                            </div>
-                                            <!-- /.form-group -->
-
-                                            <div class="form-group">
-                                                <label for="tags" class="control-label col-lg-4">Tags</label>
-
-                                                <div class="col-lg-8">
-                                                    <input name="tags" id="tags" value="foo,bar,baz" class="form-control">
-                                                </div>
-                                            </div>
-                                            <!-- /.form-group -->
-                                        </form>
+                                <div class="form-group">
+                                    <label class="control-label col-lg-4">Required</label>
+                                    <div class="col-lg-4">
+                                        <input type="text" class="validate[required] form-control" name="req" id="req">
                                     </div>
                                 </div>
-                            </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-lg-4">Cargo</label>
+                                    <div class="col-lg-4">
+                                        <select name="sport" id="sport" class="validate[required] form-control">
+                                            <option value="">Administrador</option>
+                                            <option value="option1">General</option>
+                                            <option value="option2">Subgeneral</option>
+                                            <option value="option3">Secretari@</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-lg-4">Multiple Select</label>
+
+                                    <div class="col-lg-4">
+                                        <select name="sport2" id="sport2" multiple class="validate[required] form-control">
+                                            <option value="">Choose a sport</option>
+                                            <option value="option1">Tennis</option>
+                                            <option value="option2">Football</option>
+                                            <option value="option3">Golf</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-lg-4">Url</label>
+
+                                    <div class=" col-lg-4">
+                                        <input value="http://" class="validate[required,custom[url]] form-control" type="text"
+                                               name="url1" id="url1"/>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-lg-4">E-mail</label>
+
+                                    <div class=" col-lg-4">
+                                        <input class="validate[required,custom[email]] form-control" type="text" name="email1"
+                                               id="email1"/>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-lg-4">Password</label>
+
+                                    <div class=" col-lg-4">
+                                        <input class="validate[required] form-control" type="password" name="pass1" id="pass1"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-lg-4">Confirm Password</label>
+
+                                    <div class=" col-lg-4">
+                                        <input class="validate[required,equals[pass1]] form-control" type="password" name="pass2"
+                                               id="pass2"/>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-lg-4">Minimum field size (6)</label>
+
+                                    <div class=" col-lg-4">
+                                        <input value="" class="validate[required,minSize[6]] form-control" type="text" name="minsize1"
+                                               id="minsize1"/>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-lg-4">Maximum field size, optional</label>
+
+                                    <div class=" col-lg-4">
+                                        <input value="0123456789" class="validate[optional,maxSize[6]] form-control" type="text"
+                                               name="maxsize1" id="maxsize1"/>
+                                        <span class="help-block">note that the field is optional - it won't fail if it has no value</span>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-lg-4">Number</label>
+
+                                    <div class=" col-lg-4">
+                                        <input value="-33.87a" class="validate[required,custom[number]] form-control" type="text"
+                                               name="numbe2r" id="number2"/>
+                                        <span class="help-block">a signed floating number, ie: -3849.354, 38.00, 38, .77</span>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-lg-4">IP</label>
+
+                                    <div class=" col-lg-4">
+                                        <input value="192.168.3." class="validate[required,custom[ipv4]] form-control" type="text"
+                                               name="ip" id="ip"/>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-lg-4">Date</label>
+
+                                    <div class=" col-lg-4">
+                                        <input value="201-12-01" class="validate[required,custom[date]] form-control" type="text"
+                                               name="date3" id="date3"/>
+                                        <span class="help-block">ISO 8601 dates only YYYY-mm-dd</span>
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label class="control-label col-lg-4">Date Earlier</label>
+
+                                    <div class=" col-lg-4">
+                                        <input value="2012/12/16" class="validate[custom[date],past[2012/09/13]] form-control"
+                                               type="text" name="past" id="past"/>
+                                        <span class="help-block">Please enter a date ealier than 2012/09/13</span>
+                                    </div>
+                                </div>
+
+                                <div class="form-actions no-margin-bottom">
+                                    <input type="submit" value="Validate" class="btn btn-primary">
+                                </div>
+                            </form>
                         </div>
-                        <!-- /.inner -->
                     </div>
-                    <!-- /.outer -->
                 </div>
-                <!-- /#content -->
+
 
                     <div id="right" class="onoffcanvas is-right is-fixed bg-light" aria-expanded=false>
                         <a class="onoffcanvas-toggler" href="#right" data-toggle=onoffcanvas aria-expanded=false></a>
