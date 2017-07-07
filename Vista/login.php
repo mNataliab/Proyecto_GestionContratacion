@@ -1,3 +1,4 @@
+<?php require ("snippers/verificarSession.php") ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -41,10 +42,10 @@
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+    <script src="assets/js/custom.js"></script>
 </head>
 
-<body class="login">
+<body onload="nobackbutton()" class="login"  >
 
       <div class="form-signin">
     <div class="text-center">
@@ -53,12 +54,12 @@
     <hr>
     <div class="tab-content">
         <div id="login" class="tab-pane active">
-            <form action="index.php">
+            <form  data-toggle="validator" role="form" id="frmLogin" name="frmLogin" >
                 <p class="text-muted text-center">
                     Ingrese su Usuario y Contraseña
                 </p>
-                <input type="text" placeholder="Usuario" class="form-control top">
-                <input type="password" placeholder="Contraseña" class="form-control bottom">
+                <input type="text" id="Usuario" name="Usuario" placeholder="Usuario" class="form-control top">
+                <input type="password" id="Contrasena" name="Contrasena" placeholder="Contraseña" class="form-control bottom">
                 <div class="checkbox">
 		  <label>
 		    <input type="checkbox"> Recordarme
@@ -66,47 +67,47 @@
 		</div>
                 <button class="btn btn-lg btn-primary btn-block" type="submit">Iniciar Sesion</button>
             </form>
-        </div>
-        <div id="forgot" class="tab-pane">
-            <form action="index.php">
-                <p class="text-muted text-center">Ingrese un E-mail Correcto</p>
-                <input type="email" placeholder="mail@example.com" class="form-control">
-                <br>
-                <button class="btn btn-lg btn-danger btn-block" type="submit">Recuperar Contraseña</button>
-            </form>
-        </div>
-    <hr>
-    <div class="text-center">
-        <ul class="list-inline">
-            <li><a class="text-muted" href="#login" data-toggle="tab">Iniciar Sesion</a></li>
-            <li><a class="text-muted" href="#forgot" data-toggle="tab">Olvido Contraseña</a></li>
-        </ul>
-    </div>
-  </div>
+            <p id="results" name="results">
 
+            </p>
+        </div>
+
+    <hr>
+
+  </div>
 
     <!--jQuery -->
     <script src="assets/lib/jquery/jquery.js"></script>
 
     <!--Bootstrap -->
-    <script src="assets/lib/bootstrap/js/bootstrap.js"></script>
 
+          <script src="assets/lib/bootstrap/js/bootstrap.js"></script>
 
-    <script type="text/javascript">
-        (function($) {
-            $(document).ready(function() {
-                $('.list-inline li > a').click(function() {
-                    var activeForm = $(this).attr('href') + ' > form';
-                    //console.log(activeForm);
-                    $(activeForm).addClass('animated fadeIn');
-                    //set timer to 1 seconds, after that, unload the animate animation
-                    setTimeout(function() {
-                        $(activeForm).removeClass('animated fadeIn');
-                    }, 1000);
-                });
-            });
-        })(jQuery);
-    </script>
+          <script type="text/javascript">
+              $(document).ready(function() {
+                  $('#frmLogin').on('submit', function (e) {
+                      if (!e.isDefaultPrevented()) {
+                          var formData = $(this).serialize(); //Serializamos los campos del formulario
+                          $.ajax({
+                              type        : 'POST', // Metodo de Envio
+                              url         : '../Controlador/PersonaController.php?action=Login', // Ruta del envio
+                              data        : formData, // our data object
+                              //dataType    : 'json', // what type of data do we expect back from the server
+                              encode      : true
+                          })
+                              .done(function(data) {
+                                  //console.log(data);
+                                  if (data == true){
+                                      window.location.href = "index.php";
+                                  }else{
+                                      $('#results').html(data);
+                                  }
+                              });
+                          event.preventDefault();
+                      }
+                  })
+              });
+          </script>
 </body>
 
 </html>

@@ -14,7 +14,7 @@
                 <h5 class="media-heading">Archie</h5>
                 <ul class="list-unstyled user-info">
                     <li><a href="">Administrator</a></li>
-                    <li>Last Access : <br>
+                    <li>Estado : <br>
                         <small><i class="fa fa-calendar"></i>&nbsp;16 Mar 16:32</small>
                     </li>
                 </ul>
