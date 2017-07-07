@@ -106,7 +106,8 @@
                                         <div class="form-group">
                                             <label class="control-label col-lg-4">Tipo Documento</label>
                                             <div class="col-lg-4">
-                                                <select name="sport" id="sport" class="validate[required] form-control">
+                                                <select required name="sport" id="sport" class="validate[required] form-control">
+                                                    <option value=""></option>
                                                     <option value="C.C">Cedula Ciudadina</option>
                                                     <option value="T.I">Tarjeta Identidad</option>
                                                     <option value="R.C">Registro Civil</option>
@@ -120,7 +121,7 @@
                                             <label class="control-label col-lg-4">N° Documento</label>
 
                                             <div class=" col-lg-4">
-                                                <input value="Documento" class="validate[required,custom[ipv4]] form-control" type="text"
+                                                <input value="Documento" required class="validate[required,custom[ipv4]] form-control" type="number"
                                                        name="Documento" id="Documento"/>
                                             </div>
                                         </div>
@@ -267,7 +268,7 @@
                         <!-- /.col-lg-12 -->
                     </div>
                 </div>
-
+                        </div>
                         </div>
                         <!-- /.inner -->
                     </div>
@@ -303,6 +304,8 @@
                 </div>
                 <!-- /.modal-dialog -->
             </div>
+
+
             <!-- /.modal -->
             <!-- /#helpModal -->
             <!--jQuery -->
@@ -323,6 +326,7 @@
             <script src="assets/lib/onoffcanvas/onoffcanvas.js"></script>
             <!-- Screenfull -->
             <script src="assets/lib/screenfull/screenfull.js"></script>
+                <script src="validator/validator.js"></script>
 
 
             <!-- Metis core scripts -->
