@@ -34,7 +34,7 @@
             <ul class="collapse">
                 <li>
                     <a href="CreatePersona.php">
-                        <i class="fa fa-angle-right"></i>&nbsp; Registrar Persona</a>
+                        <i class="fa fa-angle-right"></i>&nbsp; Registrar </a>
                 </li>
 
             </ul>
