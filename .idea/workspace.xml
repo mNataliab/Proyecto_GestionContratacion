@@ -57,7 +57,7 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Vista/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
+            <state relative-caret-position="5032">
               <caret line="296" column="36" lean-forward="false" selection-start-line="296" selection-start-column="36" selection-end-line="296" selection-end-column="36" />
               <folding />
             </state>
@@ -80,11 +80,15 @@
         </entry>
       </file>
 <<<<<<< HEAD
+      <file leaf-file-name="PersonaController.php" pinned="false" current-in-tab="false">
+=======
+<<<<<<< HEAD
 =======
       <file leaf-file-name="PersonaController.php" pinned="false" current-in-tab="true">
+>>>>>>> d097b8dbd48af0417f52f21f115b134a3b0ebb87
         <entry file="file://$PROJECT_DIR$/Controlador/PersonaController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
+            <state relative-caret-position="1615">
               <caret line="95" column="26" lean-forward="false" selection-start-line="95" selection-start-column="26" selection-end-line="95" selection-end-column="26" />
               <folding>
                 <marker date="1499405206661" expanded="true" signature="1778:1785" ph="×" />
@@ -110,12 +114,16 @@
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
+      <file leaf-file-name="MenuSuperior.php" pinned="false" current-in-tab="true">
+=======
 >>>>>>> origin/master
       <file leaf-file-name="MenuSuperior.php" pinned="false" current-in-tab="false">
+>>>>>>> d097b8dbd48af0417f52f21f115b134a3b0ebb87
         <entry file="file://$PROJECT_DIR$/Vista/snippers/MenuSuperior.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="714">
-              <caret line="42" column="78" lean-forward="false" selection-start-line="42" selection-start-column="78" selection-end-line="42" selection-end-column="78" />
+            <state relative-caret-position="255">
+              <caret line="15" column="82" lean-forward="false" selection-start-line="15" selection-start-column="82" selection-end-line="15" selection-end-column="82" />
               <folding />
             </state>
           </provider>
@@ -131,7 +139,7 @@
       <file leaf-file-name="login.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Vista/login.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
+            <state relative-caret-position="799">
               <caret line="47" column="28" lean-forward="false" selection-start-line="47" selection-start-column="28" selection-end-line="47" selection-end-column="28" />
 >>>>>>> origin/master
               <folding />
@@ -229,12 +237,15 @@
         <option value="$PROJECT_DIR$/Vista/snippers/verificarSession.php" />
         <option value="$PROJECT_DIR$/Vista/snippers/MenuIzquierdo.php" />
         <option value="$PROJECT_DIR$/Modelo/Persona.php" />
-        <option value="$PROJECT_DIR$/Vista/snippers/MenuSuperior.php" />
         <option value="$PROJECT_DIR$/Controlador/PersonaController.php" />
         <option value="$PROJECT_DIR$/Vista/assets/custom.js" />
         <option value="$PROJECT_DIR$/Vista/assets/js/custom.js" />
         <option value="$PROJECT_DIR$/Vista/login.php" />
+<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/Vista/snippers/MenuSuperior.php" />
+=======
 >>>>>>> origin/master
+>>>>>>> d097b8dbd48af0417f52f21f115b134a3b0ebb87
       </list>
     </option>
   </component>
@@ -247,7 +258,11 @@
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
+<<<<<<< HEAD
+    <option name="width" value="1378" />
+=======
     <option name="width" value="1380" />
+>>>>>>> d097b8dbd48af0417f52f21f115b134a3b0ebb87
     <option name="height" value="744" />
   </component>
   <component name="ProjectView">
@@ -267,9 +282,13 @@
     <panes>
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
       <pane id="Scratches" />
 >>>>>>> origin/master
+>>>>>>> d097b8dbd48af0417f52f21f115b134a3b0ebb87
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -310,6 +329,9 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+<<<<<<< HEAD
+              <option name="myItemId" value="snippers" />
+=======
               <option name="myItemId" value="public" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -333,6 +355,7 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="js" />
+>>>>>>> d097b8dbd48af0417f52f21f115b134a3b0ebb87
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -469,13 +492,27 @@
       <updated>1499391460874</updated>
 =======
       <workItem from="1499368184205" duration="9796000" />
+<<<<<<< HEAD
+      <workItem from="1499411265554" duration="1406000" />
+      <workItem from="1499446039303" duration="8000" />
+=======
       <workItem from="1499411265554" duration="623000" />
 >>>>>>> origin/master
+>>>>>>> d097b8dbd48af0417f52f21f115b134a3b0ebb87
     </task>
     <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
+    <option name="totallyTimeSpent" value="17389000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="0" width="1378" height="744" extended-state="1" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1585736" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+=======
 <<<<<<< HEAD
     <option name="totallyTimeSpent" value="11248000" />
 =======
@@ -494,6 +531,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
 =======
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15629742" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+>>>>>>> d097b8dbd48af0417f52f21f115b134a3b0ebb87
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928678" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -528,6 +566,79 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Vista/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5032">
+          <caret line="296" column="36" lean-forward="false" selection-start-line="296" selection-start-column="36" selection-end-line="296" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vista/snippers/MenuIzquierdo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="64" lean-forward="false" selection-start-line="17" selection-start-column="64" selection-end-line="17" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Controlador/PersonaController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1615">
+          <caret line="95" column="26" lean-forward="false" selection-start-line="95" selection-start-column="26" selection-end-line="95" selection-end-column="26" />
+          <folding>
+            <marker date="1499405206661" expanded="true" signature="1778:1785" ph="×" />
+            <marker date="1499405206661" expanded="true" signature="2180:2187" ph="×" />
+            <marker date="1499405206661" expanded="true" signature="2543:2550" ph="×" />
+            <marker date="1499405206661" expanded="true" signature="2875:2882" ph="×" />
+            <marker date="1499405206661" expanded="true" signature="3163:3227" ph="SELECT * FRO... Paciente" />
+            <marker date="1499405206661" expanded="true" signature="3307:3406" ph="SELECT * FRO... Paciente" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modelo/Persona.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6885">
+          <caret line="405" column="0" lean-forward="false" selection-start-line="405" selection-start-column="0" selection-end-line="405" selection-end-column="0" />
+          <folding>
+            <marker date="1499405152521" expanded="true" signature="8031:8064" ph="SELECT * FRO... persona" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vista/snippers/MenuSuperior.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="82" lean-forward="true" selection-start-line="15" selection-start-column="82" selection-end-line="15" selection-end-column="82" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vista/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="799">
+          <caret line="47" column="28" lean-forward="false" selection-start-line="47" selection-start-column="28" selection-end-line="47" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vista/snippers/verificarSession.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="32" lean-forward="false" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vista/assets/js/custom.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="1" lean-forward="false" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Vista/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5032">
@@ -661,6 +772,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1598">
           <caret line="94" column="110" lean-forward="false" selection-start-line="94" selection-start-column="110" selection-end-line="94" selection-end-column="110" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -780,9 +892,6 @@
 =======
         <state relative-caret-position="251">
           <caret line="407" column="9" lean-forward="true" selection-start-line="407" selection-start-column="9" selection-end-line="407" selection-end-column="9" />
-          <folding>
-            <marker date="1498944791948" expanded="true" signature="3429:3436" ph="×" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -790,6 +899,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1598">
           <caret line="94" column="110" lean-forward="false" selection-start-line="94" selection-start-column="110" selection-end-line="94" selection-end-column="110" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -818,13 +928,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1322">
           <caret line="402" column="0" lean-forward="false" selection-start-line="402" selection-start-column="0" selection-end-line="402" selection-end-column="0" />
-          <folding>
-            <marker date="1499047741721" expanded="true" signature="7258:7339" ph="INSERT INTO persona... " />
-            <marker date="1499047741721" expanded="true" signature="8021:8102" ph="INSERT INTO mypet.persona_has_especialidad... " />
-            <marker date="1499047741721" expanded="true" signature="8558:8604" ph="SELECT * FRO... persona" />
-            <marker date="1499047741721" expanded="true" signature="10793:10848" ph="SELECT * FRO... persona" />
-            <marker date="1499047741721" expanded="true" signature="10933:10960" ph="SELECT * FRO... persona" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -887,14 +990,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Vista/snippers/MenuSuperior.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="42" column="78" lean-forward="false" selection-start-line="42" selection-start-column="78" selection-end-line="42" selection-end-column="78" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Vista/snippers/verificarSession.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -946,7 +1041,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Vista/login.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
+        <state relative-caret-position="799">
           <caret line="47" column="28" lean-forward="false" selection-start-line="47" selection-start-column="28" selection-end-line="47" selection-end-column="28" />
           <folding />
         </state>
@@ -954,7 +1049,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Vista/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
+        <state relative-caret-position="5032">
           <caret line="296" column="36" lean-forward="false" selection-start-line="296" selection-start-column="36" selection-end-line="296" selection-end-column="36" />
           <folding />
 >>>>>>> origin/master
@@ -963,7 +1058,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Controlador/PersonaController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
+        <state relative-caret-position="1615">
           <caret line="95" column="26" lean-forward="false" selection-start-line="95" selection-start-column="26" selection-end-line="95" selection-end-column="26" />
           <folding>
             <marker date="1499405206661" expanded="true" signature="1778:1785" ph="×" />
@@ -973,6 +1068,14 @@
             <marker date="1499405206661" expanded="true" signature="3163:3227" ph="SELECT * FRO... Paciente" />
             <marker date="1499405206661" expanded="true" signature="3307:3406" ph="SELECT * FRO... Paciente" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vista/snippers/MenuSuperior.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="82" lean-forward="false" selection-start-line="15" selection-start-column="82" selection-end-line="15" selection-end-column="82" />
+          <folding />
         </state>
       </provider>
     </entry>
