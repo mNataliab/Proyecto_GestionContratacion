@@ -51,6 +51,7 @@
             env: "development",
             relativeUrls: false,
             rootpath: "/assets/"
+
         };
     </script>
     <link rel="stylesheet" href="assets/css/style-switcher.css">
@@ -112,7 +113,10 @@
                                                 </select>
                                             </div>
                                         </div>
-
+                                        <div class="form-group">
+                                            <label class="control-label col-lg-4">Browser Default</label>
+                                            <div class="col-lg-8"><input type="file"></div>
+                                        </div>
                                         <div class="form-group">
                                             <label class="control-label col-lg-4">Multiple Select</label>
 
@@ -160,12 +164,31 @@
                                             </div>
                                         </div>
 
+
+
                                         <div class="form-group">
                                             <label class="control-label col-lg-4">Minimum field size (6)</label>
 
                                             <div class=" col-lg-4">
                                                 <input value="" class="validate[required,minSize[6]] form-control" type="text" name="minsize1"
                                                        id="minsize1"/>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="control-label col-lg-4">Pre Defined Image</label>
+                                            <div class="col-lg-8">
+                                                <div class="fileinput fileinput-new" data-provides="fileinput">
+                                                    <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
+                                                        <img data-src="holder.js/100%x100%" alt="...">
+                                                    </div>
+                                                    <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>
+                                                    <div>
+                                                        <span class="btn btn-default btn-file"><span class="fileinput-new">Select image</span><span class="fileinput-exists">Change</span><input type="file" name="..."></span>
+                                                        <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
+                                                    </div>
+                                                </div>
+
                                             </div>
                                         </div>
 
