@@ -34,10 +34,30 @@
             <ul class="collapse">
                 <li>
                     <a href="CreatePersona.php">
-                        <i class="fa fa-angle-right"></i>&nbsp; Registrar </a>
+                        <i class="fa  glyphicon-user"></i>&nbsp; Registrar </a>
                 </li>
 
             </ul>
+
+
+        </li>
+
+
+        <li class="">
+            <a href="javascript:;">
+                <i class="fa fa-building "></i>
+                <span class="link-title">Secretaria</span>
+                <span class="fa arrow"></span>
+            </a>
+            <ul class="collapse">
+                <li>
+                    <a href="CreateSecretaria.php">
+                        <i class="fa  glyphicon-user"></i>&nbsp; Registrar </a>
+                </li>
+
+            </ul>
+
+
         </li>
 
     </ul>

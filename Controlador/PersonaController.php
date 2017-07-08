@@ -13,22 +13,30 @@ class PersonaController{
     static function main($action){
         if ($action == "crear"){
             PersonaController::crear();
-        /*}else if ($action == "editar"){
-            pacienteController::editar();
-        }else if ($action == "selectPacientes"){
-            pacienteController::selectPacientes();
-        }else if ($action == "adminTablePacientes"){
-            pacienteController::adminTablePacientes();
-        }else if ($action == "InactivarPaciente"){
-            pacienteController::CambiarEstado("Inactivo");
-        }else if ($action == "ActivarPaciente"){
-            pacienteController::CambiarEstado("Activo");*/
         }else if($action == "Login"){
             PersonaController::Login();
         }else if($action == "CerrarSession"){
             PersonaController::CerrarSession();
         }
 
+    }
+
+
+    static public function crear(){
+        try{
+            $arrayPersona = array();
+            $tmp_name = $_FILES['imagen']["tmp_name"];
+            $name = $_FILES['imagen']["name"];
+            $nuevo_path = "";
+            if (($name == !NULl)){
+                $nuevo_path="../Fotos/".$name;
+                move_uploaded_file($tmp_name,$nuevo_path);
+            }else{
+                $name["Errorfoto"];
+            }
+        }catch(Exception $e){
+
+        }
     }
 /**
  * Created by PhpStorm.

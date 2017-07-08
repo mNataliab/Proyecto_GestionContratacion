@@ -27,6 +27,17 @@ class Persona extends db_abstract_class
     private $Contrasena;
     private $Estado;
     private $Tipo_Usuario;
+    private $Secretarias_idSecretarias;
+
+    /**
+     * @return mixed
+     */
+
+
+    /**
+     * @param mixed $Secretarias_idSecretarias
+     */
+
 
     /**
      * Persona constructor.
@@ -74,6 +85,7 @@ class Persona extends db_abstract_class
             $this->Contrasena =  "";
             $this->Estado =  "";
             $this->Tipo_Usuario =  "";
+            $this->Secretarias_idSecretarias =  "";
 
         }
     }
@@ -81,6 +93,22 @@ class Persona extends db_abstract_class
     /**
      * @return mixed
      */
+
+
+    public function getSecretariasIdSecretarias()
+    {
+        return $this->Secretarias_idSecretarias;
+    }
+
+    /**
+     * @param mixed $Secretarias_idSecretarias
+     */
+    public function setSecretariasIdSecretarias($Secretarias_idSecretarias)
+    {
+        $this->Secretarias_idSecretarias = $Secretarias_idSecretarias;
+    }
+
+
     public function getIdPersona()
     {
         return $this->idPersona;

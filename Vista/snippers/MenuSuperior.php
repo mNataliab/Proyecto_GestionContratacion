@@ -97,7 +97,7 @@
         <div class="main-bar">
             <h3>
                 <i class="fa fa-home"></i>&nbsp;
-                Metis
+                Alcaldia
             </h3>
         </div>
         <!-- /.main-bar -->

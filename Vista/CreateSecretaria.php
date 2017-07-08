@@ -8,7 +8,7 @@
     <!--Mobile first-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Registro Personas</title>
+    <title>Registro Secretaria</title>
 
     <meta name="description" content="Free Admin Template Based On Twitter Bootstrap 3.x">
     <meta name="author" content="">
@@ -81,7 +81,7 @@
                             <div class="box">
                                 <header class="dark">
                                     <div class="icons"><i class="fa glyphicon-user"></i></div>
-                                    <h5>Registro Personas</h5>
+                                    <h5>Registro Secretaria</h5>
                                     <!-- .toolbar -->
                                     <div class="toolbar">
                                         <nav style="padding: 8px;">
@@ -108,53 +108,25 @@
                                             </div>
                                         </div>
 
-                                        <div class="form-group">
-                                            <label class="control-label col-lg-4">Apellido</label>
-                                            <div class="col-lg-4">
-                                                <input type="text" placeholder="Apellidos" required class="validate[required] form-control" name="req" id="req">
-                                            </div>
+                                        <div id="div-1" class="body">
+                                            <label class="control-label col-lg-4">Mision</label>
+                                            <textarea id="wysihtml5" class="form-control" rows="10" style="height: 100px;width: 330px;position: static "  ></textarea>
+
                                         </div>
 
-                                        <div class="form-group">
-                                            <label class="control-label col-lg-4">Tipo Documento</label>
-                                            <div class="col-lg-4">
-                                                <select required name="sport" id="sport" class="validate[required] form-control">
-                                                    <option value=""></option>
-                                                    <option value="C.C">Cedula Ciudadina</option>
-                                                    <option value="T.I">Tarjeta Identidad</option>
-                                                    <option value="R.C">Registro Civil</option>
-                                                    <option value="C.E">Cedula Extranjera</option>
-                                                    <option value="Otros">Otros</option>
-                                                </select>
-                                            </div>
+                                        <div id="div-1" class="body">
+                                            <label class="control-label col-lg-4">Vision</label>
+                                            <textarea id="wysihtml5" class="form-control" rows="10" style="height: 100px;width: 330px;position: static "  ></textarea>
+
                                         </div>
 
-                                        <div class="form-group">
-                                            <label class="control-label col-lg-4">N° Documento</label>
-                                            <div class=" col-lg-4">
-                                                <input value="Documento" placeholder="Documento " required class="validate[required] form-control" type="number" name="Documento" id="Documento"/>
-                                            </div>
+                                        <div id="div-1" class="body">
+                                            <label class="control-label col-lg-4">Objetivos</label>
+                                            <textarea id="wysihtml5" class="form-control" rows="10" style="height: 100px;width: 330px;position: static "  ></textarea>
+
                                         </div>
 
 
-                                        <div class="form-group">
-                                            <label class="control-label col-lg-4">Fecha Nacimiento</label>
-
-                                            <div class=" col-lg-4">
-                                                <input required class="validate[required,custom[date]] form-control" type="date"
-                                                      data-date-format="aaaa/mm/dd" name="Fecha_Nacimiento" id="Fecha_Nacimiento"/>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label class="control-label col-lg-4">Genero</label>
-                                            <div class="col-lg-4">
-                                                <select required name="sport" id="sport" class="validate[required] form-control">
-                                                    <option value="Masculino">Masculino</option>
-                                                    <option value="Femenino">Femenino</option>
-                                                </select>
-                                            </div>
-                                        </div>
 
                                         <div class="form-group">
                                             <label class="control-label col-lg-4">Telefono</label>
@@ -174,96 +146,6 @@
                                         </div>
 
 
-                                        <div class="form-group">
-                                            <label class="control-label col-lg-4">E-mail</label>
-
-                                            <div class=" col-lg-4">
-                                                <input required placeholder="E-mail" class="validate[required,custom[email]] form-control" type="email" name="email1"
-                                                       id="email1"/>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label class="control-label col-lg-4">Usuario</label>
-                                            <div class="col-lg-4">
-                                                <input required placeholder="Usuario" type="text" class="validate[required] form-control" name="req" id="req">
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label class="control-label col-lg-4">Contraseña</label>
-
-                                            <div class=" col-lg-4">
-                                                <input required placeholder="Contraseña" class="validate[required] form-control" type="password" name="pass1" id="pass1"/>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label class="control-label col-lg-4">Confirmar Contraseña</label>
-                                            <div class=" col-lg-4">
-                                                <input required placeholder="Contraseña" class="validate[required,equals[pass1]] form-control" type="password" name="pass2"
-                                                       id="pass2"/>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="control-label col-lg-4">Numero de Registro Profesional</label>
-
-                                            <div class=" col-lg-4">
-                                                <input required placeholder="Numero Registro Profesional" class="validate[required,custom[number]] form-control" type="text"
-                                                       name="numbe2r" id="number2"/>
-                                                <span class="help-block"></span>
-                                            </div>
-                                        </div>
-                                        <div class="form-group" name="Cargo" id="Cargo">
-                                            <label class="control-label col-lg-4">Cargo</label>
-                                            <div class="col-lg-4">
-                                                <select required name="Tipo_Usuario" id="Tipo_Usuario" class="validate[required] form-control">
-                                                    <option value=""></option>
-                                                    <option value="General">General</option>
-                                                    <option value="Subgeneral">Subgeneral</option>
-                                                    <option value="Secreterai@">Secretari@</option>
-                                                    <option value="Administrador">Administrador</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="form-group" name="Secretaria" id="Secretaria">
-                                            <label class="control-label col-lg-4">Secretaria</label>
-                                            <div class="col-lg-4">
-                                                <select  name="sport" id="sport" class="validate[required] form-control">
-                                                    <option>Uno</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="control-label col-lg-4">Contrato</label>
-                                            <div class="col-lg-8"><input  class="validate[type='file']" type="file"></div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label class="control-label col-lg-4">Foto</label>
-                                            <div class="col-lg-8">
-                                                <div class="fileinput fileinput-new" data-provides="fileinput">
-                                                    <div  class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;" ></div>
-
-                                                        <span ><span class="fileinput-new"></span><span class="fileinput-exists"></span><input class="validate[type='file'] "  type="file" name="..."></span>
-                                                        <br>
-                                                        <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Cambiar imagen</a>
-
-                                                </div>
-
-                                            </div>
-                                        </div>
-
-
-                                        <div class="form-group">
-                                            <label class="control-label col-lg-4">Estado</label>
-                                            <div class="col-lg-4">
-                                                <select  name="sport" id="sport" class="validate[required] form-control" readonly="readonly">
-                                                    <option>Activo</option>
-
-                                                </select>
-                                            </div>
-                                        </div>
 
                                         <div class="form-actions no-margin-bottom">
                                             <input type="submit" value="Enviar" class="btn btn-primary">
