@@ -45,15 +45,33 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 
+    <script src="jquery/dist/jquery.min.js"></script>
     <!--For Development Only. Not required -->
     <script>
+
+
         less = {
             env: "development",
             relativeUrls: false,
             rootpath: "/assets/"
 
         };
+
+        $(document).ready(function() {
+            $('#Secretaria').hide();
+            $('#Cargo').change(function() {
+                if($(this).val() == 'General'){
+                    $("#Secretaria").show();
+                }else{
+                    $("#Secretaria").hide();
+                }
+            })
+        });
+
+
     </script>
+
+
     <link rel="stylesheet" href="assets/css/style-switcher.css">
     <link rel="stylesheet/less" type="text/css" href="assets/less/theme.less">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.7.1/less.js"></script>
@@ -79,6 +97,8 @@
 
                             </style>
                 <div id="content">
+
+
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="box">
@@ -107,15 +127,15 @@
 
                                         <div class="form-group">
                                             <label class="control-label col-lg-4">Nombre</label>
-                                            <div class="col-lg-4">
-                                                <input type="text" class="validate[required] form-control" name="req" id="req">
+                                             <div class="col-lg-4">
+                                                <input type="text" required class="validate[required] form-control" name="req" id="req">
                                             </div>
                                         </div>
 
                                         <div class="form-group">
                                             <label class="control-label col-lg-4">Apellido</label>
                                             <div class="col-lg-4">
-                                                <input type="text" class="validate[required] form-control" name="req" id="req">
+                                                <input type="text" required class="validate[required] form-control" name="req" id="req">
                                             </div>
                                         </div>
 
@@ -137,12 +157,10 @@
                                             <label class="control-label col-lg-4">N° Documento</label>
 
                                             <div class=" col-lg-4">
-<<<<<<< HEAD
-                                                <input class="validate[required,custom[ipv4]] form-control" type="text"
-=======
-                                                <input value="Documento" required class="validate[required,custom[ipv4]] form-control" type="number"
->>>>>>> 6f435dd327c5877ee338b28db24d7e0a4b591bef
-                                                       name="Documento" id="Documento"/>
+
+                                                <input required class="validate[required,custom[ipv4]] form-control" type="text"/>
+
+                                                <input value="Documento" required class="validate[required,custom[ipv4]] form-control" type="number" name="Documento" id="Documento"/>
                                             </div>
                                         </div>
 
@@ -151,7 +169,7 @@
                                             <label class="control-label col-lg-4">Fecha Nacimiento</label>
 
                                             <div class=" col-lg-4">
-                                                <input value="2017-12-01" class="validate[required,custom[date]] form-control" type="text"
+                                                <input required value="2017-12-01" class="validate[required,custom[date]] form-control" type="text"
                                                        name="date3" id="date3"/>
                                                 <span class="help-block">Solamente YYYY-mm-dd</span>
                                             </div>
@@ -160,7 +178,7 @@
                                         <div class="form-group">
                                             <label class="control-label col-lg-4">Genero</label>
                                             <div class="col-lg-4">
-                                                <select name="sport" id="sport" class="validate[required] form-control">
+                                                <select required name="sport" id="sport" class="validate[required] form-control">
                                                     <option value="Masculino">Masculino</option>
                                                     <option value="Femenino">Femenino</option>
                                                 </select>
@@ -171,16 +189,16 @@
                                             <label class="control-label col-lg-4">Telefono</label>
 
                                             <div class=" col-lg-4">
-                                                <input value="-33.87a" class="validate[required,custom[number]] form-control" type="text"
+                                                <input required value="" class="validate[required,custom[number]] form-control" type="text"
                                                        name="numbe2r" id="number2"/>
-                                                <span class="help-block">a signed floating number, ie: -3849.354, 38.00, 38, .77</span>
+                                                <span class="help-block"></span>
                                             </div>
                                         </div>
 
                                         <div class="form-group">
-                                            <label class="control-label col-lg-4">Direccion</label>
+                                            <label  class="control-label col-lg-4">Direccion</label>
                                             <div class="col-lg-4">
-                                                <input type="text" class="validate[required] form-control" name="req" id="req">
+                                                <input required type="text" class="validate[required] form-control" name="req" id="req">
                                             </div>
                                         </div>
 
@@ -189,7 +207,7 @@
                                             <label class="control-label col-lg-4">E-mail</label>
 
                                             <div class=" col-lg-4">
-                                                <input class="validate[required,custom[email]] form-control" type="text" name="email1"
+                                                <input required class="validate[required,custom[email]] form-control" type="text" name="email1"
                                                        id="email1"/>
                                             </div>
                                         </div>
@@ -197,7 +215,7 @@
                                         <div class="form-group">
                                             <label class="control-label col-lg-4">Usuario</label>
                                             <div class="col-lg-4">
-                                                <input type="text" class="validate[required] form-control" name="req" id="req">
+                                                <input required type="text" class="validate[required] form-control" name="req" id="req">
                                             </div>
                                         </div>
 
@@ -205,7 +223,7 @@
                                             <label class="control-label col-lg-4">Contraseña</label>
 
                                             <div class=" col-lg-4">
-                                                <input class="validate[required] form-control" type="password" name="pass1" id="pass1"/>
+                                                <input required class="validate[required] form-control" type="password" name="pass1" id="pass1"/>
                                             </div>
                                         </div>
 
@@ -213,7 +231,7 @@
                                             <label class="control-label col-lg-4">Confirmar Contraseña</label>
 
                                             <div class=" col-lg-4">
-                                                <input class="validate[required,equals[pass1]] form-control" type="password" name="pass2"
+                                                <input required class="validate[required,equals[pass1]] form-control" type="password" name="pass2"
                                                        id="pass2"/>
                                             </div>
                                         </div>
@@ -221,15 +239,16 @@
                                             <label class="control-label col-lg-4">Numero de Registro Profesional</label>
 
                                             <div class=" col-lg-4">
-                                                <input value="-33.87a" class="validate[required,custom[number]] form-control" type="text"
+                                                <input required value="" class="validate[required,custom[number]] form-control" type="text"
                                                        name="numbe2r" id="number2"/>
                                                 <span class="help-block"></span>
                                             </div>
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group" name="Cargo" id="Cargo">
                                             <label class="control-label col-lg-4">Cargo</label>
                                             <div class="col-lg-4">
-                                                <select name="sport" id="sport" class="validate[required] form-control">
+                                                <select required name="sport" id="sport" class="validate[required] form-control">
+                                                    <option value=""></option>
                                                     <option value="General">General</option>
                                                     <option value="Subgeneral">Subgeneral</option>
                                                     <option value="Secreterai@">Secretari@</option>
@@ -237,10 +256,17 @@
                                                 </select>
                                             </div>
                                         </div>
-
+                                        <div class="form-group" name="Secretaria" id="Secretaria">
+                                            <label class="control-label col-lg-4">Secretaria</label>
+                                            <div class="col-lg-4">
+                                                <select  name="sport" id="sport" class="validate[required] form-control">
+                                                    <option></option>
+                                                </select>
+                                            </div>
+                                        </div>
                                         <div class="form-group">
                                             <label class="control-label col-lg-4">Contrato</label>
-                                            <div class="col-lg-8"><input type="file"></div>
+                                            <div class="col-lg-8"><input required type="file"></div>
                                         </div>
 
                                         <div class="form-group">
@@ -248,9 +274,9 @@
                                             <div class="col-lg-8">
                                                 <div class="fileinput fileinput-new" data-provides="fileinput">
 
-                                                    <div aria-required="true" class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;" ></div>
+                                                    <div  class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;" ></div>
                                                     <div>
-                                                        <span ><span class="fileinput-new"></span><span class="fileinput-exists"></span><input type="file" name="..."></span>
+                                                        <span ><span class="fileinput-new"></span><span class="fileinput-exists"></span><input required type="file" name="..."></span>
                                                         <br>
                                                         <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Cambiar imagen</a>
                                                     </div>
@@ -263,17 +289,14 @@
                                         <div class="form-group">
                                             <label class="control-label col-lg-4">Estado</label>
                                             <div class="col-lg-4">
-                                                <input type="text" class="validate[required] form-control" name="req" id="req" value="Activo" readonly >
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label class="control-label col-lg-4">Secretaria</label>
-                                            <div class="col-lg-4">
-                                                <select name="sport" id="sport" class="validate[required] form-control">
+                                                <select  name="sport" id="sport" class="validate[required] form-control">
+                                                    <option>Activo</option>
+                                                    <option>Inactivo</option>
                                                 </select>
                                             </div>
                                         </div>
+
+
 
 
 
@@ -332,7 +355,18 @@
             <!--jQuery -->
             <script src="assets/lib/jquery/jquery.js"></script>
 
-
+            <script >
+                $(document).ready(function() {
+                    $('#Secretaria').hide();
+                    $('#Cargo').change(function() {
+                        if($(this).val() == 'General'){
+                            $("#Secretaria").show();
+                        }else{
+                            $("#Secretaria").hide();
+                        }
+                    })
+                });
+            </script>
                      <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
                      <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js"></script>
                      <script src="//cdnjs.cloudflare.com/ajax/libs/holder/2.4.1/holder.js"></script>
@@ -347,11 +381,9 @@
             <script src="assets/lib/onoffcanvas/onoffcanvas.js"></script>
             <!-- Screenfull -->
             <script src="assets/lib/screenfull/screenfull.js"></script>
-<<<<<<< HEAD
                 <script src="assets/lib/jquery-validation/jquery.validate.js"></script>
-=======
+
                 <script src="validator/validator.js"></script>
->>>>>>> 6f435dd327c5877ee338b28db24d7e0a4b591bef
 
 
             <!-- Metis core scripts -->
@@ -364,7 +396,10 @@
 
 
 
-                <script src="assets/js/style-switcher.js"></script>
+            <script src="assets/js/style-switcher.js"></script>
+
+
+
         </body>
 
 </html>
