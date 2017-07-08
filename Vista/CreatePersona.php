@@ -137,11 +137,11 @@
                                             <label class="control-label col-lg-4">N° Documento</label>
 
                                             <div class=" col-lg-4">
-<<<<<<< HEAD
+
                                                 <input class="validate[required,custom[ipv4]] form-control" type="text"
-=======
+
                                                 <input value="Documento" required class="validate[required,custom[ipv4]] form-control" type="number"
->>>>>>> 6f435dd327c5877ee338b28db24d7e0a4b591bef
+
                                                        name="Documento" id="Documento"/>
                                             </div>
                                         </div>
@@ -347,11 +347,11 @@
             <script src="assets/lib/onoffcanvas/onoffcanvas.js"></script>
             <!-- Screenfull -->
             <script src="assets/lib/screenfull/screenfull.js"></script>
-<<<<<<< HEAD
+
                 <script src="assets/lib/jquery-validation/jquery.validate.js"></script>
-=======
+
                 <script src="validator/validator.js"></script>
->>>>>>> 6f435dd327c5877ee338b28db24d7e0a4b591bef
+
 
 
             <!-- Metis core scripts -->
