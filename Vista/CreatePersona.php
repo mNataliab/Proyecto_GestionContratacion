@@ -8,82 +8,62 @@
     <!--Mobile first-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Metis</title>
-    
+    <title>Registro Personas</title>
+
     <meta name="description" content="Free Admin Template Based On Twitter Bootstrap 3.x">
     <meta name="author" content="">
-    
+
     <meta name="msapplication-TileColor" content="#5bc0de" />
     <meta name="msapplication-TileImage" content="assets/img/metis-tile.png" />
-    
+
     <!-- Bootstrap -->
     <link rel="stylesheet" href="assets/lib/bootstrap/css/bootstrap.css">
-    
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="assets/lib/font-awesome/css/font-awesome.css">
 
     <!-- Metis core stylesheet -->
     <link rel="stylesheet" href="assets/css/main.css">
-    
+
     <!-- metisMenu stylesheet -->
     <link rel="stylesheet" href="assets/lib/metismenu/metisMenu.css">
-    
+
     <!-- onoffcanvas stylesheet -->
     <link rel="stylesheet" href="assets/lib/onoffcanvas/onoffcanvas.css">
-    
+
     <!-- animate.css stylesheet -->
     <link rel="stylesheet" href="assets/lib/animate.css/animate.css">
+
+
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.theme.min.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jQuery-Validation-Engine/2.6.4/validationEngine.jquery.min.css">
 
-
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-<![endif]-->
+    <![endif]-->
 
-    <script src="jquery/dist/jquery.min.js"></script>
     <!--For Development Only. Not required -->
     <script>
-
-
         less = {
             env: "development",
             relativeUrls: false,
             rootpath: "/assets/"
-
         };
-
-        $(document).ready(function() {
-            $('#Secretaria').hide();
-            $('#Cargo').change(function() {
-                if($(this).val() == 'General'){
-                    $("#Secretaria").show();
-                }else{
-                    $("#Secretaria").hide();
-                }
-            })
-        });
-
-
     </script>
-
 
     <link rel="stylesheet" href="assets/css/style-switcher.css">
     <link rel="stylesheet/less" type="text/css" href="assets/less/theme.less">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.7.1/less.js"></script>
 
-  </head>
+</head>
 
         <body class="  ">
             <div class="bg-dark dk" id="wrap">
-
-
                 <?php require("snippers/MenuSuperior.php");?>
-
                 <!-- /#top -->
                 <?php require ("snippers/MenuIzquierdo.php");?>
                     <!-- /#left -->
@@ -96,10 +76,7 @@
                                 }
 
                             </style>
-                <div id="content">
-
-
-                    <div class="row">
+                                <div class="row">
                         <div class="col-lg-12">
                             <div class="box">
                                 <header class="dark">
@@ -124,18 +101,17 @@
                                 <div id="collapse2" class="body">
                                     <form class="form-horizontal" id="popup-validation">
 
-
                                         <div class="form-group">
                                             <label class="control-label col-lg-4">Nombre</label>
                                              <div class="col-lg-4">
-                                                <input type="text" required class="validate[required] form-control" name="req" id="req">
+                                                <input type="text" placeholder="Nombres" required class="validate[required] form-control" name="req" id="req">
                                             </div>
                                         </div>
 
                                         <div class="form-group">
                                             <label class="control-label col-lg-4">Apellido</label>
                                             <div class="col-lg-4">
-                                                <input type="text" required class="validate[required] form-control" name="req" id="req">
+                                                <input type="text" placeholder="Apellidos" required class="validate[required] form-control" name="req" id="req">
                                             </div>
                                         </div>
 
@@ -155,20 +131,8 @@
 
                                         <div class="form-group">
                                             <label class="control-label col-lg-4">N° Documento</label>
-
                                             <div class=" col-lg-4">
-
-<<<<<<< HEAD
-                                                <input class="validate[required,custom[ipv4]] form-control" type="text"
-
-                                                <input value="Documento" required class="validate[required,custom[ipv4]] form-control" type="number"
-
-                                                       name="Documento" id="Documento"/>
-=======
-                                                <input required class="validate[required,custom[ipv4]] form-control" type="text"/>
-
-                                                <input value="Documento" required class="validate[required,custom[ipv4]] form-control" type="number" name="Documento" id="Documento"/>
->>>>>>> fbbc9cd00f5f5f5205c18a07e9e116e7345ed789
+                                                <input value="Documento" placeholder="Documento " required class="validate[required] form-control" type="number" name="Documento" id="Documento"/>
                                             </div>
                                         </div>
 
@@ -177,9 +141,8 @@
                                             <label class="control-label col-lg-4">Fecha Nacimiento</label>
 
                                             <div class=" col-lg-4">
-                                                <input required value="2017-12-01" class="validate[required,custom[date]] form-control" type="text"
-                                                       name="date3" id="date3"/>
-                                                <span class="help-block">Solamente YYYY-mm-dd</span>
+                                                <input required class="validate[required,custom[date]] form-control" type="date"
+                                                      data-date-format="aaaa/mm/dd" name="Fecha_Nacimiento" id="Fecha_Nacimiento"/>
                                             </div>
                                         </div>
 
@@ -197,16 +160,16 @@
                                             <label class="control-label col-lg-4">Telefono</label>
 
                                             <div class=" col-lg-4">
-                                                <input required value="" class="validate[required,custom[number]] form-control" type="text"
+                                                <input required placeholder="Telefono" class="validate[required,custom[number]] form-control" type="number"
                                                        name="numbe2r" id="number2"/>
                                                 <span class="help-block"></span>
                                             </div>
                                         </div>
 
                                         <div class="form-group">
-                                            <label  class="control-label col-lg-4">Direccion</label>
+                                            <label  class="control-label col-lg-4">Dirección</label>
                                             <div class="col-lg-4">
-                                                <input required type="text" class="validate[required] form-control" name="req" id="req">
+                                                <input required type="text" placeholder="Direccion" class="validate[required] form-control" name="req" id="req">
                                             </div>
                                         </div>
 
@@ -215,7 +178,7 @@
                                             <label class="control-label col-lg-4">E-mail</label>
 
                                             <div class=" col-lg-4">
-                                                <input required class="validate[required,custom[email]] form-control" type="text" name="email1"
+                                                <input required placeholder="E-mail" class="validate[required,custom[email]] form-control" type="email" name="email1"
                                                        id="email1"/>
                                             </div>
                                         </div>
@@ -223,7 +186,7 @@
                                         <div class="form-group">
                                             <label class="control-label col-lg-4">Usuario</label>
                                             <div class="col-lg-4">
-                                                <input required type="text" class="validate[required] form-control" name="req" id="req">
+                                                <input required placeholder="Usuario" type="text" class="validate[required] form-control" name="req" id="req">
                                             </div>
                                         </div>
 
@@ -231,15 +194,14 @@
                                             <label class="control-label col-lg-4">Contraseña</label>
 
                                             <div class=" col-lg-4">
-                                                <input required class="validate[required] form-control" type="password" name="pass1" id="pass1"/>
+                                                <input required placeholder="Contraseña" class="validate[required] form-control" type="password" name="pass1" id="pass1"/>
                                             </div>
                                         </div>
 
                                         <div class="form-group">
                                             <label class="control-label col-lg-4">Confirmar Contraseña</label>
-
                                             <div class=" col-lg-4">
-                                                <input required class="validate[required,equals[pass1]] form-control" type="password" name="pass2"
+                                                <input required placeholder="Contraseña" class="validate[required,equals[pass1]] form-control" type="password" name="pass2"
                                                        id="pass2"/>
                                             </div>
                                         </div>
@@ -247,7 +209,7 @@
                                             <label class="control-label col-lg-4">Numero de Registro Profesional</label>
 
                                             <div class=" col-lg-4">
-                                                <input required value="" class="validate[required,custom[number]] form-control" type="text"
+                                                <input required placeholder="Numero Registro Profesional" class="validate[required,custom[number]] form-control" type="text"
                                                        name="numbe2r" id="number2"/>
                                                 <span class="help-block"></span>
                                             </div>
@@ -255,7 +217,7 @@
                                         <div class="form-group" name="Cargo" id="Cargo">
                                             <label class="control-label col-lg-4">Cargo</label>
                                             <div class="col-lg-4">
-                                                <select required name="sport" id="sport" class="validate[required] form-control">
+                                                <select required name="Tipo_Usuario" id="Tipo_Usuario" class="validate[required] form-control">
                                                     <option value=""></option>
                                                     <option value="General">General</option>
                                                     <option value="Subgeneral">Subgeneral</option>
@@ -268,26 +230,25 @@
                                             <label class="control-label col-lg-4">Secretaria</label>
                                             <div class="col-lg-4">
                                                 <select  name="sport" id="sport" class="validate[required] form-control">
-                                                    <option></option>
+                                                    <option>Uno</option>
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="control-label col-lg-4">Contrato</label>
-                                            <div class="col-lg-8"><input required type="file"></div>
+                                            <div class="col-lg-8"><input  class="validate[type='file']" type="file"></div>
                                         </div>
 
                                         <div class="form-group">
                                             <label class="control-label col-lg-4">Foto</label>
                                             <div class="col-lg-8">
                                                 <div class="fileinput fileinput-new" data-provides="fileinput">
-
                                                     <div  class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;" ></div>
-                                                    <div>
-                                                        <span ><span class="fileinput-new"></span><span class="fileinput-exists"></span><input required type="file" name="..."></span>
+
+                                                        <span ><span class="fileinput-new"></span><span class="fileinput-exists"></span><input class="validate[type='file'] "  type="file" name="..."></span>
                                                         <br>
                                                         <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Cambiar imagen</a>
-                                                    </div>
+
                                                 </div>
 
                                             </div>
@@ -304,12 +265,6 @@
                                             </div>
                                         </div>
 
-
-
-
-
-                                        </div>
-
                                         <div class="form-actions no-margin-bottom">
                                             <input type="submit" value="Validate" class="btn btn-primary">
                                         </div>
@@ -317,15 +272,78 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- /.col-lg-12 -->
+                    </div>
+                                </div>
+                        <!-- /.inner -->
+                            </div>
+                     <!-- /.outer -->
+                    </div>
+                <!-- /#content -->
+
+
+                <div id="right" class="onoffcanvas is-right is-fixed bg-light" aria-expanded=false>
+                    <a class="onoffcanvas-toggler" href="#right" data-toggle=onoffcanvas aria-expanded=false></a>
+                    <br>
+                    <br>
+                    <div class="alert alert-danger">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        <strong>Warning!</strong> Best check yo self, you're not looking too good.
+                    </div>
+                    <!-- .well well-small -->
+                    <div class="well well-small dark">
+                        <ul class="list-unstyled">
+                            <li>Visitor <span class="inlinesparkline pull-right">1,4,4,7,5,9,10</span></li>
+                            <li>Online Visitor <span class="dynamicsparkline pull-right">Loading..</span></li>
+                            <li>Popularity <span class="dynamicbar pull-right">Loading..</span></li>
+                            <li>New Users <span class="inlinebar pull-right">1,3,4,5,3,5</span></li>
+                        </ul>
+                    </div>
+                    <!-- /.well well-small -->
+                    <!-- .well well-small -->
+                    <div class="well well-small dark">
+                        <button class="btn btn-block">Default</button>
+                        <button class="btn btn-primary btn-block">Primary</button>
+                        <button class="btn btn-info btn-block">Info</button>
+                        <button class="btn btn-success btn-block">Success</button>
+                        <button class="btn btn-danger btn-block">Danger</button>
+                        <button class="btn btn-warning btn-block">Warning</button>
+                        <button class="btn btn-inverse btn-block">Inverse</button>
+                        <button class="btn btn-metis-1 btn-block">btn-metis-1</button>
+                        <button class="btn btn-metis-2 btn-block">btn-metis-2</button>
+                        <button class="btn btn-metis-3 btn-block">btn-metis-3</button>
+                        <button class="btn btn-metis-4 btn-block">btn-metis-4</button>
+                        <button class="btn btn-metis-5 btn-block">btn-metis-5</button>
+                        <button class="btn btn-metis-6 btn-block">btn-metis-6</button>
+                    </div>
+                    <!-- /.well well-small -->
+                    <!-- .well well-small -->
+                    <div class="well well-small dark">
+                        <span>Default</span><span class="pull-right"><small>20%</small></span>
+
+                        <div class="progress xs">
+                            <div class="progress-bar progress-bar-info" style="width: 20%"></div>
+                        </div>
+                        <span>Success</span><span class="pull-right"><small>40%</small></span>
+
+                        <div class="progress xs">
+                            <div class="progress-bar progress-bar-success" style="width: 40%"></div>
+                        </div>
+                        <span>warning</span><span class="pull-right"><small>60%</small></span>
+
+                        <div class="progress xs">
+                            <div class="progress-bar progress-bar-warning" style="width: 60%"></div>
+                        </div>
+                        <span>Danger</span><span class="pull-right"><small>80%</small></span>
+
+                        <div class="progress xs">
+                            <div class="progress-bar progress-bar-danger" style="width: 80%"></div>
+                        </div>
                     </div>
                 </div>
-                        </div>
-                        </div>
-                        <!-- /.inner -->
-                    </div>
-                    <!-- /.outer -->
-                 </div>
+                <!-- /#right -->
+
+            </div>
+
             <!-- /#wrap -->
             <footer class="Footer bg-dark dker">
                 <p>2017 &copy; Metis Bootstrap Admin Template v2.4.2</p>
@@ -357,31 +375,26 @@
                 <!-- /.modal-dialog -->
             </div>
 
-
             <!-- /.modal -->
             <!-- /#helpModal -->
             <!--jQuery -->
             <script src="assets/lib/jquery/jquery.js"></script>
 
             <script >
-                $(document).ready(function() {
+               $(document).ready(function() {
                     $('#Secretaria').hide();
-                    $('#Cargo').change(function() {
+                    $('#Tipo_Usuario').change(function() {
                         if($(this).val() == 'General'){
-                            $("#Secretaria").show();
+                            $('#Secretaria').show();
                         }else{
-                            $("#Secretaria").hide();
+                            $('#Secretaria').hide();
                         }
                     })
                 });
             </script>
-                     <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
-                     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js"></script>
-                     <script src="//cdnjs.cloudflare.com/ajax/libs/holder/2.4.1/holder.js"></script>
-                     <script src="//cdnjs.cloudflare.com/ajax/libs/Uniform.js/2.1.2/jquery.uniform.min.js"></script>
-                     <script src="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js"></script>
-                     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
-            <!--Bootstrap -->
+                <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+            <script src="//cdnjs.cloudflare.com/ajax/libs/jQuery-Validation-Engine/2.6.4/jquery.validationEngine.min.js"></script>
+            <script src="//cdnjs.cloudflare.com/ajax/libs/jQuery-Validation-Engine/2.6.4/languages/jquery.validationEngine-en.min.js"></script>
             <script src="assets/lib/bootstrap/js/bootstrap.js"></script>
             <!-- MetisMenu -->
             <script src="assets/lib/metismenu/metisMenu.js"></script>
@@ -389,32 +402,21 @@
             <script src="assets/lib/onoffcanvas/onoffcanvas.js"></script>
             <!-- Screenfull -->
             <script src="assets/lib/screenfull/screenfull.js"></script>
-<<<<<<< HEAD
 
                 <script src="assets/lib/jquery-validation/jquery.validate.js"></script>
-
-                <script src="validator/validator.js"></script>
-
-=======
-                <script src="assets/lib/jquery-validation/jquery.validate.js"></script>
-
-                <script src="validator/validator.js"></script>
->>>>>>> fbbc9cd00f5f5f5205c18a07e9e116e7345ed789
-
 
             <!-- Metis core scripts -->
             <script src="assets/js/core.js"></script>
+
             <!-- Metis demo scripts -->
-            <script src="assets/js/app.js"></script>
+                <script src="assets/js/app.js"></script>
+                <script>
+                    $(function() {
+                        Metis.formValidation();
+                    });
+                </script>
 
-
-            <script src="assets/js/style-switcher.js"></script>
-
-
-
-            <script src="assets/js/style-switcher.js"></script>
-
-
+                <script src="assets/js/style-switcher.js"></script>
 
         </body>
 

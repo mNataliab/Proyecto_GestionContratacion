@@ -14,11 +14,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a href="index.php" class="navbar-brand"><img src="assets/img/logo.png" alt=""></a>
-
             </header>
-
-
-
             <div class="topnav">
                 <div class="btn-group">
                     <a data-placement="bottom" data-original-title="Fullscreen" data-toggle="tooltip"
@@ -108,5 +104,3 @@
     </header>
     <!-- /.head -->
 </div>
-
-</html>
