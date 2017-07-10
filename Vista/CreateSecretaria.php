@@ -99,30 +99,44 @@
 
                                 </header>
                                 <div id="collapse2" class="body">
-                                    <form class="form-horizontal" id="popup-validation">
+
+                                    <?php if(!empty($_GET['respuesta'])){ ?>
+                                        <?php if ($_GET['respuesta'] == "correcto"){ ?>
+                                            <div class="correcto" id="correcto" title="Registrada" >
+                                               <p>La persona se ha creado correctamente</p>
+                                            </div>
+                                        <?php }else {?>
+                                            <div class="error" >
+                                                <p>Error! La persona no se pudo crear correctamente intentalo nuevamente</p>
+                                            </div>
+                                        <?php } ?>
+                                    <?php } ?>
+
+
+                                    <form class="form-horizontal" id="popup-validation" method="POST" action=".../Controlador/SecretariaController.php?action=crear">
 
                                         <div class="form-group">
                                             <label class="control-label col-lg-4">Nombre</label>
                                              <div class="col-lg-4">
-                                                <input type="text" placeholder="Nombres" required class="validate[required] form-control" name="req" id="req">
+                                                <input type="text" placeholder="Nombre" required class="validate[required] form-control" name="Nombre" id="Nombre">
                                             </div>
                                         </div>
 
                                         <div id="div-1" class="body">
                                             <label class="control-label col-lg-4">Mision</label>
-                                            <textarea id="wysihtml5" class="form-control" rows="10" style="height: 100px;width: 330px;position: static "  ></textarea>
+                                            <textarea name="Mision" id="Mision" class="form-control" rows="10" style="height: 100px;width: 330px;position: static "  ></textarea>
 
                                         </div>
 
                                         <div id="div-1" class="body">
                                             <label class="control-label col-lg-4">Vision</label>
-                                            <textarea id="wysihtml5" class="form-control" rows="10" style="height: 100px;width: 330px;position: static "  ></textarea>
+                                            <textarea id="Vision" name="Vision" class="form-control" rows="10" style="height: 100px;width: 330px;position: static "  ></textarea>
 
                                         </div>
 
                                         <div id="div-1" class="body">
                                             <label class="control-label col-lg-4">Objetivos</label>
-                                            <textarea id="wysihtml5" class="form-control" rows="10" style="height: 100px;width: 330px;position: static "  ></textarea>
+                                            <textarea id="Objetivos" name="Objetivos" class="form-control" rows="10" style="height: 100px;width: 330px;position: static "  ></textarea>
 
                                         </div>
 
@@ -133,7 +147,7 @@
 
                                             <div class=" col-lg-4">
                                                 <input required placeholder="Telefono" class="validate[required,custom[number]] form-control" type="number"
-                                                       name="numbe2r" id="number2"/>
+                                                       name="Telefono" id="Telefono"/>
                                                 <span class="help-block"></span>
                                             </div>
                                         </div>
@@ -141,7 +155,7 @@
                                         <div class="form-group">
                                             <label  class="control-label col-lg-4">Dirección</label>
                                             <div class="col-lg-4">
-                                                <input required type="text" placeholder="Direccion" class="validate[required] form-control" name="req" id="req">
+                                                <input required type="text" placeholder="Direccion" class="validate[required] form-control" name="Direccion" id="Direccion">
                                             </div>
                                         </div>
 
@@ -276,6 +290,29 @@
                             $('#Secretaria').hide();
                         }
                     })
+
+                   $("#correcto").dialog({
+                       show: {
+                           effect: "blind",
+                           duration: 1000
+                       }
+                       hide: {
+                           effect: "explode",
+                           duration: 1000
+                       }
+                       resizable: false,
+                       height: "auto",
+                       width: 400,
+                       modal: true,
+                       buttons: {
+                           Ok: function() {
+                               $( this ).dialog( "close" );
+
+                           }
+
+                       }
+                   });
+
                 });
             </script>
                 <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
