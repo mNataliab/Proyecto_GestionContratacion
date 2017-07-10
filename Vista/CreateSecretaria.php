@@ -295,42 +295,13 @@
                             $('#Secretaria').hide();
                         }
                     });
-/*
-                   $( "#correcto" ).dialog({
-                       modal: true,
-                       buttons: {
-                           Ok: function() {
-                               $( this ).dialog( "close" );
 
-                               location.reload();
-                           }
-                       }
-                   });*/
-                   $( "#correcto" ).dialog({
-                       autoOpen: true,
-                       show: {
-                           effect: "blind",
-                           duration: 1000
-                       },
-                       hide: {
-                           effect: "explode",
-                           duration: 1000
-                       }
-                   });
-
+                   
                    $( "#dialogo" ).on( "click", function() {
                        $( "#correcto" ).dialog( "open" );
                    });
                    $( "#error" ).dialog({
-<<<<<<< HEAD
-                       modal: true,
-                       buttons: {
-                           Ok: function() {
-                               $( this ).dialog( "close" );
 
-                               location.reload();
-                           }
-=======
                        autoOpen: true,
                        show: {
                            effect: "blind",
@@ -339,7 +310,7 @@
                        hide: {
                            effect: "explode",
                            duration: 1000
->>>>>>> 21537af5bc08a9ee411091aa4217be5ae6f31ef1
+
                        }
                    });
 
