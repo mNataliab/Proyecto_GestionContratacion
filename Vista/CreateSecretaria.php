@@ -167,7 +167,7 @@
 
 
                                         <div class="form-actions no-margin-bottom">
-                                            <input type="submit" value="Enviar" class="btn btn-primary">
+                                            <input type="submit" id="dialogo" value="Enviar" class="btn btn-primary">
                                         </div>
                                     </form>
                                 </div>
@@ -294,8 +294,8 @@
                         } else{
                             $('#Secretaria').hide();
                         }
-                    })
-
+                    });
+/*
                    $( "#correcto" ).dialog({
                        modal: true,
                        buttons: {
@@ -303,14 +303,36 @@
                                $( this ).dialog( "close" );
                            }
                        }
+                   });*/
+                   $( "#correcto" ).dialog({
+                       autoOpen: true,
+                       show: {
+                           effect: "blind",
+                           duration: 1000
+                       },
+                       hide: {
+                           effect: "explode",
+                           duration: 1000
+                       }
+                   });
+
+                   $( "#dialogo" ).on( "click", function() {
+                       $( "#correcto" ).dialog( "open" );
                    });
                    $( "#error" ).dialog({
-                       modal: true,
-                       buttons: {
-                           Ok: function() {
-                               $( this ).dialog( "close" );
-                           }
+                       autoOpen: true,
+                       show: {
+                           effect: "blind",
+                           duration: 1000
+                       },
+                       hide: {
+                           effect: "explode",
+                           duration: 1000
                        }
+                   });
+
+                   $( "#dialogo" ).on( "click", function() {
+                       $( "#error" ).dialog( "open" );
                    });
 
                 });
