@@ -54,6 +54,10 @@
             rootpath: "/assets/"
         };
     </script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
     <link rel="stylesheet" href="assets/css/style-switcher.css">
     <link rel="stylesheet/less" type="text/css" href="assets/less/theme.less">
@@ -102,18 +106,19 @@
 
                                     <?php if(!empty($_GET['respuesta'])){ ?>
                                         <?php if ($_GET['respuesta'] == "correcto"){ ?>
-                                            <div class="correcto" id="correcto" title="Registrada" >
-                                               <p>La persona se ha creado correctamente</p>
+                                            <div class="correcto" id="correcto" title="Registro Exitoso" >
+                                                <p> <i class="glyphicon glyphicon-ok-sign"></i>
+                                               La secretaria se ha creado correctamente</p>
                                             </div>
                                         <?php }else {?>
-                                            <div class="error" >
-                                                <p>Error! La persona no se pudo crear correctamente intentalo nuevamente</p>
+                                            <div class="error" id="error" title="Registro Fallido!" >
+                                                <p><i class="glyphicon glyphicon-remove-sign"></i>&nbsp;Error! La secretaria no se pudo crear correctamente intentalo nuevamente</p>
                                             </div>
                                         <?php } ?>
                                     <?php } ?>
 
 
-                                    <form class="form-horizontal" id="popup-validation" method="POST" action=".../Controlador/SecretariaController.php?action=crear">
+                                    <form class="form-horizontal" id="popup-validation"  action="../Controlador/SecretariaController.php?action=crear" method="POST"    >
 
                                         <div class="form-group">
                                             <label class="control-label col-lg-4">Nombre</label>
@@ -291,25 +296,20 @@
                         }
                     })
 
-                   $("#correcto").dialog({
-                       show: {
-                           effect: "blind",
-                           duration: 1000
-                       }
-                       hide: {
-                           effect: "explode",
-                           duration: 1000
-                       }
-                       resizable: false,
-                       height: "auto",
-                       width: 400,
+                   $( "#correcto" ).dialog({
                        modal: true,
                        buttons: {
                            Ok: function() {
                                $( this ).dialog( "close" );
-
                            }
-
+                       }
+                   });
+                   $( "#error" ).dialog({
+                       modal: true,
+                       buttons: {
+                           Ok: function() {
+                               $( this ).dialog( "close" );
+                           }
                        }
                    });
 

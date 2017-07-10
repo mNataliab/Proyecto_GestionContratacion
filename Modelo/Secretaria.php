@@ -171,15 +171,15 @@ class Secretaria extends db_abstract_class
 
     public function insertar()
     {
-        $this>insertRow("INSERT INTO Secretarias VALUES(NULL ,?,?,?,?,?,?)",array(
+        $this->insertRow("INSERT INTO proyectophp.secretarias VALUES (NULL, ?, ?, ?, ?, ?, ?)",array(
             $this->Nombre,
             $this->Mision,
             $this->Vision,
             $this->Objetivos,
             $this->Telefono,
             $this->Direccion,
-
-        ));
+        )
+        );
         $this->Disconnect();
     }
 

@@ -4,7 +4,7 @@
 require_once (__DIR__.'/../Modelo/Secretaria.php');
 
 if(!empty($_GET['action'])){
-    EspecialidadController::main($_GET['action']);
+    SecretariaController::main($_GET['action']);
 }else{
     echo "No se encontro ninguna accion...";
 }
@@ -26,7 +26,9 @@ try{
     $arraySecretaria['Direccion']= $_POST['Direccion'];
     $Secretaria = new Secretaria($arraySecretaria);
     $Secretaria->insertar();
+    header("Location: ../Vista/CreateSecretaria.php?respuesta=correcto");
 }catch (Exception $w){
+    header("Location: ../Vista/CreateSecretaria.php?respuesta=error");
 
 }
 }
