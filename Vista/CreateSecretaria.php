@@ -167,7 +167,7 @@
 
 
                                         <div class="form-actions no-margin-bottom">
-                                            <input type="submit" value="Enviar" class="btn btn-primary">
+                                            <input type="submit" id="dialogo" value="Enviar" class="btn btn-primary">
                                         </div>
                                     </form>
                                 </div>
@@ -294,8 +294,8 @@
                         } else{
                             $('#Secretaria').hide();
                         }
-                    })
-
+                    });
+/*
                    $( "#correcto" ).dialog({
                        modal: true,
                        buttons: {
@@ -305,8 +305,24 @@
                                location.reload();
                            }
                        }
+                   });*/
+                   $( "#correcto" ).dialog({
+                       autoOpen: true,
+                       show: {
+                           effect: "blind",
+                           duration: 1000
+                       },
+                       hide: {
+                           effect: "explode",
+                           duration: 1000
+                       }
+                   });
+
+                   $( "#dialogo" ).on( "click", function() {
+                       $( "#correcto" ).dialog( "open" );
                    });
                    $( "#error" ).dialog({
+<<<<<<< HEAD
                        modal: true,
                        buttons: {
                            Ok: function() {
@@ -314,7 +330,21 @@
 
                                location.reload();
                            }
+=======
+                       autoOpen: true,
+                       show: {
+                           effect: "blind",
+                           duration: 1000
+                       },
+                       hide: {
+                           effect: "explode",
+                           duration: 1000
+>>>>>>> 21537af5bc08a9ee411091aa4217be5ae6f31ef1
                        }
+                   });
+
+                   $( "#dialogo" ).on( "click", function() {
+                       $( "#error" ).dialog( "open" );
                    });
 
                 });
