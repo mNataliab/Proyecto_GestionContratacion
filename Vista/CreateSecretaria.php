@@ -301,6 +301,8 @@
                        buttons: {
                            Ok: function() {
                                $( this ).dialog( "close" );
+
+                               location.reload();
                            }
                        }
                    });
@@ -309,6 +311,8 @@
                        buttons: {
                            Ok: function() {
                                $( this ).dialog( "close" );
+
+                               location.reload();
                            }
                        }
                    });

@@ -26,7 +26,7 @@ try{
     $arraySecretaria['Direccion']= $_POST['Direccion'];
     $Secretaria = new Secretaria($arraySecretaria);
     $Secretaria->insertar();
-    header("Location: ../Vista/CreateSecretaria.php?respuesta=correcto");
+   header("Location: ../Vista/CreateSecretaria.php?respuesta=correcto");
 }catch (Exception $w){
     header("Location: ../Vista/CreateSecretaria.php?respuesta=error");
 
