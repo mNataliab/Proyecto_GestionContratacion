@@ -106,7 +106,7 @@
 
                                     <?php if(!empty($_GET['respuesta'])){ ?>
                                         <?php if ($_GET['respuesta'] == "correcto"){ ?>
-                                            <div class="correcto" id="correcto" title="Registro Exitoso" >
+                                            <div class="glyphicon glyphicon-remove" id="correcto" title="Registro Exitoso" >
                                                 <p> <i class="glyphicon glyphicon-ok-sign"></i>
                                                La secretaria se ha creado correctamente</p>
                                             </div>
@@ -316,21 +316,13 @@
                            effect: "explode",
                            duration: 1000
                        }
+
                    });
 
                    $( "#dialogo" ).on( "click", function() {
                        $( "#correcto" ).dialog( "open" );
                    });
                    $( "#error" ).dialog({
-<<<<<<< HEAD
-                       modal: true,
-                       buttons: {
-                           Ok: function() {
-                               $( this ).dialog( "close" );
-
-                               location.reload();
-                           }
-=======
                        autoOpen: true,
                        show: {
                            effect: "blind",
@@ -339,7 +331,6 @@
                        hide: {
                            effect: "explode",
                            duration: 1000
->>>>>>> 21537af5bc08a9ee411091aa4217be5ae6f31ef1
                        }
                    });
 

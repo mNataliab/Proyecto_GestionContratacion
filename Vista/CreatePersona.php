@@ -99,7 +99,7 @@
 
                                 </header>
                                 <div id="collapse2" class="body">
-                                    <form class="form-horizontal" id="popup-validation">
+                                    <form class="form-horizontal" id="popup-validation" action="">
 
                                         <div class="form-group">
                                             <label class="control-label col-lg-4">Nombre</label>
@@ -236,7 +236,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label class="control-label col-lg-4">Contrato</label>
-                                            <div class="col-lg-8"><input  class="validate[type='file']" type="file"></div>
+                                            <div class="col-lg-8"><input  class="validate[required]" type="file"></div>
                                         </div>
 
                                         <div class="form-group">
@@ -244,8 +244,7 @@
                                             <div class="col-lg-8">
                                                 <div class="fileinput fileinput-new" data-provides="fileinput">
                                                     <div  class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;" ></div>
-
-                                                        <span ><span class="fileinput-new"></span><span class="fileinput-exists"></span><input class="validate[type='file'] "  type="file" name="..."></span>
+                                                        <span ><span class="fileinput-new"></span><span class="fileinput-exists"></span><input class="validate[required]"  type="file" name="..."></span>
                                                         <br>
                                                         <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Cambiar imagen</a>
 
