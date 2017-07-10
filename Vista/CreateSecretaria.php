@@ -106,7 +106,7 @@
 
                                     <?php if(!empty($_GET['respuesta'])){ ?>
                                         <?php if ($_GET['respuesta'] == "correcto"){ ?>
-                                            <div class="glyphicon glyphicon-remove" id="correcto" title="Registro Exitoso" >
+                                            <div id="correcto" title="Registro Exitoso"  >
                                                 <p> <i class="glyphicon glyphicon-ok-sign"></i>
                                                La secretaria se ha creado correctamente</p>
                                             </div>
@@ -295,61 +295,25 @@
                             $('#Secretaria').hide();
                         }
                     });
-<<<<<<< HEAD
-/*
+
                    $( "#correcto" ).dialog({
                        modal: true,
                        buttons: {
                            Ok: function() {
+                               $(this).hide("explode");
                                $( this ).dialog( "close" );
-
-                               location.reload();
                            }
                        }
-                   });*/
-                   $( "#correcto" ).dialog({
-                       autoOpen: true,
-                       show: {
-                           effect: "blind",
-                           duration: 1000
-                       },
-                       hide: {
-                           effect: "explode",
-                           duration: 1000
-                       }
-
-                   });
-=======
->>>>>>> 8e17f6bcd77f8a22595a25d26429115cdc35ab7b
-
-                   
-                   $( "#dialogo" ).on( "click", function() {
-                       $( "#correcto" ).dialog( "open" );
                    });
                    $( "#error" ).dialog({
-<<<<<<< HEAD
-=======
-
->>>>>>> 8e17f6bcd77f8a22595a25d26429115cdc35ab7b
-                       autoOpen: true,
-                       show: {
-                           effect: "blind",
-                           duration: 1000
-                       },
-                       hide: {
-                           effect: "explode",
-                           duration: 1000
-<<<<<<< HEAD
-=======
-
->>>>>>> 8e17f6bcd77f8a22595a25d26429115cdc35ab7b
+                       modal: true,
+                       buttons: {
+                           Ok: function() {
+                               $(this).hide("explode");
+                               $( this ).dialog( "close" );
+                           }
                        }
                    });
-
-                   $( "#dialogo" ).on( "click", function() {
-                       $( "#error" ).dialog( "open" );
-                   });
-
                 });
             </script>
                 <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
