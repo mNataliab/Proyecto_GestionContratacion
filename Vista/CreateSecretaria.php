@@ -295,6 +295,7 @@
                             $('#Secretaria').hide();
                         }
                     });
+<<<<<<< HEAD
 /*
                    $( "#correcto" ).dialog({
                        modal: true,
@@ -318,11 +319,18 @@
                        }
 
                    });
+=======
+>>>>>>> 8e17f6bcd77f8a22595a25d26429115cdc35ab7b
 
+                   
                    $( "#dialogo" ).on( "click", function() {
                        $( "#correcto" ).dialog( "open" );
                    });
                    $( "#error" ).dialog({
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8e17f6bcd77f8a22595a25d26429115cdc35ab7b
                        autoOpen: true,
                        show: {
                            effect: "blind",
@@ -331,6 +339,10 @@
                        hide: {
                            effect: "explode",
                            duration: 1000
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8e17f6bcd77f8a22595a25d26429115cdc35ab7b
                        }
                    });
 
