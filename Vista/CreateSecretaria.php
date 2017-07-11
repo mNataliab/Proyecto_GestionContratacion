@@ -296,12 +296,11 @@
                         }
                     });
 
-<<<<<<< HEAD
+
 
                    $( "#dialogo" ).on( "click", function() {
                        $( "#correcto" ).dialog( "open" );
-=======
-                   $( "#correcto" ).dialog({
+          $( "#correcto" ).dialog({
                        modal: true,
                        buttons: {
                            Ok: function() {
@@ -309,7 +308,7 @@
                                $( this ).dialog( "close" );
                            }
                        }
->>>>>>> 46c74ff8b16aae00c747d6c840f99fc53f7d078c
+
                    });
                    $( "#error" ).dialog({
                        modal: true,
