@@ -126,4 +126,18 @@ class PersonaController{
         session_destroy();
         header("Location: ../Vista/login.php");
     }
+
+    public function Usuario (){
+       $arrPerson = Persona::getAll();
+        $htmlSelect = "";
+        foreach ($arrPerson as $Persona) {
+            $htmlSelect .= "<tr>";
+            $htmlSelect .= "<td>" . $Persona>getUsuario() . "</td>";
+            $htmlSelect .= "<td>";
+            $htmlSelect .= "</td>";
+            $htmlSelect .= "</tr>";
+        }
+
+        return  $htmlSelect;
+    }
 }
