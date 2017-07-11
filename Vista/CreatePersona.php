@@ -35,7 +35,10 @@
     <!-- animate.css stylesheet -->
     <link rel="stylesheet" href="assets/lib/animate.css/animate.css">
 
-
+    <link rel="stylesheet" href="/assets/lib/plupload/js/jquery.plupload.queue/css/jquery.plupload.queue.css">
+    <link rel="stylesheet" href="/assets/lib/jquery.gritter/css/jquery.gritter.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/Uniform.js/2.1.2/themes/default/css/uniform.default.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.theme.min.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jQuery-Validation-Engine/2.6.4/validationEngine.jquery.min.css">
@@ -244,35 +247,26 @@
                                                 <?php echo SecretariaController::selectSecretaria(true,"form-group"); ?>
                                             </div>
                                         </div>
+
                                         <div class="form-group">
                                             <label class="control-label col-lg-4">Contrato</label>
-
-                                            <div class="col-lg-8"><input  class="validate[type='file']" type="file" id="Contrato_PDF" name="Contrato_PDF" required></div>
-
-                                            <div class="col-lg-8"><input  class="validate[required]" type="file"></div>
-
+                                            <div class="col-lg-8">
+                                                <input type="file" id="fileUpload"/>
+                                            </div>
                                         </div>
-
                                         <div class="form-group">
                                             <label class="control-label col-lg-4">Foto</label>
                                             <div class="col-lg-8">
                                                 <div class="fileinput fileinput-new" data-provides="fileinput">
-
-                                                    <div  class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;height: 200px"  ></div>
-
-                                                        <span ><span class="fileinput-new"></span><span class="fileinput-exists"></span><input class="validate[type='file'] "  type="file" name="imagen" id="imagen" required></span>
-
-                                                    <div  class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;" ></div>
-                                                        <span ><span class="fileinput-new"></span><span class="fileinput-exists"></span><input class="validate[required]"  type="file" name="..."></span>
-
-                                                        <br>
+                                                    <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;"></div>
+                                                    <div>
+                                                        <span class="btn btn-default btn-file"><span class="fileinput-new">Seleccione imagen</span><span class="fileinput-exists">Change</span><input type="file" name="..."></span>
                                                         <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Cambiar imagen</a>
-
+                                                    </div>
                                                 </div>
 
                                             </div>
                                         </div>
-
 
                                         <div class="form-group">
                                             <label class="control-label col-lg-4">Estado</label>
@@ -418,7 +412,11 @@
                 <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
             <script src="//cdnjs.cloudflare.com/ajax/libs/jQuery-Validation-Engine/2.6.4/jquery.validationEngine.min.js"></script>
             <script src="//cdnjs.cloudflare.com/ajax/libs/jQuery-Validation-Engine/2.6.4/languages/jquery.validationEngine-en.min.js"></script>
-            <script src="assets/lib/bootstrap/js/bootstrap.js"></script>
+            <script src="//cdnjs.cloudflare.com/ajax/libs/holder/2.4.1/holder.js"></script>
+            <script src="//cdnjs.cloudflare.com/ajax/libs/Uniform.js/2.1.2/jquery.uniform.min.js"></script>
+            <script src="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js"></script>
+            <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
+           <script src="assets/lib/bootstrap/js/bootstrap.js"></script>
             <!-- MetisMenu -->
             <script src="assets/lib/metismenu/metisMenu.js"></script>
             <!-- onoffcanvas -->
@@ -426,6 +424,10 @@
             <!-- Screenfull -->
             <script src="assets/lib/screenfull/screenfull.js"></script>
 
+            <script src="/assets/lib/plupload/js/plupload.full.min.js"></script>
+            <script src="/assets/lib/plupload/js/jquery.plupload.queue/jquery.plupload.queue.min.js"></script>
+            <script src="/assets/lib/jquery.gritter/js/jquery.gritter.min.js"></script>
+            <script src="/assets/lib/formwizard/js/jquery.form.wizard.js"></script>
                 <script src="assets/lib/jquery-validation/jquery.validate.js"></script>
 
             <!-- Metis core scripts -->
@@ -442,6 +444,11 @@
                 <script src="assets/js/style-switcher.js"></script>
 
             <script src="assets/lib/jquery/jquery.js"></script>
+            <script>
+                $(function() {
+                    Metis.formWizard();
+                });
+            </script>
 
             <script >
                 $(document).ready(function() {

@@ -296,10 +296,6 @@
                         }
                     });
 
-
-
-                   $( "#dialogo" ).on( "click", function() {
-                       $( "#correcto" ).dialog( "open" );
           $( "#correcto" ).dialog({
                        modal: true,
                        buttons: {
