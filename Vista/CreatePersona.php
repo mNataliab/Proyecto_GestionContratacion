@@ -100,6 +100,7 @@
 
                                 </header>
                                 <div id="collapse2" class="body">
+<<<<<<< HEAD
                                     <?php if(!empty($_GET['respuesta'])){ ?>
                                         <?php if ($_GET['respuesta'] == "correcto"){ ?>
                                             <div class="correcto" id="correcto" title="Registro Exitoso" >
@@ -114,6 +115,9 @@
                                     <?php } ?>
 
                                     <form class="form-horizontal" id="popup-validation"   action="../Controlador/PersonaController.php?action=crear" method="POST">
+=======
+                                    <form class="form-horizontal" id="popup-validation" action="">
+>>>>>>> 46c74ff8b16aae00c747d6c840f99fc53f7d078c
 
                                         <div class="form-group">
                                             <label class="control-label col-lg-4">Nombre</label>
@@ -242,16 +246,25 @@
                                         </div>
                                         <div class="form-group">
                                             <label class="control-label col-lg-4">Contrato</label>
+<<<<<<< HEAD
                                             <div class="col-lg-8"><input  class="validate[type='file']" type="file" id="Contrato_PDF" name="Contrato_PDF" required></div>
+=======
+                                            <div class="col-lg-8"><input  class="validate[required]" type="file"></div>
+>>>>>>> 46c74ff8b16aae00c747d6c840f99fc53f7d078c
                                         </div>
 
                                         <div class="form-group">
                                             <label class="control-label col-lg-4">Foto</label>
                                             <div class="col-lg-8">
                                                 <div class="fileinput fileinput-new" data-provides="fileinput">
+<<<<<<< HEAD
                                                     <div  class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;height: 200px"  ></div>
 
                                                         <span ><span class="fileinput-new"></span><span class="fileinput-exists"></span><input class="validate[type='file'] "  type="file" name="imagen" id="imagen" required></span>
+=======
+                                                    <div  class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;" ></div>
+                                                        <span ><span class="fileinput-new"></span><span class="fileinput-exists"></span><input class="validate[required]"  type="file" name="..."></span>
+>>>>>>> 46c74ff8b16aae00c747d6c840f99fc53f7d078c
                                                         <br>
                                                         <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Cambiar imagen</a>
 

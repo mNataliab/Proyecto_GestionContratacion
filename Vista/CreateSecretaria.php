@@ -106,7 +106,7 @@
 
                                     <?php if(!empty($_GET['respuesta'])){ ?>
                                         <?php if ($_GET['respuesta'] == "correcto"){ ?>
-                                            <div class="correcto" id="correcto" title="Registro Exitoso" >
+                                            <div id="correcto" title="Registro Exitoso"  >
                                                 <p> <i class="glyphicon glyphicon-ok-sign"></i>
                                                La secretaria se ha creado correctamente</p>
                                             </div>
@@ -296,28 +296,30 @@
                         }
                     });
 
+<<<<<<< HEAD
 
                    $( "#dialogo" ).on( "click", function() {
                        $( "#correcto" ).dialog( "open" );
+=======
+                   $( "#correcto" ).dialog({
+                       modal: true,
+                       buttons: {
+                           Ok: function() {
+                               $(this).hide("explode");
+                               $( this ).dialog( "close" );
+                           }
+                       }
+>>>>>>> 46c74ff8b16aae00c747d6c840f99fc53f7d078c
                    });
                    $( "#error" ).dialog({
-
-                       autoOpen: true,
-                       show: {
-                           effect: "blind",
-                           duration: 1000
-                       },
-                       hide: {
-                           effect: "explode",
-                           duration: 1000
-
+                       modal: true,
+                       buttons: {
+                           Ok: function() {
+                               $(this).hide("explode");
+                               $( this ).dialog( "close" );
+                           }
                        }
                    });
-
-                   $( "#dialogo" ).on( "click", function() {
-                       $( "#error" ).dialog( "open" );
-                   });
-
                 });
             </script>
                 <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
