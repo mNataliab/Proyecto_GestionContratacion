@@ -25,10 +25,10 @@ class PersonaController{
     static public function crear(){
         try{
             $arrayPersona = array();
-            $tmp_name2 = $_FILES['Contrato_PDF']["tmp_name2"];
-            $name2 = $_FILES['Contrato_PDF']["name2"];
-            $tmp_name = $_FILES['imagen']["tmp_name"];
-            $name = $_FILES['imagen']["name"];
+            $tmp_name2 = $_FILES['Contrato_PDF']['tmp_name'];
+            $name2 = $_FILES['Contrato_PDF']['name'];
+            $tmp_name = $_FILES['imagen']['tmp_name'];
+            $name = $_FILES['imagen']['name'];
             $nuevo_path="";
             $nuevo_path2="";
 
@@ -38,9 +38,9 @@ class PersonaController{
                 $nuevo_path2="../Contratos/".$name2;
                 move_uploaded_file($tmp_name2,$nuevo_path2);
             }else{
-
+              //  header("Location: ../Vista/createPersona.php?respuesta=errorFoto");
             }
-            $arrayPersona['Tipo_Documento'] = $_POST['Tipo_Documento'];
+            $arrayPersona['Tipo_Documento'] = $_POST['TipoDocumento'];
             $arrayPersona['Documento']=$_POST['Documento'];
             $arrayPersona['Foto'] = $nuevo_path;
             $arrayPersona['Fecha_Nacimiento']=$_POST['Fecha_Nacimiento'];
@@ -55,7 +55,7 @@ class PersonaController{
             $arrayPersona['Usuario'] = $_POST['Usuario'];
             $arrayPersona['Contrasena'] = $_POST['Contrasena'];
             $arrayPersona['Estado'] = $_POST['Estado'];
-            $arrayPersona['Cargo'] = $_POST['Estado'];
+            $arrayPersona['Cargo'] = $_POST['Cargo'];
             $arrayPersona['Secretarias_idSecretarias'] = $_GET['Secretarias_idSecretarias'];
             $Persona = new Persona($arrayPersona);
             $Persona->insertar();

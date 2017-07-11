@@ -139,7 +139,7 @@
                                         <div class="form-group">
                                             <label class="control-label col-lg-4">Tipo Documento</label>
                                             <div class="col-lg-4">
-                                                <select required name="Tipo_Doumento" id="Tipo_Documento" class="validate[required] form-control">
+                                                <select required name="TipoDoumento" id="TipoDocumento" class="validate[required] form-control">
                                                     <option value=""></option>
                                                     <option value="C.C">Cedula Ciudadina</option>
                                                     <option value="T.I">Tarjeta Identidad</option>
@@ -251,7 +251,7 @@
                                         <div class="form-group">
                                             <label class="control-label col-lg-4">Contrato</label>
                                             <div class="col-lg-8">
-                                                <input type="file" id="fileUpload"/>
+                                                <input  type="file" id="Contrato_PDF"/>
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -260,7 +260,7 @@
                                                 <div class="fileinput fileinput-new" data-provides="fileinput">
                                                     <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;"></div>
                                                     <div>
-                                                        <span class="btn btn-default btn-file"><span class="fileinput-new">Seleccione imagen</span><span class="fileinput-exists">Change</span><input type="file" name="..."></span>
+                                                        <span class="btn btn-default btn-file"><span class="fileinput-new">Seleccione imagen</span><span class="fileinput-exists">Change</span><input type="file" id="imagen" name="imagen"></span>
                                                         <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Cambiar imagen</a>
                                                     </div>
                                                 </div>
