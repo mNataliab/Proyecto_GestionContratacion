@@ -62,7 +62,7 @@ class Persona extends db_abstract_class
 
     public function __construct($persona_data=array())
     {
-        parent::__construct(); //Llama al contructor padre "la clase conexion" para conectarme a la BD
+        parent::__construct(); //
         if(count($persona_data)>1){ //
             foreach ($persona_data as $campo => $valor){
                 $this->$campo = $valor;
@@ -383,6 +383,29 @@ class Persona extends db_abstract_class
 
     public function insertar()
     {
+        $this->insertRow("INSERT INTO persona VALUES(NULL,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",array(
+            $this->Tipo_Documento,
+            $this->Documento,
+            $this->Foto,
+            $this->Fecha_Nacimiento,
+            $this->Genero,
+            $this->Nombres,
+            $this->Apellidos,
+            $this->Telefono,
+            $this->Direccion,
+            $this->Correo,
+            $this->Contrato_PDF,
+            $this->NRP,
+            $this->Usuario,
+            $this->Contrasena,
+            $this->Estado,
+            $this->Tipo_Usuario,
+            $this->Secretarias_idSecretarias,
+
+
+
+    ));
+        $this->Disconnect();
 
     }
 

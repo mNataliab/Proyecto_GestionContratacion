@@ -1,3 +1,4 @@
+<?php require "../Controlador/SecretariaController.php";?>
 <!doctype html>
 <html>
 
@@ -99,26 +100,39 @@
 
                                 </header>
                                 <div id="collapse2" class="body">
-                                    <form class="form-horizontal" id="popup-validation">
+                                    <?php if(!empty($_GET['respuesta'])){ ?>
+                                        <?php if ($_GET['respuesta'] == "correcto"){ ?>
+                                            <div class="correcto" id="correcto" title="Registro Exitoso" >
+                                                <p> <i class="glyphicon glyphicon-ok-sign"></i>
+                                                    La Persona se ha creado correctamente</p>
+                                            </div>
+                                        <?php }else {?>
+                                            <div class="error" id="error" title="Registro Fallido!" >
+                                                <p><i class="glyphicon glyphicon-remove-sign"></i>&nbsp;Error! La Persona no se pudo crear correctamente intentalo nuevamente</p>
+                                            </div>
+                                        <?php } ?>
+                                    <?php } ?>
+
+                                    <form class="form-horizontal" id="popup-validation"   action="../Controlador/PersonaController.php?action=crear" method="POST">
 
                                         <div class="form-group">
                                             <label class="control-label col-lg-4">Nombre</label>
                                              <div class="col-lg-4">
-                                                <input type="text" placeholder="Nombres" required class="validate[required] form-control" name="req" id="req">
+                                                <input type="text" placeholder="Nombres" required class="validate[required] form-control" name="Nombres" id="Nombres">
                                             </div>
                                         </div>
 
                                         <div class="form-group">
                                             <label class="control-label col-lg-4">Apellido</label>
                                             <div class="col-lg-4">
-                                                <input type="text" placeholder="Apellidos" required class="validate[required] form-control" name="req" id="req">
+                                                <input type="text" placeholder="Apellidos" required class="validate[required] form-control" name="Apellidos" id="Apellidos">
                                             </div>
                                         </div>
 
                                         <div class="form-group">
                                             <label class="control-label col-lg-4">Tipo Documento</label>
                                             <div class="col-lg-4">
-                                                <select required name="sport" id="sport" class="validate[required] form-control">
+                                                <select required name="Tipo_Doumento" id="Tipo_Documento" class="validate[required] form-control">
                                                     <option value=""></option>
                                                     <option value="C.C">Cedula Ciudadina</option>
                                                     <option value="T.I">Tarjeta Identidad</option>
@@ -149,7 +163,7 @@
                                         <div class="form-group">
                                             <label class="control-label col-lg-4">Genero</label>
                                             <div class="col-lg-4">
-                                                <select required name="sport" id="sport" class="validate[required] form-control">
+                                                <select required name="Genero" id="Genero" class="validate[required] form-control">
                                                     <option value="Masculino">Masculino</option>
                                                     <option value="Femenino">Femenino</option>
                                                 </select>
@@ -161,7 +175,7 @@
 
                                             <div class=" col-lg-4">
                                                 <input required placeholder="Telefono" class="validate[required,custom[number]] form-control" type="number"
-                                                       name="numbe2r" id="number2"/>
+                                                       name="Telefono" id="Telefono"/>
                                                 <span class="help-block"></span>
                                             </div>
                                         </div>
@@ -169,7 +183,7 @@
                                         <div class="form-group">
                                             <label  class="control-label col-lg-4">Dirección</label>
                                             <div class="col-lg-4">
-                                                <input required type="text" placeholder="Direccion" class="validate[required] form-control" name="req" id="req">
+                                                <input required type="text" placeholder="Direccion" class="validate[required] form-control" name="Direccion" id="Direccion">
                                             </div>
                                         </div>
 
@@ -178,15 +192,15 @@
                                             <label class="control-label col-lg-4">E-mail</label>
 
                                             <div class=" col-lg-4">
-                                                <input required placeholder="E-mail" class="validate[required,custom[email]] form-control" type="email" name="email1"
-                                                       id="email1"/>
+                                                <input required placeholder="E-mail" class="validate[required,custom[email]] form-control" type="email" name="Correo"
+                                                       id="Correo"/>
                                             </div>
                                         </div>
 
                                         <div class="form-group">
                                             <label class="control-label col-lg-4">Usuario</label>
                                             <div class="col-lg-4">
-                                                <input required placeholder="Usuario" type="text" class="validate[required] form-control" name="req" id="req">
+                                                <input required placeholder="Usuario" type="text" class="validate[required] form-control" name="Usuario" id="Usuario">
                                             </div>
                                         </div>
 
@@ -194,34 +208,28 @@
                                             <label class="control-label col-lg-4">Contraseña</label>
 
                                             <div class=" col-lg-4">
-                                                <input required placeholder="Contraseña" class="validate[required] form-control" type="password" name="pass1" id="pass1"/>
+                                                <input required placeholder="Contraseña" class="validate[required] form-control" type="password" name="Contrasena" id="Contrasena"/>
                                             </div>
                                         </div>
 
-                                        <div class="form-group">
-                                            <label class="control-label col-lg-4">Confirmar Contraseña</label>
-                                            <div class=" col-lg-4">
-                                                <input required placeholder="Contraseña" class="validate[required,equals[pass1]] form-control" type="password" name="pass2"
-                                                       id="pass2"/>
-                                            </div>
-                                        </div>
+
                                         <div class="form-group">
                                             <label class="control-label col-lg-4">Numero de Registro Profesional</label>
 
                                             <div class=" col-lg-4">
                                                 <input required placeholder="Numero Registro Profesional" class="validate[required,custom[number]] form-control" type="text"
-                                                       name="numbe2r" id="number2"/>
+                                                       name="NRP" id="NRP"/>
                                                 <span class="help-block"></span>
                                             </div>
                                         </div>
-                                        <div class="form-group" name="Cargo" id="Cargo">
+                                        <div class="form-group" name="Cargo1" id="Cargo1">
                                             <label class="control-label col-lg-4">Cargo</label>
                                             <div class="col-lg-4">
-                                                <select required name="Tipo_Usuario" id="Tipo_Usuario" class="validate[required] form-control">
+                                                <select required name="Cargo" id="Cargo" class="validate[required] form-control">
                                                     <option value=""></option>
                                                     <option value="General">General</option>
                                                     <option value="Subgeneral">Subgeneral</option>
-                                                    <option value="Secreterai@">Secretari@</option>
+                                                    <option value="Secretari@">Secretari@</option>
                                                     <option value="Administrador">Administrador</option>
                                                 </select>
                                             </div>
@@ -229,23 +237,21 @@
                                         <div class="form-group" name="Secretaria" id="Secretaria">
                                             <label class="control-label col-lg-4">Secretaria</label>
                                             <div class="col-lg-4">
-                                                <select  name="sport" id="sport" class="validate[required] form-control">
-                                                    <option>Uno</option>
-                                                </select>
+                                                <?php echo SecretariaController::selectSecretaria(true,"form-group"); ?>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="control-label col-lg-4">Contrato</label>
-                                            <div class="col-lg-8"><input  class="validate[type='file']" type="file"></div>
+                                            <div class="col-lg-8"><input  class="validate[type='file']" type="file" id="Contrato_PDF" name="Contrato_PDF" required></div>
                                         </div>
 
                                         <div class="form-group">
                                             <label class="control-label col-lg-4">Foto</label>
                                             <div class="col-lg-8">
                                                 <div class="fileinput fileinput-new" data-provides="fileinput">
-                                                    <div  class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;" ></div>
+                                                    <div  class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;height: 200px"  ></div>
 
-                                                        <span ><span class="fileinput-new"></span><span class="fileinput-exists"></span><input class="validate[type='file'] "  type="file" name="..."></span>
+                                                        <span ><span class="fileinput-new"></span><span class="fileinput-exists"></span><input class="validate[type='file'] "  type="file" name="imagen" id="imagen" required></span>
                                                         <br>
                                                         <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Cambiar imagen</a>
 
@@ -258,7 +264,7 @@
                                         <div class="form-group">
                                             <label class="control-label col-lg-4">Estado</label>
                                             <div class="col-lg-4">
-                                                <select  name="sport" id="sport" class="validate[required] form-control" readonly="readonly">
+                                                <select  name="Estado" id="Estadp" class="validate[required] form-control" readonly="readonly">
                                                     <option>Activo</option>
 
                                                 </select>
@@ -383,7 +389,7 @@
             <script >
                $(document).ready(function() {
                     $('#Secretaria').hide();
-                    $('#Tipo_Usuario').change(function() {
+                    $('#Cargo').change(function() {
                         if($(this).val() == 'General'){
                             $('#Secretaria').show();
                         }else if($(this).val() == 'Subgeneral'){
@@ -421,6 +427,36 @@
                 </script>
 
                 <script src="assets/js/style-switcher.js"></script>
+
+            <script src="assets/lib/jquery/jquery.js"></script>
+
+            <script >
+                $(document).ready(function() {
+
+
+                    $( "#dialogo" ).on( "click", function() {
+                        $( "#correcto" ).dialog( "open" );
+                    });
+                    $( "#error" ).dialog({
+
+                        autoOpen: true,
+                        show: {
+                            effect: "blind",
+                            duration: 1000
+                        },
+                        hide: {
+                            effect: "explode",
+                            duration: 1000
+
+                        }
+                    });
+
+                    $( "#dialogo" ).on( "click", function() {
+                        $( "#error" ).dialog( "open" );
+                    });
+
+                });
+            </script>
 
         </body>
 

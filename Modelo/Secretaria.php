@@ -159,14 +159,31 @@ class Secretaria extends db_abstract_class
         // TODO: Implement buscarForId() method.
     }
 
-    protected static function buscar($query)
+    public static function buscar($query)
     {
-        // TODO: Implement buscar() method.
+        $arrSecretaria = array();
+        $tmp = new Secretaria();
+        $getrows = $tmp->getRows($query);
+
+        foreach ($getrows as $valor) {
+            $Secretaria = new Secretaria();
+            $Secretaria->idSecretarias = $valor["idSecretarias"];
+            $Secretaria->Nombre = $valor["Nombre"];
+            $Secretaria->Mision = $valor["Mision"];
+            $Secretaria->Vision = $valor["Vision"];
+            $Secretaria->Objetivos = $valor["Objetivos"];
+            $Secretaria->Telefono = $valor["Telefono"];
+            $Secretaria->Direccion= $valor["Direccion"];
+            $Secretaria->Direccion= $valor["Direccion"];
+            array_push($arrSecretaria, $Secretaria);
+        }
+        $tmp->Disconnect();
+        return $arrSecretaria;
     }
 
-    protected static function getAll()
+    public static function getAll()
     {
-        // TODO: Implement getAll() method.
+        return Secretaria::buscar("SELECT * FROM Secretarias");
     }
 
     public function insertar()

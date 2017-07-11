@@ -296,7 +296,7 @@
                         }
                     });
 
-                   
+
                    $( "#dialogo" ).on( "click", function() {
                        $( "#correcto" ).dialog( "open" );
                    });
