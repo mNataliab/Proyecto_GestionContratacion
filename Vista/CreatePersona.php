@@ -208,6 +208,18 @@
                                             <label class="control-label col-lg-4">Usuario</label>
                                             <div class="col-lg-4">
                                                 <input required placeholder="Usuario" type="text" class="validate[required] form-control" name="Usuario" id="Usuario">
+                                                <div id="correcto" class="correcto"><?php
+                                                    echo "<div class='alert alert-success alert-dismissable'>";
+                                                    echo "    <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>";
+                                                    echo "    <strong>Correcto!</strong>.Usuario correcto!.";
+                                                    echo "</div>";
+                                                    ?></div>
+                                                <div id="incorrecto" class="Incorrecto"><?php
+                                                    echo "<div class='alert alert-danger alert-dismissable'>";
+                                                    echo "    <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>";
+                                                    echo "    <strong>Error!</strong>.Este usuario ya existe!.";
+                                                    echo "</div>";
+                                                    ?></div>
                                             </div>
                                         </div>
 
@@ -405,6 +417,33 @@
                             $('#Secretaria').show();
                         } else{
                             $('#Secretaria').hide();
+                        }
+                    })
+                });
+            </script>
+            <script type="text/javascript">
+                $(document).ready(function() {
+                    $('#correcto').hide();
+                    $('#incorrecto').hide();
+                    $('#Usuario').on('keyup', function (e) {
+                        if (!e.isDefaultPrevented()) {
+                            var formData = $(this).serialize(); //Serializamos los campos del formulario
+                            $.ajax({
+                                type        : 'POST', // Metodo de Envio
+                                url         : '../Controlador/PersonaController.php?action=Verificacion', // Ruta del envio
+                                data        : formData, // our data object
+                                //dataType    : 'json', // what type of data do we expect back from the server
+                                encode      : true
+                            })
+                                .done(function(data) {
+                                    console.log(data);
+                                    if (data == true){
+                                        $('#incorrecto').show();
+                                    }else if (data== false){
+                                        $('#correcto').show();
+                                    }
+                                });
+                            event.preventDefault();
                         }
                     })
                 });

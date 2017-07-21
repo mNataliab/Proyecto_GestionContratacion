@@ -15,7 +15,8 @@
                 <ul class="list-unstyled user-info">
                     <li><a href="">Administrator</a></li>
                     <li>Estado : <br>
-                        <small><i class="fa fa-calendar"></i>&nbsp;16 Mar 16:32</small>
+                        <small><i class="fa fa-calendar"></i><?php echo date("d")." de ",date("F")." del ".date("Y");?>
+                            </small>
                     </li>
                 </ul>
             </div>

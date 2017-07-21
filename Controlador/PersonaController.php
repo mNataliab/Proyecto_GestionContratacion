@@ -103,7 +103,7 @@ class PersonaController{
 
     public function validLogin ($Usuario, $Contrasena) {
 
-        $arrPacientes = array();
+        $arrPersona = array();
         $tmp = new Persona();
         $getTempUser = $tmp->getRows("SELECT * FROM proyectophp.persona WHERE Usuario = '".$Usuario."'");
         if(count($getTempUser) >= 1){
@@ -119,14 +119,30 @@ class PersonaController{
             return "No existe el usuario";
         }
         $tmp->Disconnect();
-        return $arrPacientes;
+        return $arrPersona;
+    }
+    public function Verificacion(){
+        $arrayperso = array();
+        $tmp = new Persona();
+        $Usuario=$_POST['Usuario'];
+        $getUsuario = $tmp->getRows("SELECT * FROM proyectophp.persona WHERE Usuario='".$Usuario."'");
+        if (count($getUsuario)>=1){
+             echo true;
+        }else{
+             echo false;
+        }
+        $tmp->Disconnect();
+        return $arrayperso;
+
     }
 
     public function CerrarSession (){
         session_destroy();
         header("Location: ../Vista/login.php");
     }
+    public function InicioUsuario(){
 
+    }
     public function Usuario (){
        $arrPerson = Persona::getAll();
         $htmlSelect = "";
