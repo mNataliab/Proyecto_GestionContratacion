@@ -139,7 +139,7 @@
                                         <div class="form-group">
                                             <label class="control-label col-lg-4">Tipo Documento</label>
                                             <div class="col-lg-4">
-                                                <select required name="Tipo_Doumento" id="Tipo_Documento" class="validate[required] form-control">
+                                                <select required name="TipoDoumento" id="TipoDocumento" class="validate[required] form-control">
                                                     <option value=""></option>
                                                     <option value="C.C">Cedula Ciudadina</option>
                                                     <option value="T.I">Tarjeta Identidad</option>
@@ -208,6 +208,18 @@
                                             <label class="control-label col-lg-4">Usuario</label>
                                             <div class="col-lg-4">
                                                 <input required placeholder="Usuario" type="text" class="validate[required] form-control" name="Usuario" id="Usuario">
+                                                <div id="correcto" class="correcto"><?php
+                                                    echo "<div class='alert alert-success alert-dismissable'>";
+                                                    echo "    <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>";
+                                                    echo "    <strong>Correcto!</strong>.Usuario correcto!.";
+                                                    echo "</div>";
+                                                    ?></div>
+                                                <div id="incorrecto" class="Incorrecto"><?php
+                                                    echo "<div class='alert alert-danger alert-dismissable'>";
+                                                    echo "    <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>";
+                                                    echo "    <strong>Error!</strong>.Este usuario ya existe!.";
+                                                    echo "</div>";
+                                                    ?></div>
                                             </div>
                                         </div>
 
@@ -251,7 +263,7 @@
                                         <div class="form-group">
                                             <label class="control-label col-lg-4">Contrato</label>
                                             <div class="col-lg-8">
-                                                <input type="file" id="fileUpload"/>
+                                                <input  type="file" id="Contrato_PDF"/>
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -260,7 +272,7 @@
                                                 <div class="fileinput fileinput-new" data-provides="fileinput">
                                                     <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;"></div>
                                                     <div>
-                                                        <span class="btn btn-default btn-file"><span class="fileinput-new">Seleccione imagen</span><span class="fileinput-exists">Change</span><input type="file" name="..."></span>
+                                                        <span class="btn btn-default btn-file"><span class="fileinput-new">Seleccione imagen</span><span class="fileinput-exists">Change</span><input type="file" id="imagen" name="imagen"></span>
                                                         <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Cambiar imagen</a>
                                                     </div>
                                                 </div>
@@ -405,6 +417,33 @@
                             $('#Secretaria').show();
                         } else{
                             $('#Secretaria').hide();
+                        }
+                    })
+                });
+            </script>
+            <script type="text/javascript">
+                $(document).ready(function() {
+                    $('#correcto').hide();
+                    $('#incorrecto').hide();
+                    $('#Usuario').on('keyup', function (e) {
+                        if (!e.isDefaultPrevented()) {
+                            var formData = $(this).serialize(); //Serializamos los campos del formulario
+                            $.ajax({
+                                type        : 'POST', // Metodo de Envio
+                                url         : '../Controlador/PersonaController.php?action=Verificacion', // Ruta del envio
+                                data        : formData, // our data object
+                                //dataType    : 'json', // what type of data do we expect back from the server
+                                encode      : true
+                            })
+                                .done(function(data) {
+                                    console.log(data);
+                                    if (data == true){
+                                        $('#incorrecto').show();
+                                    }else if (data== false){
+                                        $('#correcto').show();
+                                    }
+                                });
+                            event.preventDefault();
                         }
                     })
                 });
