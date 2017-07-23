@@ -1,4 +1,7 @@
-<?php require "../Controlador/SecretariaController.php";?>
+<?php session_start();
+require "../Controlador/SecretariaController.php";
+//require "../Controlador/PersonaController.php";?>
+
 <!doctype html>
 <html>
 
@@ -117,9 +120,7 @@
                                         <?php } ?>
                                     <?php } ?>
 
-                                    <form class="form-horizontal" id="popup-validation"   action="../Controlador/PersonaController.php?action=crear" method="POST">
-
-                                    <form class="form-horizontal" id="popup-validation" action="">
+                                    <form class="form-horizontal" id="popup-validation"  enctype="multipart/form-data" action="../Controlador/PersonaController.php?action=crear" method="POST">
 
 
                                         <div class="form-group">
@@ -139,7 +140,7 @@
                                         <div class="form-group">
                                             <label class="control-label col-lg-4">Tipo Documento</label>
                                             <div class="col-lg-4">
-                                                <select required name="TipoDoumento" id="TipoDocumento" class="validate[required] form-control">
+                                                <select required name="TipoDocumento" id="TipoDocumento" class="validate[required] form-control">
                                                     <option value=""></option>
                                                     <option value="C.C">Cedula Ciudadina</option>
                                                     <option value="T.I">Tarjeta Identidad</option>
@@ -253,7 +254,7 @@
                                                 </select>
                                             </div>
                                         </div>
-                                        <div class="form-group" name="Secretaria" id="Secretaria">
+                                        <div class="form-group" name="idSecretarias" id="idSecretarias">
                                             <label class="control-label col-lg-4">Secretaria</label>
                                             <div class="col-lg-4">
                                                 <?php echo SecretariaController::selectSecretaria(true,"form-group"); ?>
@@ -263,7 +264,7 @@
                                         <div class="form-group">
                                             <label class="control-label col-lg-4">Contrato</label>
                                             <div class="col-lg-8">
-                                                <input  type="file" id="Contrato_PDF"/>
+                                                <input  type="file" name="ContratoPDF" id="ContratoPDF">
                                             </div>
                                         </div>
                                         <div class="form-group">

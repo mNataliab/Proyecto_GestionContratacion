@@ -2,8 +2,8 @@
 
 /**
  * Created by PhpStorm.
- * User: CAPACITACION-PC
- * Date: 22/07/2016
+ * User: ALEJANDRO BERNALK
+ * Date: 28/06/2017
  * Time: 9:17
  */
 abstract class db_abstract_class {
@@ -26,7 +26,8 @@ abstract class db_abstract_class {
     public function __construct(){
         $this->isConnected = true;
         try {
-            $this->datab = new PDO("mysql:host={$this->host};dbname={$this->dbname};charset=utf8", $this->username, $this->password, array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
+            $this->datab = new PDO("mysql:host={$this->host};dbname={$this->dbname};charset=utf8", $this->username,
+                $this->password, array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
             $this->datab->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $this->datab->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
         }catch(PDOException $e) {

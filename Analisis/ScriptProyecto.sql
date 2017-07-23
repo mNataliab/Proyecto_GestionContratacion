@@ -52,7 +52,6 @@ CREATE TABLE IF NOT EXISTS `ProyectoPhP`.`Persona` (
   `Usuario` VARCHAR(45) NOT NULL,
   `Contrasena` VARCHAR(45) NOT NULL,
   `Estado` ENUM('Activo', 'Inactivo') NOT NULL,
-  `Profesion` VARCHAR(45) NOT NULL,
   `Cargo` VARCHAR(45) NOT NULL,
   `idSecretarias` INT UNSIGNED NULL,
   PRIMARY KEY (`idPersona`),

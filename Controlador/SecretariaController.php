@@ -6,7 +6,7 @@ require_once (__DIR__.'/../Modelo/Secretaria.php');
 if(!empty($_GET['action'])){
     SecretariaController::main($_GET['action']);
 }else{
-    echo "No se encontro ninguna accion...";
+   // echo "No se encontro ninguna accion...";
 }
 class SecretariaController
 {
@@ -37,7 +37,7 @@ try{
     {
         $arrSecretaria = Secretaria::getAll();
         $htmlSelect = "";
-        $htmlSelect = "<select id='Secretarias_idSecretarias'>";
+        $htmlSelect = "<select  name='idSecretarias' id='idSecretarias'>";
         $htmlSelect .= "<option>Seleccione</option>";
         foreach ($arrSecretaria as $Secretarias) {
             $htmlSelect .= "<option value='".$Secretarias->getidSecretarias()."' id='".$Secretarias->getidSecretarias()."'>".$Secretarias->getNombre()."</option>";

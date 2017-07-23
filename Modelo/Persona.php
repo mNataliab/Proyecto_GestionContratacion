@@ -26,8 +26,8 @@ class Persona extends db_abstract_class
     private $Usuario;
     private $Contrasena;
     private $Estado;
-    private $Tipo_Usuario;
-    private $Secretarias_idSecretarias;
+    private $Cargo;
+    private $idSecretarias;
 
     /**
      * @return mixed
@@ -84,8 +84,8 @@ class Persona extends db_abstract_class
             $this->Usuario =  "";
             $this->Contrasena =  "";
             $this->Estado =  "";
-            $this->Tipo_Usuario =  "";
-            $this->Secretarias_idSecretarias =  "";
+            $this->Cargo =  "";
+            $this->idSecretarias =  "";
 
         }
     }
@@ -95,17 +95,17 @@ class Persona extends db_abstract_class
      */
 
 
-    public function getSecretariasIdSecretarias()
+    public function getIdSecretarias()
     {
-        return $this->Secretarias_idSecretarias;
+        return $this->idSecretarias;
     }
 
     /**
-     * @param mixed $Secretarias_idSecretarias
+     * @param mixed $idSecretarias
      */
-    public function setSecretariasIdSecretarias($Secretarias_idSecretarias)
+    public function setIdSecretarias($idSecretarias)
     {
-        $this->Secretarias_idSecretarias = $Secretarias_idSecretarias;
+        $this->idSecretarias = $idSecretarias;
     }
 
 
@@ -365,17 +365,17 @@ class Persona extends db_abstract_class
     /**
      * @return mixed
      */
-    public function getTipoUsuario()
+    public function getCargo()
     {
-        return $this->Tipo_Usuario;
+        return $this->Cargo;
     }
 
     /**
-     * @param mixed $Tipo_Usuario
+     * @param mixed $Cargo
      */
-    public function setTipoUsuario($Tipo_Usuario)
+    public function setCargo($Cargo)
     {
-        $this->Tipo_Usuario = $Tipo_Usuario;
+        $this->Cargo = $Cargo;
     }
 
 
@@ -399,8 +399,8 @@ class Persona extends db_abstract_class
             $this->Usuario,
             $this->Contrasena,
             $this->Estado,
-            $this->Tipo_Usuario,
-            $this->Secretarias_idSecretarias,
+            $this->Cargo,
+            $this->idSecretarias,
 
 
 
@@ -448,7 +448,7 @@ class Persona extends db_abstract_class
             $persona->Usuario = $valor['Usuario'];
             $persona->Contrasena = $valor['Contrasena'];
             $persona->Estado = $valor['Estado'];
-            $persona->Tipo_Usuario=$valor['Tipo_Usuario'];
+            $persona->Cargo=$valor['Cargo'];
             array_push($arrPacientes, $persona);
         }
         $tmp->Disconnect();
