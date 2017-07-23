@@ -25,21 +25,23 @@ class PersonaController{
     static public function crear(){
         try{
             $arrayPersona = array();
-            $tmp_name2 = $_FILES['Contrato_PDF']['tmp_name'];
-            $name2 = $_FILES['Contrato_PDF']['name'];
-            $tmp_name = $_FILES['imagen']['tmp_name'];
-            $name = $_FILES['imagen']['name'];
-            $nuevo_path="";
-            $nuevo_path2="";
+            if (is_uploaded_file($_FILES['ContratoPDF']['tmp_name'])&& is_uploaded_file($_FILES['imagen']['tmp_name']))
+            {
 
-            if (($name == !NULl ) && ($name2 == !NULL)){
-                $nuevo_path="../Fotos/".$name;
-                move_uploaded_file($tmp_name,$nuevo_path);
-                $nuevo_path2="../Contratos/".$name2;
-                move_uploaded_file($tmp_name2,$nuevo_path2);
-            }else{
-              //  header("Location: ../Vista/createPersona.php?respuesta=errorFoto");
+                $nombreDirectorio = "../Contratos-Fotos/";
+                $nombreFichero = $_FILES['ContratoPDF']['name'];
+                $nombrefoto=$_FILES['imagen']['name'];
+                $nuevo_path="../Contratos-Fotos/".date("d")."-".date("F")."-".date("Y")."-".date("H")."-".date("i")."-".date("s")."-" .$nombrefoto;
+                $nuevo_path2="../Contratos-Fotos/".date("d")."-".date("F")."-".date("Y")."-".date("H")."-".date("i")."-".date("s")."-" .$nombreFichero;
+
+                move_uploaded_file($_FILES['ContratoPDF']['tmp_name'], $nombreDirectorio.date("d")."-".date("F")."-".date("Y")."-".date("H")."-".date("i")."-".date("s")."-" .$nombreFichero);
+                move_uploaded_file($_FILES['imagen']['tmp_name'], $nombreDirectorio.date("d")."-".date("F")."-".date("Y")."-".date("H")."-".date("i")."-".date("s")."-" .$nombrefoto);
+
+            } else{
+                echo ("No se ha podido subir el fichero");
+             header("Location: ../Vista/createPersona.php?respuesta=errorFoto");
             }
+
             $arrayPersona['Tipo_Documento'] = $_POST['TipoDocumento'];
             $arrayPersona['Documento']=$_POST['Documento'];
             $arrayPersona['Foto'] = $nuevo_path;
@@ -56,14 +58,14 @@ class PersonaController{
             $arrayPersona['Contrasena'] = $_POST['Contrasena'];
             $arrayPersona['Estado'] = $_POST['Estado'];
             $arrayPersona['Cargo'] = $_POST['Cargo'];
-            $arrayPersona['Secretarias_idSecretarias'] = $_GET['Secretarias_idSecretarias'];
+            $arrayPersona['idSecretarias'] = $_GET['idSecretarias'];
             $Persona = new Persona($arrayPersona);
             $Persona->insertar();
-          //  header("Location: ../Vista/createPersona.php?respuesta=correcto");
+            header("Location: ../Vista/createPersona.php?respuesta=correcto");
 
 
         }catch(Exception $e){
-//            header("Location: ../Vista/createPersona.php?respuesta=error");
+            header("Location: ../Vista/createPersona.php?respuesta=error");
         }
     }
 
@@ -138,6 +140,7 @@ class PersonaController{
 
     public function CerrarSession (){
         session_destroy();
+        unset($_COOKIE['']);
         header("Location: ../Vista/login.php");
     }
     public function InicioUsuario(){
