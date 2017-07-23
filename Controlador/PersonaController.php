@@ -25,6 +25,7 @@ class PersonaController{
     static public function crear(){
         try{
             $arrayPersona = array();
+
             if (is_uploaded_file($_FILES['ContratoPDF']['tmp_name'])&& is_uploaded_file($_FILES['imagen']['tmp_name']))
             {
 
@@ -73,10 +74,12 @@ class PersonaController{
         try {
             $Usuario = $_POST['Usuario'];
             $Contrasena = $_POST['Contrasena'];
+
             if(!empty($Usuario) && !empty($Contrasena)){
                 $respuesta = PersonaController::validLogin($Usuario, $Contrasena);
                 if (is_array($respuesta)) {
-                    $_SESSION['DataPaciente'] = $respuesta;
+                    $_SESSION['verificar']=true;
+                    $_SESSION['DataPersona'] = $respuesta;
                     echo TRUE;
                 }else if($respuesta == "Password Incorrecto"){
                     echo "<div class='alert alert-danger alert-dismissable'>";
@@ -139,9 +142,10 @@ class PersonaController{
     }
 
     public function CerrarSession (){
-        session_destroy();
-        unset($_COOKIE['']);
+
+        unset($_COOKIE);
         header("Location: ../Vista/login.php");
+        session_destroy();
     }
     public function InicioUsuario(){
 

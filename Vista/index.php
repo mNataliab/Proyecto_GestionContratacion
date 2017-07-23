@@ -1,3 +1,9 @@
+<?php session_start();
+if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true){
+}else{
+    header("Location: 403.html");
+}
+?>
 <!doctype html>
 <html>
 

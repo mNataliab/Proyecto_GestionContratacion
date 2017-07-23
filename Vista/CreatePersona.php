@@ -1,6 +1,12 @@
 <?php session_start();
 require "../Controlador/SecretariaController.php";
-//require "../Controlador/PersonaController.php";?>
+if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true)
+{
+}else
+{
+    header("Location: 403.html");
+
+}?>
 
 <!doctype html>
 <html>
