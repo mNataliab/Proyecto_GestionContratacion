@@ -408,16 +408,16 @@ require "../Controlador/SecretariaController.php";
 
             <script >
                $(document).ready(function() {
-                    $('#Secretaria').hide();
+                    $('#idSecretarias').hide();
                     $('#Cargo').change(function() {
                         if($(this).val() == 'General'){
-                            $('#Secretaria').show();
+                            $('#idSecretarias').show();
                         }else if($(this).val() == 'Subgeneral'){
-                            $('#Secretaria').show();
+                            $('#idSecretarias').show();
                         }else if($(this).val() == 'Secretari@'){
-                            $('#Secretaria').show();
+                            $('#idSecretarias').show();
                         } else{
-                            $('#Secretaria').hide();
+                            $('#idSecretarias').hide();
                         }
                     })
                 });
@@ -492,8 +492,6 @@ require "../Controlador/SecretariaController.php";
 
             <script >
                 $(document).ready(function() {
-
-
                     $( "#dialogo" ).on( "click", function() {
                         $( "#correcto" ).dialog( "open" );
                     });
@@ -510,7 +508,6 @@ require "../Controlador/SecretariaController.php";
 
                         }
                     });
-
                     $( "#dialogo" ).on( "click", function() {
                         $( "#error" ).dialog( "open" );
                     });

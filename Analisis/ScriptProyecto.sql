@@ -50,7 +50,7 @@ CREATE TABLE IF NOT EXISTS `ProyectoPhP`.`Persona` (
   `Contrato_PDF` VARCHAR(200) NULL,
   `NRP` INT UNSIGNED NULL,
   `Usuario` VARCHAR(45) NOT NULL,
-  `Contrasena` VARCHAR(45) NOT NULL,
+  `Contrasena` VARCHAR(255) NOT NULL,
   `Estado` ENUM('Activo', 'Inactivo') NOT NULL,
   `Cargo` VARCHAR(45) NOT NULL,
   `idSecretarias` INT UNSIGNED NULL,
