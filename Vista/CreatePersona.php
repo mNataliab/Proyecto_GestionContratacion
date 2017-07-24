@@ -33,10 +33,9 @@
     <link rel="stylesheet" href="assets/lib/onoffcanvas/onoffcanvas.css">
 
     <!-- animate.css stylesheet -->
-    <link rel="stylesheet" href="assets/lib/animate.css/animate.css">
-
-    <link rel="stylesheet" href="/assets/lib/plupload/js/jquery.plupload.queue/css/jquery.plupload.queue.css">
-    <link rel="stylesheet" href="/assets/lib/jquery.gritter/css/jquery.gritter.css">
+    <!--link rel="stylesheet" href="assets/lib/animate.css/animate.css">
+     <link rel="stylesheet" href="/assets/lib/plupload/js/jquery.plupload.queue/css/jquery.plupload.queue.css">
+    <link rel="stylesheet" href="/assets/lib/jquery.gritter/css/jquery.gritter.css">-->
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/Uniform.js/2.1.2/themes/default/css/uniform.default.min.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.css">
@@ -139,7 +138,7 @@
                                         <div class="form-group">
                                             <label class="control-label col-lg-4">Tipo Documento</label>
                                             <div class="col-lg-4">
-                                                <select required name="TipoDoumento" id="TipoDocumento" class="validate[required] form-control">
+                                                <select required name="TipoDocumento" id="TipoDocumento" class="validate[required] form-control">
                                                     <option value=""></option>
                                                     <option value="C.C">Cedula Ciudadina</option>
                                                     <option value="T.I">Tarjeta Identidad</option>
@@ -153,7 +152,7 @@
                                         <div class="form-group">
                                             <label class="control-label col-lg-4">N° Documento</label>
                                             <div class=" col-lg-4">
-                                                <input value="Documento" placeholder="Documento " required class="validate[required] form-control" type="number" name="Documento" id="Documento"/>
+                                                <input  placeholder="Documento " required class="validate[required] form-control" type="number" name="Documento" id="Documento"/>
                                             </div>
                                         </div>
 
@@ -253,7 +252,7 @@
                                                 </select>
                                             </div>
                                         </div>
-                                        <div class="form-group" name="Secretaria" id="Secretaria">
+                                        <div class="form-group" name="Secretarias_idSecretarias" id="Secretarias_idSecretarias">
                                             <label class="control-label col-lg-4">Secretaria</label>
                                             <div class="col-lg-4">
                                                 <?php echo SecretariaController::selectSecretaria(true,"form-group"); ?>
@@ -263,7 +262,7 @@
                                         <div class="form-group">
                                             <label class="control-label col-lg-4">Contrato</label>
                                             <div class="col-lg-8">
-                                                <input  type="file" id="Contrato_PDF"/>
+                                                <input  type="file" id="Contrato_PDF" name="Contrato_PDF"/>
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -273,7 +272,7 @@
                                                     <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;"></div>
                                                     <div>
                                                         <span class="btn btn-default btn-file"><span class="fileinput-new">Seleccione imagen</span><span class="fileinput-exists">Change</span><input type="file" id="imagen" name="imagen"></span>
-                                                        <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Cambiar imagen</a>
+
                                                     </div>
                                                 </div>
 
@@ -407,16 +406,16 @@
 
             <script >
                $(document).ready(function() {
-                    $('#Secretaria').hide();
+                    $('#Secretarias_idSecretarias').hide();
                     $('#Cargo').change(function() {
                         if($(this).val() == 'General'){
-                            $('#Secretaria').show();
+                            $('#Secretarias_idSecretarias').show();
                         }else if($(this).val() == 'Subgeneral'){
-                            $('#Secretaria').show();
+                            $('#Secretarias_idSecretarias').show();
                         }else if($(this).val() == 'Secretari@'){
-                            $('#Secretaria').show();
+                            $('#Secretarias_idSecretarias').show();
                         } else{
-                            $('#Secretaria').hide();
+                            $('#Secretarias_idSecretarias').hide();
                         }
                     })
                 });
@@ -463,10 +462,10 @@
             <!-- Screenfull -->
             <script src="assets/lib/screenfull/screenfull.js"></script>
 
-            <script src="/assets/lib/plupload/js/plupload.full.min.js"></script>
+            <!-- script src="/assets/lib/plupload/js/plupload.full.min.js"></script>
             <script src="/assets/lib/plupload/js/jquery.plupload.queue/jquery.plupload.queue.min.js"></script>
             <script src="/assets/lib/jquery.gritter/js/jquery.gritter.min.js"></script>
-            <script src="/assets/lib/formwizard/js/jquery.form.wizard.js"></script>
+            <script src="/assets/lib/formwizard/js/jquery.form.wizard.js"></script> -->
                 <script src="assets/lib/jquery-validation/jquery.validate.js"></script>
 
             <!-- Metis core scripts -->
@@ -488,6 +487,8 @@
                     Metis.formWizard();
                 });
             </script>
+
+
 
             <script >
                 $(document).ready(function() {

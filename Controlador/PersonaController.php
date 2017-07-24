@@ -25,8 +25,8 @@ class PersonaController{
     static public function crear(){
         try{
             $arrayPersona = array();
-            $tmp_name2 = $_FILES['Contrato_PDF']['tmp_name'];
-            $name2 = $_FILES['Contrato_PDF']['name'];
+            $tmp_name2 = $_FILES['Contrato_PDF']['tmp_name2'];
+            $name2 = $_FILES['Contrato_PDF']['name2'];
             $tmp_name = $_FILES['imagen']['tmp_name'];
             $name = $_FILES['imagen']['name'];
             $nuevo_path="";
