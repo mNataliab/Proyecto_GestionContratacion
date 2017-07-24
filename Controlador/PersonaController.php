@@ -70,17 +70,22 @@ class PersonaController{
         }
     }
 
-    public function Login (){
+  static public function Login (){
         try {
             $Usuario = $_POST['Usuario'];
             $Contrasena = $_POST['Contrasena'];
-
+            $arrayPesona= array();
             if(!empty($Usuario) && !empty($Contrasena)){
                 $respuesta = PersonaController::validLogin($Usuario, $Contrasena);
                 if (is_array($respuesta)) {
+                    foreach ($respuesta as $id){
+
+                    }
                     $_SESSION['verificar']=true;
                     $_SESSION['DataPersona'] = $respuesta;
                     echo TRUE;
+
+                    PersonaController::InicioUsuario($respuesta);
                 }else if($respuesta == "Password Incorrecto"){
                     echo "<div class='alert alert-danger alert-dismissable'>";
                     echo "    <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>";
@@ -126,7 +131,7 @@ class PersonaController{
         $tmp->Disconnect();
         return $arrPersona;
     }
-    public function Verificacion(){
+   static public function Verificacion(){
         $arrayperso = array();
         $tmp = new Persona();
         $Usuario=$_POST['Usuario'];
@@ -147,8 +152,19 @@ class PersonaController{
         header("Location: ../Vista/login.php");
         session_destroy();
     }
-    public function InicioUsuario(){
-
+   static public function InicioUsuario($respuesta){
+        $arrayPesona=$respuesta;
+        foreach ($arrayPesona as $persona){
+            $htmlInicio="";
+            $htmlInicio .="<h5 class='media-heading'>".$persona->getNombres()." ".$persona->getApellidos()."</h5>";
+            $htmlInicio .="<ul class='list-unstyled user-info'>";
+            $htmlInicio .="<li>".$persona->getCargo()."</li>";
+            $htmlInicio .="<li>Pendiente<br>";
+            $htmlInicio .="<small><i class='fa fa-calendar'></i>".date('d').' de '.date('F').' del '.date('Y')."</small>";
+            $htmlInicio .="</li>";
+            $htmlInicio .="</ul>";
+        }
+        return $htmlInicio;
     }
     public function Usuario (){
        $arrPerson = Persona::getAll();

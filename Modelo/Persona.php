@@ -449,8 +449,9 @@ class Persona extends db_abstract_class
             $persona->Contrasena = $valor['Contrasena'];
             $persona->Estado = $valor['Estado'];
             $persona->Cargo=$valor['Cargo'];
+            $persona->idSecretarias=$valor['idSecretarias'];
             array_push($arrPacientes, $persona);
-        }
+    }
         $tmp->Disconnect();
         return $arrPacientes;
     }
