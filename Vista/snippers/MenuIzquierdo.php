@@ -17,6 +17,7 @@
                     <li>Estado : <br>
                         <small><i class="fa fa-calendar"></i><?php echo date("d")." de ",date("F")." del ".date("Y");?>
                             </small>
+                        <?php echo ($_SESSION['DataPersona']["Cargo"]) ?>
                     </li>
                 </ul>
             </div>
@@ -50,6 +51,10 @@
                     <a href="CreatePersona.php">
                         <i class="fa  glyphicon-user"></i>&nbsp; Registrar </a>
                 </li>
+                <li>
+                    <a href="AdministrarPersona.php">
+                        <i class="fa  glyphicon-user"></i>&nbsp; Administrar </a>
+                </li>
             </ul>
         </li>
 
@@ -66,7 +71,32 @@
                 </li>
             </ul>
         </li>
-
+        <li class="">
+            <a href="javascript:;">
+                <i class="fa fa-building "></i>
+                <span class="link-title">Contratos</span>
+                <span class="fa arrow"></span>
+            </a>
+            <ul class="collapse">
+                <li>
+                    <a href="CreateContratos.php">
+                        <i class="fa  glyphicon-user"></i>&nbsp; Registrar Contratos </a>
+                </li>
+            </ul>
+        </li>
+        <li class="">
+            <a href="javascript:;">
+                <i class="fa fa-building "></i>
+                <span class="link-title">Empresas</span>
+                <span class="fa arrow"></span>
+            </a>
+            <ul class="collapse">
+                <li>
+                    <a href="CreateEmpresas.php">
+                        <i class="fa  glyphicon-user"></i>&nbsp; Registrar Empresas      </a>
+                </li>
+            </ul>
+        </li>
     </ul>
     <!-- /#menu -->
 </div>

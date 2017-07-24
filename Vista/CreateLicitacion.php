@@ -1,5 +1,7 @@
 <?php session_start();
-require "../Controlador/SecretariaController.php";
+require "../Controlador/PersonaController.php";
+//require "../Controlador/EmpresasController.php";
+//require "../Controlador/ContratosPublicosController.php";
 if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true)
 {
 }else
@@ -18,7 +20,7 @@ if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true)
     <!--Mobile first-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Registro Personas</title>
+    <title>Registro Licitacion</title>
 
     <meta name="description" content="Free Admin Template Based On Twitter Bootstrap 3.x">
     <meta name="author" content="">
@@ -95,7 +97,7 @@ if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true)
                             <div class="box">
                                 <header class="dark">
                                     <div class="icons"><i class="fa glyphicon-user"></i></div>
-                                    <h5>Registro Personas</h5>
+                                    <h5>Registro Licitacion</h5>
                                     <!-- .toolbar -->
                                     <div class="toolbar">
                                         <nav style="padding: 8px;">
@@ -118,11 +120,11 @@ if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true)
                                         <?php if ($_GET['respuesta'] == "correcto"){ ?>
                                             <div class="correcto" id="correcto" title="Registro Exitoso" >
                                                 <p> <i class="glyphicon glyphicon-ok-sign"></i>
-                                                    La Persona se ha creado correctamente</p>
+                                                    La Licitacion  se ha creado correctamente</p>
                                             </div>
                                         <?php }else {?>
                                             <div class="error" id="error" title="Registro Fallido!" >
-                                                <p><i class="glyphicon glyphicon-remove-sign"></i>&nbsp;Error! La Persona no se pudo crear correctamente intentalo nuevamente</p>
+                                                <p><i class="glyphicon glyphicon-remove-sign"></i>&nbsp;Error! La Licitacion no se pudo crear correctamente intentalo nuevamente</p>
                                             </div>
                                         <?php } ?>
                                     <?php } ?>
@@ -130,167 +132,75 @@ if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true)
                                     <form class="form-horizontal" id="popup-validation"  enctype="multipart/form-data" action="../Controlador/PersonaController.php?action=crear" method="POST">
 
 
-                                        <div class="form-group">
-                                            <label class="control-label col-lg-4">Nombre</label>
-                                             <div class="col-lg-4">
-                                                <input type="text" placeholder="Nombres" required class="validate[required] form-control" name="Nombres" id="Nombres">
-                                            </div>
-                                        </div>
 
                                         <div class="form-group">
-                                            <label class="control-label col-lg-4">Apellido</label>
-                                            <div class="col-lg-4">
-                                                <input type="text" placeholder="Apellidos" required class="validate[required] form-control" name="Apellidos" id="Apellidos">
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label class="control-label col-lg-4">Tipo Documento</label>
-                                            <div class="col-lg-4">
-                                                <select required name="TipoDocumento" id="TipoDocumento" class="validate[required] form-control">
-                                                    <option value=""></option>
-                                                    <option value="C.C">Cedula Ciudadina</option>
-                                                    <option value="T.I">Tarjeta Identidad</option>
-                                                    <option value="R.C">Registro Civil</option>
-                                                    <option value="C.E">Cedula Extranjera</option>
-                                                    <option value="Otros">Otros</option>
-                                                </select>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label class="control-label col-lg-4">N° Documento</label>
-                                            <div class=" col-lg-4">
-                                                <input  placeholder="Documento " required class="validate[required] form-control" type="number" name="Documento" id="Documento"/>
-                                            </div>
-                                        </div>
-
-
-                                        <div class="form-group">
-                                            <label class="control-label col-lg-4">Fecha Nacimiento</label>
+                                            <label class="control-label col-lg-4">Ejecución de contrato</label>
 
                                             <div class=" col-lg-4">
                                                 <input required class="validate[required,custom[date]] form-control" type="date"
-                                                      data-date-format="aaaa/mm/dd" name="Fecha_Nacimiento" id="Fecha_Nacimiento"/>
+                                                       data-date-format="aaaa/mm/dd" name="Ejecucion_Contrato" id="Ejecucion_Contrato"/>
                                             </div>
                                         </div>
-
                                         <div class="form-group">
-                                            <label class="control-label col-lg-4">Genero</label>
-                                            <div class="col-lg-4">
-                                                <select required name="Genero" id="Genero" class="validate[required] form-control">
-                                                    <option value="Masculino">Masculino</option>
-                                                    <option value="Femenino">Femenino</option>
-                                                </select>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label class="control-label col-lg-4">Telefono</label>
+                                            <label class="control-label col-lg-4">Fecha Firma de Contratos</label>
 
                                             <div class=" col-lg-4">
-                                                <input required placeholder="Telefono" class="validate[required,custom[number]] form-control" type="number"
-                                                       name="Telefono" id="Telefono"/>
+                                                <input required class="validate[required,custom[date]] form-control" type="date"
+                                                       data-date-format="aaaa/mm/dd" name="Fecha_firma_contrato" id="Fecha_firma_contrato"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-lg-4">Plazo de Ejecución</label>
+
+                                            <div class=" col-lg-4">
+                                                <input required class="validate[required,custom[date]] form-control" type="date"
+                                                       data-date-format="aaaa/mm/dd" name="Plazo_Ejecucion_Contrato" id="Plazo_Ejecucion_Contrato"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-lg-4">Calificación</label>
+
+                                            <div class=" col-lg-4">
+                                                <input required placeholder="Calificacion" class="validate[required,custom[number]] form-control" type="number"
+                                                       name="Calificacion" id="Calificacion"/>
                                                 <span class="help-block"></span>
                                             </div>
                                         </div>
 
-                                        <div class="form-group">
-                                            <label  class="control-label col-lg-4">Dirección</label>
-                                            <div class="col-lg-4">
-                                                <input required type="text" placeholder="Direccion" class="validate[required] form-control" name="Direccion" id="Direccion">
-                                            </div>
-                                        </div>
-
-
-                                        <div class="form-group">
-                                            <label class="control-label col-lg-4">E-mail</label>
-
-                                            <div class=" col-lg-4">
-                                                <input required placeholder="E-mail" class="validate[required,custom[email]] form-control" type="email" name="Correo"
-                                                       id="Correo"/>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label class="control-label col-lg-4">Usuario</label>
-                                            <div class="col-lg-4">
-                                                <input required placeholder="Usuario" type="text" class="validate[required] form-control" name="Usuario" id="Usuario">
-
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label class="control-label col-lg-4">Contraseña</label>
-
-                                            <div class=" col-lg-4">
-                                                <input required placeholder="Contraseña" class="validate[required] form-control" type="password" name="Contrasena" id="Contrasena"/>
-                                            </div>
-                                        </div>
-
-
-                                        <div class="form-group">
-                                            <label class="control-label col-lg-4">Numero de Registro Profesional</label>
-
-                                            <div class=" col-lg-4">
-                                                <input required placeholder="Numero Registro Profesional" class="validate[required,custom[number]] form-control" type="text"
-                                                       name="NRP" id="NRP"/>
-                                                <span class="help-block"></span>
-                                            </div>
-                                        </div>
-                                        <div class="form-group" name="Cargo1" id="Cargo1">
-                                            <label class="control-label col-lg-4">Cargo</label>
-                                            <div class="col-lg-4">
-                                                <select required name="Cargo" id="Cargo" class="validate[required] form-control">
-                                                    <option value=""></option>
-                                                    <option value="General">General</option>
-                                                    <option value="Subgeneral">Subgeneral</option>
-                                                    <option value="Secretari@">Secretari@</option>
-                                                    <option value="Administrador">Administrador</option>
-                                                </select>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group" name="Secretarias_idSecretarias" id="Secretarias_idSecretarias">
-
-                                        <div class="form-group" name="idSecretarias" id="idSecretarias">
-
-                                            <label class="control-label col-lg-4">Secretaria</label>
-                                            <div class="col-lg-4">
-                                                <?php echo SecretariaController::selectSecretaria(true,"form-group"); ?>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label class="control-label col-lg-4">Contrato</label>
-                                            <div class="col-lg-8">
-                                                <input  type="file" id="ContratoPDF" name="ContratoPDF"/>
-
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="control-label col-lg-4">Foto</label>
-                                            <div class="col-lg-8">
-                                                <div class="fileinput fileinput-new" data-provides="fileinput">
-                                                    <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;"></div>
-                                                    <div>
-                                                        <span class="btn btn-default btn-file"><span class="fileinput-new">Seleccione imagen</span><span class="fileinput-exists">Change</span><input type="file" id="imagen" name="imagen"></span>
-
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                        </div>
 
                                         <div class="form-group">
                                             <label class="control-label col-lg-4">Estado</label>
                                             <div class="col-lg-4">
-                                                <select  name="Estado" id="Estadp" class="validate[required] form-control" readonly="readonly">
-                                                    <option>Activo</option>
-
+                                                <select required name="Estado" id="Estado" class="validate[required] form-control">
+                                                    <option value="Activo">Activo</option>
                                                 </select>
                                             </div>
                                         </div>
+
+                                        <div class="form-group" name="idPersona id="idPersona">
+
+                                            <label class="control-label col-lg-4">Persona a cargo</label>
+                                            <div class="col-lg-4">
+                                                <?php echo PersonaController::selectPersona(true,"form-group"); ?>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group" name="idEmpresas" id="idEmpresas">
+
+                                            <label class="control-label col-lg-4">Empresa</label>
+                                            <div class="col-lg-4">
+                                                <?php//  echo EmpresaController::selectEmpresa(true,"form-group"); ?>
+                                            </div>
+                                        </div>
+
+                                <div class="form-group" name="Contratos_Publicos" id="idContatos_Publicos">
+
+                                    <label class="control-label col-lg-4">Contratos Publicos</label>
+                                    <div class="col-lg-4">
+                                        <?php //echo ContratosPublicosController::selectContratosPublicos(true,"form-group"); ?>
+                                    </div>
+                                </div>
+
 
                                         <div class="form-actions no-margin-bottom">
                                             <input type="submit" value="Enviar" class="btn btn-primary">
@@ -407,22 +317,29 @@ if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true)
             <!--jQuery -->
             <script src="assets/lib/jquery/jquery.js"></script>
             <script >
-                $(document).ready(function() {
-                    $('#idSecretaria').hide();
+<<<<<<< HEAD
+               $(document).ready(function() {
+                    $('#Secretarias_idSecretarias').hide();
                     $('#Cargo').change(function() {
+=======
+                $(document).ready(function() {
+                    $('#Secretaria').hide();
+                    $('#Tipo_Usuario').change(function() {
+>>>>>>> d1a223ec51db908e3df5e8632dc0fa161664ee0c
                         if($(this).val() == 'General'){
-                            $('#idSecretarias').show();
+                            $('#Secretarias_idSecretarias').show();
                         }else if($(this).val() == 'Subgeneral'){
-                            $('#idSecretarias').show();
+                            $('#Secretarias_idSecretarias').show();
                         }else if($(this).val() == 'Secretari@'){
-                            $('#idSecretarias').show();
-                        } else {
-                            $('#idSecretarias').hide();
+                            $('#Secretarias_idSecretarias').show();
+                        } else{
+                            $('#Secretarias_idSecretarias').hide();
                         }
                     });
 
                 });
             </script>
+
 
                 <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
             <script src="//cdnjs.cloudflare.com/ajax/libs/jQuery-Validation-Engine/2.6.4/jquery.validationEngine.min.js"></script>

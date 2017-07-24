@@ -25,47 +25,30 @@ class PersonaController{
     static public function crear(){
         try{
             $arrayPersona = array();
-
-            $tmp_name2 = $_FILES['Contrato_PDF']['tmp_name2'];
-            $name2 = $_FILES['Contrato_PDF']['name2'];
-            $tmp_name = $_FILES['imagen']['tmp_name'];
-            $name = $_FILES['imagen']['name'];
-            $nuevo_path="";
-            $nuevo_path2="";
-
-            if (($name == !NULl ) && ($name2 == !NULL)){
-                $nuevo_path="../Fotos/".$name;
-                move_uploaded_file($tmp_name,$nuevo_path);
-                $nuevo_path2="../Contratos/".$name2;
-                move_uploaded_file($tmp_name2,$nuevo_path2);
-            }else{
-              //  header("Location: ../Vista/createPersona.php?respuesta=errorFoto");
-
-
+            $Documento=$_POST['Documento'];
             if (is_uploaded_file($_FILES['ContratoPDF']['tmp_name'])&& is_uploaded_file($_FILES['imagen']['tmp_name']))
             {
-
                 $nombreDirectorio = "../Contratos-Fotos/";
                 $nombreFichero = $_FILES['ContratoPDF']['name'];
                 $nombrefoto=$_FILES['imagen']['name'];
-                $nuevo_path="../Contratos-Fotos/".date("d")."-".date("F")."-".date("Y")."-".date("H").":".date("i").":".date("s")."-" .$nombrefoto;
-                $nuevo_path2="../Contratos-Fotos/".date("d")."-".date("F")."-".date("Y")."-".date("H")."-".date("i")."-".date("s")."-" .$nombreFichero;
+                $nuevo_path="../Contratos-Fotos/".$Documento.$nombrefoto;
+                $nuevo_path2="../Contratos-Fotos/".$Documento.$nombreFichero;
 
-                move_uploaded_file($_FILES['ContratoPDF']['tmp_name'], $nombreDirectorio.date("d")."-".date("F")."-".date("Y")."-".date("H").":".date("i").":".date("s")."-" .$nombreFichero);
-                move_uploaded_file($_FILES['imagen']['tmp_name'], $nombreDirectorio.date("d")."-".date("F")."-".date("Y")."-".date("H").":".date("i").":".date("s")."-" .$nombrefoto);
+                move_uploaded_file($_FILES['ContratoPDF']['tmp_name'], $nombreDirectorio.$Documento.$nombreFichero);
+                move_uploaded_file($_FILES['imagen']['tmp_name'], $nombreDirectorio.$Documento.$nombrefoto);
 
             } else{
                 echo ("No se ha podido subir el fichero");
-             header("Location: ../Vista/createPersona.php?respuesta=errorFoto");
+            header("Location: ../Vista/createPersona.php?respuesta=errorFoto");
 
             }
 
             $arrayPersona['Tipo_Documento'] = $_POST['TipoDocumento'];
-            $arrayPersona['Documento']=$_POST['Documento'];
+            $arrayPersona['Documento']=$Documento;
             $arrayPersona['Foto'] = $nuevo_path;
             $arrayPersona['Fecha_Nacimiento']=$_POST['Fecha_Nacimiento'];
             $arrayPersona['Genero'] = $_POST['Genero'];
-            $arrayPersona['Nombres'] = $_POST['Nombres'];
+            $arrayPersona['Nombres'] = $_POST['Noms'];
             $arrayPersona['Apellidos'] = $_POST['Apellidos'];
             $arrayPersona['Telefono'] = $_POST['Telefono'];
             $arrayPersona['Direccion'] = $_POST['Direccion'];
@@ -82,7 +65,7 @@ class PersonaController{
             header("Location: ../Vista/createPersona.php?respuesta=correcto");
 
 
-        }
+
     }catch(Exception $e){
             header("Location: ../Vista/createPersona.php?respuesta=error");
         }
@@ -96,12 +79,10 @@ class PersonaController{
             if(!empty($Usuario) && !empty($Contrasena)){
                 $respuesta = PersonaController::validLogin($Usuario, $Contrasena);
                 if (is_array($respuesta)) {
-
                     $_SESSION['verificar']=true;
                     $_SESSION['DataPersona'] = $respuesta;
                     echo TRUE;
 
-                   // PersonaController::InicioUsuario($respuesta);
                 }else if($respuesta == "Password Incorrecto"){
                     echo "<div class='alert alert-danger alert-dismissable'>";
                     echo "    <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>";
@@ -147,20 +128,7 @@ class PersonaController{
         $tmp->Disconnect();
         return $arrPersona;
     }
-   static public function Verificacion(){
-        $arrayperso = array();
-        $tmp = new Persona();
-        $Usuario=$_POST['Usuario'];
-        $getUsuario = $tmp->getRows("SELECT * FROM proyectophp.persona WHERE Usuario='".$Usuario."'");
-        if (count($getUsuario)>=1){
-             echo true;
-        }else{
-             echo false;
-        }
-        $tmp->Disconnect();
-        return $arrayperso;
 
-    }
 
     public function CerrarSession (){
 
@@ -168,20 +136,7 @@ class PersonaController{
         header("Location: ../Vista/login.php");
         session_destroy();
     }
-   static public function InicioUsuario($respuesta){
-        $arrayPesona=$respuesta;
-        foreach ($arrayPesona as $persona){
-            $htmlInicio="";
-            $htmlInicio .="<h5 class='media-heading'>".$persona->getNombres()." ".$persona->getApellidos()."</h5>";
-            $htmlInicio .="<ul class='list-unstyled user-info'>";
-            $htmlInicio .="<li>".$persona->getCargo()."</li>";
-            $htmlInicio .="<li>Pendiente<br>";
-            $htmlInicio .="<small><i class='fa fa-calendar'></i>".date('d').' de '.date('F').' del '.date('Y')."</small>";
-            $htmlInicio .="</li>";
-            $htmlInicio .="</ul>";
-        }
-        return $htmlInicio;
-    }
+
     public function Usuario (){
        $arrPerson = Persona::getAll();
         $htmlSelect = "";

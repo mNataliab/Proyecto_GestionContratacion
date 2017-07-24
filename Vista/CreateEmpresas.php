@@ -28,6 +28,7 @@ if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true)
 
     <!-- Bootstrap -->
     <link rel="icon" href="assets/img/icono.png">
+    <!-- Icono -->
     <link rel="stylesheet" href="assets/lib/bootstrap/css/bootstrap.css">
 
     <!-- Font Awesome -->
@@ -94,9 +95,10 @@ if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true)
                                 <div class="row">
                         <div class="col-lg-12">
                             <div class="box">
+
                                 <header class="dark">
                                     <div class="icons"><i class="fa glyphicon-user"></i></div>
-                                    <h5>Registro Secretaria</h5>
+                                    <h5>Registro de Empresas</h5>
                                     <!-- .toolbar -->
                                     <div class="toolbar">
                                         <nav style="padding: 8px;">
@@ -117,83 +119,109 @@ if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true)
 
                                     <?php if(!empty($_GET['respuesta'])){ ?>
                                         <?php if ($_GET['respuesta'] == "correcto"){ ?>
-                                            <div id="correcto" title="Registro Exitoso"  >
+                                            <div class="correcto" id="correcto" title="Registro Exitoso" >
                                                 <p> <i class="glyphicon glyphicon-ok-sign"></i>
-                                               La secretaria se ha creado correctamente</p>
+                                                    La Empresa se ha creado correctamente</p>
                                             </div>
                                         <?php }else {?>
                                             <div class="error" id="error" title="Registro Fallido!" >
-                                                <p><i class="glyphicon glyphicon-remove-sign"></i>&nbsp;Error! La secretaria no se pudo crear correctamente intentalo nuevamente</p>
+                                                <p><i class="glyphicon glyphicon-remove-sign"></i>&nbsp;Error! la Empresa no se pudo crear correctamente intentalo nuevamente</p>
                                             </div>
                                         <?php } ?>
                                     <?php } ?>
 
-
-                                    <form class="form-horizontal" id="popup-validation"  action="../Controlador/SecretariaController.php?action=crear" method="POST"    >
+                                    <form class="form-horizontal" id="popup-validation"  enctype="multipart/form-data" action="../Controlador/EmpresasController.php?action=crear" method="POST">
 
                                         <div class="form-group">
-                                            <label class="control-label col-lg-4">Nombre</label>
-                                             <div class="col-lg-4">
-                                                <input type="text" placeholder="Nombre" required class="validate[required] form-control" name="Nombre" id="Nombre">
+                                            <label class="control-label col-lg-4">Razon social del contratista </label>
+                                            <div class=" col-lg-4">
+                                                <input required placeholder="Razon social del contratita" class="validate[required,custom[number]] form-control" type="number"
+                                                       name="Razonsocial_contratista" id="Razonsocial_contratista"/>
+                                                <span class="help-block"></span>
                                             </div>
                                         </div>
-
-                                        <div id="div-1" class="body">
-                                            <label class="control-label col-lg-4">Mision</label>
-                                            <textarea name="Mision" id="Mision" class="form-control" rows="10" style="height: 100px;width: 330px;position: static "  ></textarea>
-
-                                        </div>
-
-                                        <div id="div-1" class="body">
-                                            <label class="control-label col-lg-4">Vision</label>
-                                            <textarea id="Vision" name="Vision" class="form-control" rows="10" style="height: 100px;width: 330px;position: static "  ></textarea>
-
-                                        </div>
-
-                                        <div id="div-1" class="body">
-                                            <label class="control-label col-lg-4">Objetivos</label>
-                                            <textarea id="Objetivos" name="Objetivos" class="form-control" rows="10" style="height: 100px;width: 330px;position: static "  ></textarea>
-
-                                        </div>
-
-
-
                                         <div class="form-group">
-                                            <label class="control-label col-lg-4">Telefono</label>
-
+                                            <label class="control-label col-lg-4">Nit de la empresa </label>
                                             <div class=" col-lg-4">
-                                                <input required placeholder="Telefono" class="validate[required,custom[number]] form-control" type="number"
-                                                       name="Telefono" id="Telefono"/>
+                                                <input required placeholder="Nit de la empresa" class="validate[required,custom[number]] form-control" type="number"
+                                                       name="Identificacion_Contatista" id="Identificacion_Contatista"/>
                                                 <span class="help-block"></span>
                                             </div>
                                         </div>
 
                                         <div class="form-group">
-                                            <label  class="control-label col-lg-4">Dirección</label>
+                                            <label class="control-label col-lg-4">Pais del contratista</label>
                                             <div class="col-lg-4">
-                                                <input required type="text" placeholder="Direccion" class="validate[required] form-control" name="Direccion" id="Direccion">
+                                                <select required name="Pais_Contatrista" id="Pais_Contatrista" class="validate[required] form-control">
+
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+
+                                            <label class="control-label col-lg-4">Departamento del contratista</label>
+                                            <div class="col-lg-4">
+                                                <select required name="Departamento_Contatista" id="Departamento_Contatista" class="validate[required] form-control">
+
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-lg-4">Provincia/Municipio del contratista</label>
+                                            <div class="col-lg-4">
+                                                <select required name="Provincia_Contratista" id="Provincia_Contratista" class="validate[required] form-control">
+
+                                                </select>
                                             </div>
                                         </div>
 
-
-
-                                        <div class="form-actions no-margin-bottom">
-                                            <input type="submit" id="dialogo" value="Enviar" class="btn btn-primary">
+                                        <div class="form-group">
+                                            <label  class="control-label col-lg-4">Direccion</label>
+                                            <div class="col-lg-4">
+                                                <input required type="text" placeholder="Direccion" class="validate[required] form-control" name="Direccion_Contratista" id="Direccion_Contratista">
+                                            </div>
                                         </div>
+
+                                        <div class="form-group">
+                                            <label  class="control-label col-lg-4">Nombre representante legal</label>
+                                            <div class="col-lg-4">
+                                                <input required type="text" placeholder="Nombre representante legal" class="validate[required] form-control" name="Representante_Contaratista" id="Representante_Contaratista">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-lg-4">Identificacion del contratista  </label>
+                                            <div class=" col-lg-4">
+                                                <input required placeholder="Identificacion del contratista " class="validate[required,custom[number]] form-control" type="number"
+                                                       name="Identificacion_Representante" id="Identificacion_Representante"/>
+                                                <span class="help-block"></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-lg-4"> Estado </label>
+                                            <div class="col-lg-4">
+                                                <select required name="Estado" id="Estado" class="validate[required] form-control">
+                                                    <option>Activo</option>
+                                                    <option>Inactivo</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                            <div class="form-actions no-margin-bottom">
+                                                <input type="submit" value="Enviar" class="btn btn-primary">
+                                            </div>
                                     </form>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
                                 </div>
                         <!-- /.inner -->
                             </div>
                      <!-- /.outer -->
                     </div>
                 <!-- /#content -->
+                        </div>
 
+                        </div>
                 <!-- /#right -->
-
+                    </div>
             </div>
 
             <!-- /#wrap -->
@@ -226,6 +254,8 @@ if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true)
                 </div>
                 <!-- /.modal-dialog -->
             </div>
+
+
 
             <!-- /.modal -->
             <!-- /#helpModal -->

@@ -37,11 +37,7 @@ try{
     {
         $arrSecretaria = Secretaria::getAll();
         $htmlSelect = "";
-<<<<<<< HEAD
-        $htmlSelect = "<select id='Secretarias_idSecretarias' name='Secretarias_idSecretarias'>";
-=======
         $htmlSelect = "<select  name='idSecretarias' id='idSecretarias'>";
->>>>>>> d1a223ec51db908e3df5e8632dc0fa161664ee0c
         $htmlSelect .= "<option>Seleccione</option>";
         foreach ($arrSecretaria as $Secretarias) {
             $htmlSelect .= "<option value='".$Secretarias->getidSecretarias()."' id='".$Secretarias->getidSecretarias()."'>".$Secretarias->getNombre()."</option>";

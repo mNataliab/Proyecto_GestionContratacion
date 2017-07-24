@@ -194,9 +194,9 @@ class Secretaria extends db_abstract_class
     public static function showCount()
     {
         $tmp = new Secretaria();
-        $getRows = $tmp->getCount("SELECT COUNT(secretarias.idSecretarias) FROM proyectophp.secretarias");
+        $getRow = $tmp->getRow("SELECT COUNT(secretarias.idSecretarias) as NumSecretarias FROM proyectophp.secretarias");
         $html ="";
-            $html .= "<span class='price-figure'>" .$getRows. "</span>";
+            $html .= "<span class='price-figure'>" .$getRow["NumSecretarias"]. "</span>";
         $tmp->Disconnect();
         return $html;
     }
