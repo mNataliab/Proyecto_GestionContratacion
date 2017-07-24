@@ -215,18 +215,7 @@ if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true)
                                             <label class="control-label col-lg-4">Usuario</label>
                                             <div class="col-lg-4">
                                                 <input required placeholder="Usuario" type="text" class="validate[required] form-control" name="Usuario" id="Usuario">
-                                                <div id="correcto" class="correcto"><?php
-                                                    echo "<div class='alert alert-success alert-dismissable'>";
-                                                    echo "    <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>";
-                                                    echo "    <strong>Correcto!</strong>.Usuario correcto!.";
-                                                    echo "</div>";
-                                                    ?></div>
-                                                <div id="incorrecto" class="Incorrecto"><?php
-                                                    echo "<div class='alert alert-danger alert-dismissable'>";
-                                                    echo "    <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>";
-                                                    echo "    <strong>Error!</strong>.Este usuario ya existe!.";
-                                                    echo "</div>";
-                                                    ?></div>
+
                                             </div>
                                         </div>
 
@@ -413,46 +402,45 @@ if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true)
             <script src="assets/lib/jquery/jquery.js"></script>
 
             <script >
-               $(document).ready(function() {
-                    $('#idSecretarias').hide();
-                    $('#Cargo').change(function() {
+                $(document).ready(function() {
+                    $('#Secretaria').hide();
+                    $('#Tipo_Usuario').change(function() {
                         if($(this).val() == 'General'){
-                            $('#idSecretarias').show();
+                            $('#Secretaria').show();
                         }else if($(this).val() == 'Subgeneral'){
-                            $('#idSecretarias').show();
+                            $('#Secretaria').show();
                         }else if($(this).val() == 'Secretari@'){
-                            $('#idSecretarias').show();
+                            $('#Secretaria').show();
                         } else{
-                            $('#idSecretarias').hide();
+                            $('#Secretaria').hide();
                         }
-                    })
+                    });
+
                 });
             </script>
+
             <script type="text/javascript">
                 $(document).ready(function() {
-                    $('#correcto').hide();
-                    $('#incorrecto').hide();
-                    $('#Usuario').on('keyup', function (e) {
-                        if (!e.isDefaultPrevented()) {
-                            var formData = $(this).serialize(); //Serializamos los campos del formulario
-                            $.ajax({
-                                type        : 'POST', // Metodo de Envio
-                                url         : '../Controlador/PersonaController.php?action=Verificacion', // Ruta del envio
-                                data        : formData, // our data object
-                                //dataType    : 'json', // what type of data do we expect back from the server
-                                encode      : true
-                            })
-                                .done(function(data) {
-                                    console.log(data);
-                                    if (data == true){
-                                        $('#incorrecto').show();
-                                    }else if (data== false){
-                                        $('#correcto').show();
-                                    }
-                                });
-                            event.preventDefault();
+                    $( "#correcto" ).dialog({
+                        modal: true,
+                        buttons: {
+                            Ok: function() {
+                                $(this).hide("explode");
+                                $( this ).dialog( "close" );
+                            }
                         }
-                    })
+
+                    });
+                    $( "#error" ).dialog({
+                        modal: true,
+                        buttons: {
+                            Ok: function() {
+                                $(this).hide("explode");
+                                $( this ).dialog( "close" );
+                            }
+                        }
+                    });
+
                 });
             </script>
                 <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
@@ -497,28 +485,7 @@ if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true)
             </script>
 
             <script >
-                $(document).ready(function() {
-                    $( "#dialogo" ).on( "click", function() {
-                        $( "#correcto" ).dialog( "open" );
-                    });
-                    $( "#error" ).dialog({
 
-                        autoOpen: true,
-                        show: {
-                            effect: "blind",
-                            duration: 1000
-                        },
-                        hide: {
-                            effect: "explode",
-                            duration: 1000
-
-                        }
-                    });
-                    $( "#dialogo" ).on( "click", function() {
-                        $( "#error" ).dialog( "open" );
-                    });
-
-                });
             </script>
 
         </body>

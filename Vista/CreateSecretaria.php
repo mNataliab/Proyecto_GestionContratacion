@@ -283,18 +283,7 @@
 
             <script >
                $(document).ready(function() {
-                    $('#Secretaria').hide();
-                    $('#Tipo_Usuario').change(function() {
-                        if($(this).val() == 'General'){
-                            $('#Secretaria').show();
-                        }else if($(this).val() == 'Subgeneral'){
-                            $('#Secretaria').show();
-                        }else if($(this).val() == 'Secretari@'){
-                            $('#Secretaria').show();
-                        } else{
-                            $('#Secretaria').hide();
-                        }
-                    });
+
 
           $( "#correcto" ).dialog({
                        modal: true,

@@ -32,11 +32,11 @@ class PersonaController{
                 $nombreDirectorio = "../Contratos-Fotos/";
                 $nombreFichero = $_FILES['ContratoPDF']['name'];
                 $nombrefoto=$_FILES['imagen']['name'];
-                $nuevo_path="../Contratos-Fotos/".date("d")."-".date("F")."-".date("Y")."-".date("H")."-".date("i")."-".date("s")."-" .$nombrefoto;
+                $nuevo_path="../Contratos-Fotos/".date("d")."-".date("F")."-".date("Y")."-".date("H").":".date("i").":".date("s")."-" .$nombrefoto;
                 $nuevo_path2="../Contratos-Fotos/".date("d")."-".date("F")."-".date("Y")."-".date("H")."-".date("i")."-".date("s")."-" .$nombreFichero;
 
-                move_uploaded_file($_FILES['ContratoPDF']['tmp_name'], $nombreDirectorio.date("d")."-".date("F")."-".date("Y")."-".date("H")."-".date("i")."-".date("s")."-" .$nombreFichero);
-                move_uploaded_file($_FILES['imagen']['tmp_name'], $nombreDirectorio.date("d")."-".date("F")."-".date("Y")."-".date("H")."-".date("i")."-".date("s")."-" .$nombrefoto);
+                move_uploaded_file($_FILES['ContratoPDF']['tmp_name'], $nombreDirectorio.date("d")."-".date("F")."-".date("Y")."-".date("H").":".date("i").":".date("s")."-" .$nombreFichero);
+                move_uploaded_file($_FILES['imagen']['tmp_name'], $nombreDirectorio.date("d")."-".date("F")."-".date("Y")."-".date("H").":".date("i").":".date("s")."-" .$nombrefoto);
 
             } else{
                 echo ("No se ha podido subir el fichero");
