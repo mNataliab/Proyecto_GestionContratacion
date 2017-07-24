@@ -25,7 +25,7 @@ class PersonaController{
     static public function crear(){
         try{
             $arrayPersona = array();
-<<<<<<< HEAD
+
             $tmp_name2 = $_FILES['Contrato_PDF']['tmp_name2'];
             $name2 = $_FILES['Contrato_PDF']['name2'];
             $tmp_name = $_FILES['imagen']['tmp_name'];
@@ -40,7 +40,7 @@ class PersonaController{
                 move_uploaded_file($tmp_name2,$nuevo_path2);
             }else{
               //  header("Location: ../Vista/createPersona.php?respuesta=errorFoto");
-=======
+
 
             if (is_uploaded_file($_FILES['ContratoPDF']['tmp_name'])&& is_uploaded_file($_FILES['imagen']['tmp_name']))
             {
@@ -57,7 +57,7 @@ class PersonaController{
             } else{
                 echo ("No se ha podido subir el fichero");
              header("Location: ../Vista/createPersona.php?respuesta=errorFoto");
->>>>>>> d1a223ec51db908e3df5e8632dc0fa161664ee0c
+
             }
 
             $arrayPersona['Tipo_Documento'] = $_POST['TipoDocumento'];
@@ -82,7 +82,8 @@ class PersonaController{
             header("Location: ../Vista/createPersona.php?respuesta=correcto");
 
 
-        }catch(Exception $e){
+        }
+    }catch(Exception $e){
             header("Location: ../Vista/createPersona.php?respuesta=error");
         }
     }
@@ -194,4 +195,36 @@ class PersonaController{
 
         return  $htmlSelect;
     }
+
+
+       static public function buscarID($id){
+            try{
+                $arrPersona = Persona::buscarForId($id);
+                $htmlSelect = "";
+                foreach ($arrPersona as $persona){
+                    $htmlSelect .="<label id='idPersona' hidden>".$persona->getidPersona()."</label><br>";
+                    $htmlSelect .="<label for='Tipo_Documento'>Tipo de Documento:  </label><label>".$persona->getTipo_Documento()."</label><br>";
+                    $htmlSelect .="<label for='Documento'>Documento:  </label><label>".$persona->getDocumento()."</label><br>";
+                    $htmlSelect .="<label for='Foto'>Foto:  </label><label>".$persona->getFoto()."</label><br>";
+                    $htmlSelect .="<label for='Fecha_Nacimiento'>Fecha de Nacimiento:  </label><label>".$persona->getFecha_Nacimiento()."</label><br>";
+                    $htmlSelect .="<label for='Genero'>Genero: </label><label>".$persona->getGenero()."</label><br>";
+                    $htmlSelect .="<label for='Nombres'>Nombres:  </label><label>".$persona->getNombres()."</label><br>";
+                    $htmlSelect .="<label for='Apellidos'>Apellidos:  </label><label>".$persona->getApellidos()."</label><br>";
+                    $htmlSelect .="<label for='Telefono'>Telefono:  </label><label>".$persona->getTelefono()."</label><br>";
+                    $htmlSelect .="<label for='Direccion'>Direccion:  </label><label>".$persona->getDireccion()."</label><br>";
+                    $htmlSelect .="<label for='Correo'>Email:  </label><label >".$persona->getCorreo()."</label><br>";
+                    $htmlSelect .="<label for='Contro_PDF'>Contrato_PDF:  </label><label>".$persona->getContrato_PDF()."</label><br>";
+                    $htmlSelect .="<label for='NRP'>N° de Registro Profesional: </label><label>".$persona->getNRP()."</label><br>";
+                    $htmlSelect .="<label for='Usuario'>Usuario: </label><label>".$persona->getUsuario()."</label><br>";
+                    $htmlSelect .="<label for='Contrasena'>Contraseña:  </label><label>".$persona->getContrasena()."</label><br>";
+                    $htmlSelect .="<label for='Estado'>Estado:  </label><label >".$persona->getEstado()." </label><br>";
+                    $htmlSelect .="<label for='Cargo'>Cargo:   </label><label>".$persona->getCargo()."</label><br>";
+
+                }
+                return $htmlSelect;
+            }catch (Exception $e) {
+                header("Location: ../agregarEspecialidad.php?respuesta=error");
+            }
+
+        }
 }

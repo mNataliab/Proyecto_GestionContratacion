@@ -421,6 +421,33 @@ class Persona extends db_abstract_class
 
     public static function buscarForId($id)
     {
+        $tmp = new Persona();
+        if ($id > 0) {
+            $getrow = $tmp->getRow("SELECT * FROM persona WHERE idPersona =?", array($id));
+            $tmp = new Persona();
+            $tmp->idPersona = $getrow['idPersona'];
+            $tmp->Tipo_Documento = $getrow['Tipo_Documento'];
+            $tmp->Documento = $getrow['Documento'];
+            $tmp->Foto = $getrow['Foto'];
+            $tmp->Fecha_Nacimiento = $getrow['Fecha_Nacimiento'];
+            $tmp->Genero = $getrow['Genero'];
+            $tmp->Nombres = $getrow['Nombres'];
+            $tmp->Apellidos = $getrow['Apellidos'];
+            $tmp->Telefono = $getrow['Telefono'];
+            $tmp->Direccion = $getrow['Direccion'];
+            $tmp->Correo = $getrow['Correo'];
+            $tmp->Contrato_PDF = $getrow['Contrato_PDF'];
+            $tmp->NRP = $getrow['NRP'];
+            $tmp->Usuario = $getrow['Usuario'];
+            $tmp->Contrasena = $getrow['Contrasena'];
+            $tmp->Estado = $getrow['Estado'];
+            $tmp->Cargo = $getrow['Cargo'];
+            $tmp->Fecha_Registro = $getrow['Fecha_Registro'];
+            $tmp->Disconnect();
+            return $tmp;
+        }else{
+            return NULL;
+        }
 
     }
 
