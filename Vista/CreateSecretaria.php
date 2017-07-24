@@ -1,3 +1,13 @@
+<?php session_start();
+require "../Controlador/SecretariaController.php";
+if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true)
+{
+}else
+{
+    header("Location: 403.html");
+
+}?>
+
 <!doctype html>
 <html>
 
@@ -284,10 +294,9 @@
             <script >
                $(document).ready(function() {
 
-
           $( "#correcto" ).dialog({
                        modal: true,
-                       buttons: {
+                        buttons: {
                            Ok: function() {
                                $(this).hide("explode");
                                $( this ).dialog( "close" );
