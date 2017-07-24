@@ -78,14 +78,12 @@ class PersonaController{
             if(!empty($Usuario) && !empty($Contrasena)){
                 $respuesta = PersonaController::validLogin($Usuario, $Contrasena);
                 if (is_array($respuesta)) {
-                    foreach ($respuesta as $id){
 
-                    }
                     $_SESSION['verificar']=true;
                     $_SESSION['DataPersona'] = $respuesta;
                     echo TRUE;
 
-                    PersonaController::InicioUsuario($respuesta);
+                   // PersonaController::InicioUsuario($respuesta);
                 }else if($respuesta == "Password Incorrecto"){
                     echo "<div class='alert alert-danger alert-dismissable'>";
                     echo "    <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>";
