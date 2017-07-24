@@ -27,6 +27,7 @@ if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true)
     <meta name="msapplication-TileImage" content="assets/img/metis-tile.png" />
 
     <!-- Bootstrap -->
+    <link rel="icon" href="assets/img/icono.png">
     <link rel="stylesheet" href="assets/lib/bootstrap/css/bootstrap.css">
 
     <!-- Font Awesome -->
@@ -257,7 +258,7 @@ if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true)
 
             <!-- /#wrap -->
             <footer class="Footer bg-dark dker">
-                <p>2017 &copy; Metis Bootstrap Admin Template v2.4.2</p>
+                <p>2017 &copy; SIC-Sistema Integrado de Contratacion. v1.0</p>
             </footer>
             <!-- /#footer -->
             <!-- #helpModal -->

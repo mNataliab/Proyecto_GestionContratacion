@@ -16,7 +16,7 @@
     
     <meta name="msapplication-TileColor" content="#5bc0de" />
     <meta name="msapplication-TileImage" content="assets/img/metis-tile.png" />
-    
+    <link rel="icon" href="assets/img/icono.png">
     <!-- Bootstrap -->
     <link rel="stylesheet" href="assets/lib/bootstrap/css/bootstrap.css">
     
@@ -49,7 +49,7 @@
 
       <div class="form-signin">
     <div class="text-center">
-        <img src="assets/img/logo.png" alt="Metis Logo">
+        <img src="assets/img/logosic.png" alt="SIC Logo">
     </div>
     <hr>
     <div class="tab-content">

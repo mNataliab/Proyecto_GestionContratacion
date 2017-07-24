@@ -29,6 +29,19 @@
         <li class="">
             <a href="javascript:;">
                 <i class="fa fa-building "></i>
+                <span class="link-title">Inicio</span>
+                <span class="fa arrow"></span>
+            </a>
+            <ul class="collapse">
+                <li>
+                    <a href="index.php">
+                        <i class="fa  glyphicon-user"></i> Volver al inicio </a>
+                </li>
+            </ul>
+        </li>
+        <li class="">
+            <a href="javascript:;">
+                <i class="fa fa-building "></i>
                 <span class="link-title">Personas</span>
                 <span class="fa arrow"></span>
             </a>
@@ -37,12 +50,8 @@
                     <a href="CreatePersona.php">
                         <i class="fa  glyphicon-user"></i>&nbsp; Registrar </a>
                 </li>
-
             </ul>
-
-
         </li>
-
 
         <li class="">
             <a href="javascript:;">
@@ -55,10 +64,7 @@
                     <a href="CreateSecretaria.php">
                         <i class="fa  glyphicon-user"></i>&nbsp; Registrar </a>
                 </li>
-
             </ul>
-
-
         </li>
 
     </ul>

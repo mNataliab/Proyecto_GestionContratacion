@@ -27,6 +27,7 @@ if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true)
     <meta name="msapplication-TileImage" content="assets/img/metis-tile.png" />
 
     <!-- Bootstrap -->
+    <link rel="icon" href="assets/img/icono.png">
     <link rel="stylesheet" href="assets/lib/bootstrap/css/bootstrap.css">
 
     <!-- Font Awesome -->
@@ -68,10 +69,7 @@ if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true)
         };
     </script>
 
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="/resources/demos/style.css">
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
     <link rel="stylesheet" href="assets/css/style-switcher.css">
     <link rel="stylesheet/less" type="text/css" href="assets/less/theme.less">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.7.1/less.js"></script>
@@ -371,7 +369,7 @@ if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true)
 
             <!-- /#wrap -->
             <footer class="Footer bg-dark dker">
-                <p>2017 &copy; Metis Bootstrap Admin Template v2.4.2</p>
+                <p>2017 &copy; SIC-Sistema Integrado de Contratacion. v1.0</p>
             </footer>
             <!-- /#footer -->
             <!-- #helpModal -->
@@ -418,25 +416,7 @@ if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true)
                             $('#Secretaria').hide();
                         }
                     });
-                    $( "#correcto" ).dialog({
-                        modal: true,
-                        buttons: {
-                            Ok: function() {
-                                $(this).hide("explode");
-                                $( this ).dialog( "close" );
-                            }
-                        }
 
-                    });
-                    $( "#error" ).dialog({
-                        modal: true,
-                        buttons: {
-                            Ok: function() {
-                                $(this).hide("explode");
-                                $( this ).dialog( "close" );
-                            }
-                        }
-                    });
                 });
             </script>
 
