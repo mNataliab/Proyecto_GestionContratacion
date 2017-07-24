@@ -54,7 +54,14 @@ abstract class db_abstract_class {
             throw new Exception($e->getMessage());
         }
     }
-
+    public function getCount($query){
+        try{
+        $stmt =$this->datab->prepare($query);
+        return $stmt->fetch();
+        }catch(PDOException $e){
+            throw new Exception($e->getMessage());
+        }
+    }
     //Getting multiple rows
     //$getrows = $database->getRows("SELECT id, username FROM users");
     public function getRows($query, $params=array()){
@@ -66,6 +73,7 @@ abstract class db_abstract_class {
             throw new Exception($e->getMessage());
         }
     }
+
 
     //inserting un campo
     //$insertrow = $database ->insertRow("INSERT INTO users (username, email) VALUES (?, ?)", array("Diego", "yusaf@email.com"));

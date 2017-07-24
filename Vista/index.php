@@ -1,4 +1,5 @@
 <?php session_start();
+require "../Controlador/SecretariaController.php";
 if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true){
 }else{
     header("Location: 403.html");
@@ -74,8 +75,63 @@ if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true){
                 <div id="content">
                     <div class="outer">
                         <div class="inner bg-light lter">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <h2>Registros <small>Todos los usuarios</small> </h2>
 
+                                    <ul class="pricing-table" contenteditable id="light">
+                                        <li class="col-lg-3">
+                                            <h3>Secretarias</h3>
+                                            <div class="price-body">
+                                                <div >
+                                                <?php Secretaria::showCount(); ?>
+                                                </div>
+                                            </div>
 
+                                            <div class="footer">
+                                                <a href="#" class="btn btn-info btn-rect">Get Started</a>
+                                            </div>
+                                        </li>
+                                        <!-- Active/Hover styles -->
+                                        <li class="col-lg-3">
+                                            <h3>Basic</h3>
+                                            <div class="price-body">
+                                                <div >
+
+                                                </div>
+                                            </div>
+                                            <div class="footer">
+                                                <a href="#" class="btn btn-info btn-rect">Get Started</a>
+                                            </div>
+                                        </li>
+                                        <li class="col-lg-3">
+                                            <h3>Premium</h3>
+                                            <div class="price-body">
+                                                <div>
+
+                                                </div>
+                                            </div>
+                                            <div class="footer">
+                                                <a href="#" class="btn btn-info btn-rect">Get Started</a>
+                                            </div>
+                                        </li>
+                                        <li class="col-lg-3">
+                                            <h3>Ultra</h3>
+                                            <div class="price-body">
+                                                <div class="price">
+
+                                                </div>
+                                            </div>
+                                            <div class="footer">
+                                                <a href="#" class="btn btn-info btn-rect">Get Started</a>
+                                            </div>
+                                        </li>
+                                        <div class="clearfix"></div>
+                                    </ul>
+
+                                </div>
+                                <!-- /.col-lg-12 -->
+                            </div>
                         </div>
                         <!-- /.inner -->
                     </div>
