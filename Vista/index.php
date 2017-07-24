@@ -1,3 +1,10 @@
+<?php session_start();
+require "../Controlador/SecretariaController.php";
+if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true){
+}else{
+    header("Location: 403.html");
+}
+?>
 <!doctype html>
 <html>
 
@@ -15,7 +22,7 @@
 
     <meta name="msapplication-TileColor" content="#5bc0de" />
     <meta name="msapplication-TileImage" content="assets/img/metis-tile.png" />
-
+    <link rel="icon" href="assets/img/icono.png">
     <!-- Bootstrap -->
     <link rel="stylesheet" href="assets/lib/bootstrap/css/bootstrap.css">
 
@@ -68,8 +75,63 @@
                 <div id="content">
                     <div class="outer">
                         <div class="inner bg-light lter">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <h2>Registros <small>Todos los usuarios</small> </h2>
 
+                                    <ul class="pricing-table" contenteditable id="light">
+                                        <li class="col-lg-3">
+                                            <h3>Secretarias</h3>
+                                            <div class="price-body">
+                                                <div >
+                                                <?php Secretaria::showCount(); ?>
+                                                </div>
+                                            </div>
 
+                                            <div class="footer">
+                                                <a href="#" class="btn btn-info btn-rect">Get Started</a>
+                                            </div>
+                                        </li>
+                                        <!-- Active/Hover styles -->
+                                        <li class="col-lg-3">
+                                            <h3>Basic</h3>
+                                            <div class="price-body">
+                                                <div >
+
+                                                </div>
+                                            </div>
+                                            <div class="footer">
+                                                <a href="#" class="btn btn-info btn-rect">Get Started</a>
+                                            </div>
+                                        </li>
+                                        <li class="col-lg-3">
+                                            <h3>Premium</h3>
+                                            <div class="price-body">
+                                                <div>
+
+                                                </div>
+                                            </div>
+                                            <div class="footer">
+                                                <a href="#" class="btn btn-info btn-rect">Get Started</a>
+                                            </div>
+                                        </li>
+                                        <li class="col-lg-3">
+                                            <h3>Ultra</h3>
+                                            <div class="price-body">
+                                                <div class="price">
+
+                                                </div>
+                                            </div>
+                                            <div class="footer">
+                                                <a href="#" class="btn btn-info btn-rect">Get Started</a>
+                                            </div>
+                                        </li>
+                                        <div class="clearfix"></div>
+                                    </ul>
+
+                                </div>
+                                <!-- /.col-lg-12 -->
+                            </div>
                         </div>
                         <!-- /.inner -->
                     </div>
@@ -77,70 +139,12 @@
                 </div>
                 <!-- /#content -->
 
-                    <div id="right" class="onoffcanvas is-right is-fixed bg-light" aria-expanded=false>
-                        <a class="onoffcanvas-toggler" href="#right" data-toggle=onoffcanvas aria-expanded=false></a>
-                        <br>
-                        <br>
-                        <div class="alert alert-danger">
-                            <button type="button" class="close" data-dismiss="alert">&times;</button>
-                            <strong>Warning!</strong> Best check yo self, you're not looking too good.
-                        </div>
-                        <!-- .well well-small -->
-                        <div class="well well-small dark">
-                            <ul class="list-unstyled">
-                                <li>Visitor <span class="inlinesparkline pull-right">1,4,4,7,5,9,10</span></li>
-                                <li>Online Visitor <span class="dynamicsparkline pull-right">Loading..</span></li>
-                                <li>Popularity <span class="dynamicbar pull-right">Loading..</span></li>
-                                <li>New Users <span class="inlinebar pull-right">1,3,4,5,3,5</span></li>
-                            </ul>
-                        </div>
-                        <!-- /.well well-small -->
-                        <!-- .well well-small -->
-                        <div class="well well-small dark">
-                            <button class="btn btn-block">Default</button>
-                            <button class="btn btn-primary btn-block">Primary</button>
-                            <button class="btn btn-info btn-block">Info</button>
-                            <button class="btn btn-success btn-block">Success</button>
-                            <button class="btn btn-danger btn-block">Danger</button>
-                            <button class="btn btn-warning btn-block">Warning</button>
-                            <button class="btn btn-inverse btn-block">Inverse</button>
-                            <button class="btn btn-metis-1 btn-block">btn-metis-1</button>
-                            <button class="btn btn-metis-2 btn-block">btn-metis-2</button>
-                            <button class="btn btn-metis-3 btn-block">btn-metis-3</button>
-                            <button class="btn btn-metis-4 btn-block">btn-metis-4</button>
-                            <button class="btn btn-metis-5 btn-block">btn-metis-5</button>
-                            <button class="btn btn-metis-6 btn-block">btn-metis-6</button>
-                        </div>
-                        <!-- /.well well-small -->
-                        <!-- .well well-small -->
-                        <div class="well well-small dark">
-                            <span>Default</span><span class="pull-right"><small>20%</small></span>
-                        
-                            <div class="progress xs">
-                                <div class="progress-bar progress-bar-info" style="width: 20%"></div>
-                            </div>
-                            <span>Success</span><span class="pull-right"><small>40%</small></span>
-                        
-                            <div class="progress xs">
-                                <div class="progress-bar progress-bar-success" style="width: 40%"></div>
-                            </div>
-                            <span>warning</span><span class="pull-right"><small>60%</small></span>
-                        
-                            <div class="progress xs">
-                                <div class="progress-bar progress-bar-warning" style="width: 60%"></div>
-                            </div>
-                            <span>Danger</span><span class="pull-right"><small>80%</small></span>
-                        
-                            <div class="progress xs">
-                                <div class="progress-bar progress-bar-danger" style="width: 80%"></div>
-                            </div>
-                        </div>
-                    </div>
+
                     <!-- /#right -->
             </div>
             <!-- /#wrap -->
             <footer class="Footer bg-dark dker">
-                <p>2017 &copy; Metis Bootstrap Admin Template v2.4.2</p>
+                <p>2017 &copy; SIC-Sistema Integrado de Contratacion. v1.0</p>
             </footer>
             <!-- /#footer -->
             <!-- #helpModal -->

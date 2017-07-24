@@ -154,6 +154,12 @@ class Secretaria extends db_abstract_class
         $this->Direccion = $Direccion;
     }
 
+    /**
+     * @return mixed
+     */
+
+
+
     protected static function buscarForId($id)
     {
         // TODO: Implement buscarForId() method.
@@ -185,8 +191,16 @@ class Secretaria extends db_abstract_class
     {
         return Secretaria::buscar("SELECT * FROM Secretarias");
     }
-
-    public function insertar()
+    public static function showCount()
+    {
+        $tmp = new Secretaria();
+        $getRows = $tmp->getCount("SELECT COUNT(secretarias.idSecretarias) FROM proyectophp.secretarias");
+        $html ="";
+            $html .= "<span class='price-figure'>" .$getRows. "</span>";
+        $tmp->Disconnect();
+        return $html;
+    }
+    public  function insertar()
     {
         $this->insertRow("INSERT INTO proyectophp.secretarias VALUES (NULL, ?, ?, ?, ?, ?, ?)",array(
             $this->Nombre,

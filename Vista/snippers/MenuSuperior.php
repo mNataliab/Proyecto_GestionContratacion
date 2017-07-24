@@ -12,67 +12,41 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
+                    <br>
                 </button>
-                <a href="index.php" class="navbar-brand"><img src="assets/img/logo.png" alt=""></a>
+
+                <a href="index.php" class="navbar-brand"><img src="assets/img/logomenu.png" alt=""></a>
             </header>
             <div class="topnav">
                 <div class="btn-group">
-                    <a data-placement="bottom" data-original-title="Fullscreen" data-toggle="tooltip"
+                    <a data-placement="bottom" data-original-title="Pantalla Completa" data-toggle="tooltip"
                        class="btn btn-default btn-sm" id="toggleFullScreen">
                         <i class="glyphicon glyphicon-fullscreen"></i>
                     </a>
                 </div>
-                <div class="btn-group">
-                    <a data-placement="bottom" data-original-title="E-mail" data-toggle="tooltip"
-                       class="btn btn-default btn-sm">
-                        <i class="fa fa-envelope"></i>
-                        <span class="label label-warning"></span>
-                    </a>
-                    <a data-placement="bottom" data-original-title="Messages" href="#" data-toggle="tooltip"
-                       class="btn btn-default btn-sm">
-                        <i class="fa fa-comments"></i>
-                        <span class="label label-danger"></span>
-                    </a>
 
-                </div>
                 <div class="btn-group">
-                    <a href="../Controlador/PersonaController.php?action=CerrarSession"" data-toggle="tooltip" data-original-title="Logout" data-placement="bottom"
+                    <a href="../Controlador/PersonaController.php?action=CerrarSession" data-toggle="tooltip" data-original-title="Cerrar sesion" data-placement="bottom"
                        class="btn btn-metis-1 btn-sm">
                         <i class="fa fa-power-off"></i>
                     </a>
                 </div>
                 <div class="btn-group">
-                    <a data-placement="bottom" data-original-title="Show / Hide Left" data-toggle="tooltip"
+                    <a data-placement="bottom" data-original-title="Mostar / Esconder Menu" data-toggle="tooltip"
                        class="btn btn-primary btn-sm toggle-left" id="menu-toggle">
                         <i class="fa fa-bars"></i>
                     </a>
-                    <a href="#right" data-toggle="onoffcanvas" class="btn btn-default btn-sm" aria-expanded="false">
-                        <span class="fa fa-fw fa-comment"></span>
-                    </a>
+
                 </div>
 
             </div>
-
-
-
-
-            <div class="collapse navbar-collapse navbar-ex1-collapse">
+       <div class="collapse navbar-collapse navbar-ex1-collapse">
 
                 <!-- .nav -->
                 <ul class="nav navbar-nav">
-                    <li><a href="dashboard.html">Dashboard</a></li>
-                    <li><a href="table.html">Tables</a></li>
-                    <li class='dropdown '>
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            Form Elements <b class="caret"></b>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="form-general.html">General</a></li>
-                            <li><a href="form-validation.html">Validation</a></li>
-                            <li><a href="form-wysiwyg.html">WYSIWYG</a></li>
-                            <li><a href="form-wizard.html">Wizard &amp; File Upload</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="index.php">Inicio</a></li>
+                    <li><a href="sitio.html">Sitio web</a></li>
+
                 </ul>
                 <!-- /.nav -->
             </div>
@@ -84,7 +58,7 @@
         <div class="search-bar">
             <form class="main-search" action="">
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Live Search ...">
+                    <input type="text" class="form-control" placeholder="Buscar...">
                     <span class="input-group-btn">
                                                 <button class="btn btn-primary btn-sm text-muted" type="button">
                                                     <i class="fa fa-search"></i>

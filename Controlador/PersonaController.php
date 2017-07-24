@@ -25,6 +25,7 @@ class PersonaController{
     static public function crear(){
         try{
             $arrayPersona = array();
+<<<<<<< HEAD
             $tmp_name2 = $_FILES['Contrato_PDF']['tmp_name2'];
             $name2 = $_FILES['Contrato_PDF']['name2'];
             $tmp_name = $_FILES['imagen']['tmp_name'];
@@ -39,7 +40,26 @@ class PersonaController{
                 move_uploaded_file($tmp_name2,$nuevo_path2);
             }else{
               //  header("Location: ../Vista/createPersona.php?respuesta=errorFoto");
+=======
+
+            if (is_uploaded_file($_FILES['ContratoPDF']['tmp_name'])&& is_uploaded_file($_FILES['imagen']['tmp_name']))
+            {
+
+                $nombreDirectorio = "../Contratos-Fotos/";
+                $nombreFichero = $_FILES['ContratoPDF']['name'];
+                $nombrefoto=$_FILES['imagen']['name'];
+                $nuevo_path="../Contratos-Fotos/".date("d")."-".date("F")."-".date("Y")."-".date("H").":".date("i").":".date("s")."-" .$nombrefoto;
+                $nuevo_path2="../Contratos-Fotos/".date("d")."-".date("F")."-".date("Y")."-".date("H")."-".date("i")."-".date("s")."-" .$nombreFichero;
+
+                move_uploaded_file($_FILES['ContratoPDF']['tmp_name'], $nombreDirectorio.date("d")."-".date("F")."-".date("Y")."-".date("H").":".date("i").":".date("s")."-" .$nombreFichero);
+                move_uploaded_file($_FILES['imagen']['tmp_name'], $nombreDirectorio.date("d")."-".date("F")."-".date("Y")."-".date("H").":".date("i").":".date("s")."-" .$nombrefoto);
+
+            } else{
+                echo ("No se ha podido subir el fichero");
+             header("Location: ../Vista/createPersona.php?respuesta=errorFoto");
+>>>>>>> d1a223ec51db908e3df5e8632dc0fa161664ee0c
             }
+
             $arrayPersona['Tipo_Documento'] = $_POST['TipoDocumento'];
             $arrayPersona['Documento']=$_POST['Documento'];
             $arrayPersona['Foto'] = $nuevo_path;
@@ -56,26 +76,31 @@ class PersonaController{
             $arrayPersona['Contrasena'] = $_POST['Contrasena'];
             $arrayPersona['Estado'] = $_POST['Estado'];
             $arrayPersona['Cargo'] = $_POST['Cargo'];
-            $arrayPersona['Secretarias_idSecretarias'] = $_GET['Secretarias_idSecretarias'];
+            $arrayPersona['idSecretarias'] = $_POST['idSecretarias'];
             $Persona = new Persona($arrayPersona);
             $Persona->insertar();
-          //  header("Location: ../Vista/createPersona.php?respuesta=correcto");
+            header("Location: ../Vista/createPersona.php?respuesta=correcto");
 
 
         }catch(Exception $e){
-//            header("Location: ../Vista/createPersona.php?respuesta=error");
+            header("Location: ../Vista/createPersona.php?respuesta=error");
         }
     }
 
-    public function Login (){
+  static public function Login (){
         try {
             $Usuario = $_POST['Usuario'];
             $Contrasena = $_POST['Contrasena'];
+            $arrayPesona= array();
             if(!empty($Usuario) && !empty($Contrasena)){
                 $respuesta = PersonaController::validLogin($Usuario, $Contrasena);
                 if (is_array($respuesta)) {
-                    $_SESSION['DataPaciente'] = $respuesta;
+
+                    $_SESSION['verificar']=true;
+                    $_SESSION['DataPersona'] = $respuesta;
                     echo TRUE;
+
+                   // PersonaController::InicioUsuario($respuesta);
                 }else if($respuesta == "Password Incorrecto"){
                     echo "<div class='alert alert-danger alert-dismissable'>";
                     echo "    <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>";
@@ -121,7 +146,7 @@ class PersonaController{
         $tmp->Disconnect();
         return $arrPersona;
     }
-    public function Verificacion(){
+   static public function Verificacion(){
         $arrayperso = array();
         $tmp = new Persona();
         $Usuario=$_POST['Usuario'];
@@ -137,11 +162,24 @@ class PersonaController{
     }
 
     public function CerrarSession (){
-        session_destroy();
-        header("Location: ../Vista/login.php");
-    }
-    public function InicioUsuario(){
 
+        unset($_COOKIE);
+        header("Location: ../Vista/login.php");
+        session_destroy();
+    }
+   static public function InicioUsuario($respuesta){
+        $arrayPesona=$respuesta;
+        foreach ($arrayPesona as $persona){
+            $htmlInicio="";
+            $htmlInicio .="<h5 class='media-heading'>".$persona->getNombres()." ".$persona->getApellidos()."</h5>";
+            $htmlInicio .="<ul class='list-unstyled user-info'>";
+            $htmlInicio .="<li>".$persona->getCargo()."</li>";
+            $htmlInicio .="<li>Pendiente<br>";
+            $htmlInicio .="<small><i class='fa fa-calendar'></i>".date('d').' de '.date('F').' del '.date('Y')."</small>";
+            $htmlInicio .="</li>";
+            $htmlInicio .="</ul>";
+        }
+        return $htmlInicio;
     }
     public function Usuario (){
        $arrPerson = Persona::getAll();

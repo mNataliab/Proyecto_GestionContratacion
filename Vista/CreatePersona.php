@@ -1,4 +1,13 @@
-<?php require "../Controlador/SecretariaController.php";?>
+<?php session_start();
+require "../Controlador/SecretariaController.php";
+if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true)
+{
+}else
+{
+    header("Location: 403.html");
+
+}?>
+
 <!doctype html>
 <html>
 
@@ -18,6 +27,7 @@
     <meta name="msapplication-TileImage" content="assets/img/metis-tile.png" />
 
     <!-- Bootstrap -->
+    <link rel="icon" href="assets/img/icono.png">
     <link rel="stylesheet" href="assets/lib/bootstrap/css/bootstrap.css">
 
     <!-- Font Awesome -->
@@ -57,6 +67,7 @@
             rootpath: "/assets/"
         };
     </script>
+
 
     <link rel="stylesheet" href="assets/css/style-switcher.css">
     <link rel="stylesheet/less" type="text/css" href="assets/less/theme.less">
@@ -116,9 +127,7 @@
                                         <?php } ?>
                                     <?php } ?>
 
-                                    <form class="form-horizontal" id="popup-validation"   action="../Controlador/PersonaController.php?action=crear" method="POST">
-
-                                    <form class="form-horizontal" id="popup-validation" action="">
+                                    <form class="form-horizontal" id="popup-validation"  enctype="multipart/form-data" action="../Controlador/PersonaController.php?action=crear" method="POST">
 
 
                                         <div class="form-group">
@@ -207,18 +216,7 @@
                                             <label class="control-label col-lg-4">Usuario</label>
                                             <div class="col-lg-4">
                                                 <input required placeholder="Usuario" type="text" class="validate[required] form-control" name="Usuario" id="Usuario">
-                                                <div id="correcto" class="correcto"><?php
-                                                    echo "<div class='alert alert-success alert-dismissable'>";
-                                                    echo "    <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>";
-                                                    echo "    <strong>Correcto!</strong>.Usuario correcto!.";
-                                                    echo "</div>";
-                                                    ?></div>
-                                                <div id="incorrecto" class="Incorrecto"><?php
-                                                    echo "<div class='alert alert-danger alert-dismissable'>";
-                                                    echo "    <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>";
-                                                    echo "    <strong>Error!</strong>.Este usuario ya existe!.";
-                                                    echo "</div>";
-                                                    ?></div>
+
                                             </div>
                                         </div>
 
@@ -252,7 +250,11 @@
                                                 </select>
                                             </div>
                                         </div>
+<<<<<<< HEAD
                                         <div class="form-group" name="Secretarias_idSecretarias" id="Secretarias_idSecretarias">
+=======
+                                        <div class="form-group" name="idSecretarias" id="idSecretarias">
+>>>>>>> d1a223ec51db908e3df5e8632dc0fa161664ee0c
                                             <label class="control-label col-lg-4">Secretaria</label>
                                             <div class="col-lg-4">
                                                 <?php echo SecretariaController::selectSecretaria(true,"form-group"); ?>
@@ -262,7 +264,11 @@
                                         <div class="form-group">
                                             <label class="control-label col-lg-4">Contrato</label>
                                             <div class="col-lg-8">
+<<<<<<< HEAD
                                                 <input  type="file" id="Contrato_PDF" name="Contrato_PDF"/>
+=======
+                                                <input  type="file" name="ContratoPDF" id="ContratoPDF">
+>>>>>>> d1a223ec51db908e3df5e8632dc0fa161664ee0c
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -370,7 +376,7 @@
 
             <!-- /#wrap -->
             <footer class="Footer bg-dark dker">
-                <p>2017 &copy; Metis Bootstrap Admin Template v2.4.2</p>
+                <p>2017 &copy; SIC-Sistema Integrado de Contratacion. v1.0</p>
             </footer>
             <!-- /#footer -->
             <!-- #helpModal -->
@@ -403,11 +409,16 @@
             <!-- /#helpModal -->
             <!--jQuery -->
             <script src="assets/lib/jquery/jquery.js"></script>
-
             <script >
+<<<<<<< HEAD
                $(document).ready(function() {
                     $('#Secretarias_idSecretarias').hide();
                     $('#Cargo').change(function() {
+=======
+                $(document).ready(function() {
+                    $('#Secretaria').hide();
+                    $('#Tipo_Usuario').change(function() {
+>>>>>>> d1a223ec51db908e3df5e8632dc0fa161664ee0c
                         if($(this).val() == 'General'){
                             $('#Secretarias_idSecretarias').show();
                         }else if($(this).val() == 'Subgeneral'){
@@ -417,36 +428,12 @@
                         } else{
                             $('#Secretarias_idSecretarias').hide();
                         }
-                    })
+                    });
+
                 });
             </script>
-            <script type="text/javascript">
-                $(document).ready(function() {
-                    $('#correcto').hide();
-                    $('#incorrecto').hide();
-                    $('#Usuario').on('keyup', function (e) {
-                        if (!e.isDefaultPrevented()) {
-                            var formData = $(this).serialize(); //Serializamos los campos del formulario
-                            $.ajax({
-                                type        : 'POST', // Metodo de Envio
-                                url         : '../Controlador/PersonaController.php?action=Verificacion', // Ruta del envio
-                                data        : formData, // our data object
-                                //dataType    : 'json', // what type of data do we expect back from the server
-                                encode      : true
-                            })
-                                .done(function(data) {
-                                    console.log(data);
-                                    if (data == true){
-                                        $('#incorrecto').show();
-                                    }else if (data== false){
-                                        $('#correcto').show();
-                                    }
-                                });
-                            event.preventDefault();
-                        }
-                    })
-                });
-            </script>
+
+
                 <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
             <script src="//cdnjs.cloudflare.com/ajax/libs/jQuery-Validation-Engine/2.6.4/jquery.validationEngine.min.js"></script>
             <script src="//cdnjs.cloudflare.com/ajax/libs/jQuery-Validation-Engine/2.6.4/languages/jquery.validationEngine-en.min.js"></script>
@@ -491,31 +478,7 @@
 
 
             <script >
-                $(document).ready(function() {
 
-
-                    $( "#dialogo" ).on( "click", function() {
-                        $( "#correcto" ).dialog( "open" );
-                    });
-                    $( "#error" ).dialog({
-
-                        autoOpen: true,
-                        show: {
-                            effect: "blind",
-                            duration: 1000
-                        },
-                        hide: {
-                            effect: "explode",
-                            duration: 1000
-
-                        }
-                    });
-
-                    $( "#dialogo" ).on( "click", function() {
-                        $( "#error" ).dialog( "open" );
-                    });
-
-                });
             </script>
 
         </body>

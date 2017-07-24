@@ -1,3 +1,13 @@
+<?php session_start();
+require "../Controlador/SecretariaController.php";
+if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true)
+{
+}else
+{
+    header("Location: 403.html");
+
+}?>
+
 <!doctype html>
 <html>
 
@@ -17,6 +27,7 @@
     <meta name="msapplication-TileImage" content="assets/img/metis-tile.png" />
 
     <!-- Bootstrap -->
+    <link rel="icon" href="assets/img/icono.png">
     <link rel="stylesheet" href="assets/lib/bootstrap/css/bootstrap.css">
 
     <!-- Font Awesome -->
@@ -247,7 +258,7 @@
 
             <!-- /#wrap -->
             <footer class="Footer bg-dark dker">
-                <p>2017 &copy; Metis Bootstrap Admin Template v2.4.2</p>
+                <p>2017 &copy; SIC-Sistema Integrado de Contratacion. v1.0</p>
             </footer>
             <!-- /#footer -->
             <!-- #helpModal -->
@@ -283,22 +294,10 @@
 
             <script >
                $(document).ready(function() {
-                    $('#Secretaria').hide();
-                    $('#Tipo_Usuario').change(function() {
-                        if($(this).val() == 'General'){
-                            $('#Secretaria').show();
-                        }else if($(this).val() == 'Subgeneral'){
-                            $('#Secretaria').show();
-                        }else if($(this).val() == 'Secretari@'){
-                            $('#Secretaria').show();
-                        } else{
-                            $('#Secretaria').hide();
-                        }
-                    });
 
           $( "#correcto" ).dialog({
                        modal: true,
-                       buttons: {
+                        buttons: {
                            Ok: function() {
                                $(this).hide("explode");
                                $( this ).dialog( "close" );
