@@ -59,7 +59,7 @@ class PersonaController{
             $arrayPersona['Contrasena'] = $_POST['Contrasena'];
             $arrayPersona['Estado'] = $_POST['Estado'];
             $arrayPersona['Cargo'] = $_POST['Cargo'];
-            $arrayPersona['idSecretarias'] = $_GET['idSecretarias'];
+            $arrayPersona['idSecretarias'] = $_POST['idSecretarias'];
             $Persona = new Persona($arrayPersona);
             $Persona->insertar();
             header("Location: ../Vista/createPersona.php?respuesta=correcto");
