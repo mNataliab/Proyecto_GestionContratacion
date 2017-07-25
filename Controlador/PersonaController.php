@@ -42,13 +42,12 @@ class PersonaController{
             header("Location: ../Vista/createPersona.php?respuesta=errorFoto");
 
             }
-
             $arrayPersona['Tipo_Documento'] = $_POST['TipoDocumento'];
             $arrayPersona['Documento']=$Documento;
             $arrayPersona['Foto'] = $nuevo_path;
             $arrayPersona['Fecha_Nacimiento']=$_POST['Fecha_Nacimiento'];
             $arrayPersona['Genero'] = $_POST['Genero'];
-            $arrayPersona['Nombres'] = $_POST['Noms'];
+            $arrayPersona['Nombres'] = $_POST['Nombres'];
             $arrayPersona['Apellidos'] = $_POST['Apellidos'];
             $arrayPersona['Telefono'] = $_POST['Telefono'];
             $arrayPersona['Direccion'] = $_POST['Direccion'];
@@ -137,7 +136,7 @@ class PersonaController{
         session_destroy();
     }
 
-    public function Usuario (){
+    public function tablaPersona (){
        $arrPerson = Persona::getAll();
         $htmlSelect = "";
         foreach ($arrPerson as $Persona) {

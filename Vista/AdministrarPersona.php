@@ -1,4 +1,4 @@
-<?php session_start();
+<?php
 require "../Controlador/SecretariaController.php";
 require "../Controlador/PersonaController.php";
 if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true)
@@ -126,7 +126,7 @@ if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true)
                                                                 <th>Acciones</th>
                                                             </tr>
                                                             </thead>
-                                                            <?php echo PersonaController::admiPersona(); ?>
+                                                            <?php echo PersonaController::tablaPersona(); ?>
                                                         </table>
                                                     </div>
                                                 </div>

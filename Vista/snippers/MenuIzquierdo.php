@@ -97,6 +97,19 @@
                 </li>
             </ul>
         </li>
+        <li class="">
+            <a href="javascript:;">
+                <i class="fa fa-building "></i>
+                <span class="link-title">Licitacion</span>
+                <span class="fa arrow"></span>
+            </a>
+            <ul class="collapse">
+                <li>
+                    <a href="CreateLicitacion.php">
+                        <i class="fa  glyphicon-user"></i>&nbsp; Registrar Licitaciones      </a>
+                </li>
+            </ul>
+        </li>
     </ul>
     <!-- /#menu -->
 </div>
