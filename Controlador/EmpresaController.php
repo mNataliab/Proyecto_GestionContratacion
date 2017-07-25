@@ -43,7 +43,7 @@ class EmpresaController
         $htmlSelec .="<select name='idEmpresas' id='idEmpresas' class='validate[required] form-control'>";
         $htmlSelec .="<option>Seleccione</option>";
         foreach ($arrayEmpresas as $empresas){
-            $htmlSelec .="<option value='".$empresas->getIdEmpresas()."' id='".$empresas->getIdContatosPublicos()."'>".$empresas->getRazonsocialContratista()."-".$empresas->getIdentificacionContatista()."</option>";
+            $htmlSelec .="<option value='".$empresas->getIdEmpresas()."' id='".$empresas->getIdEmpresas()."'>".$empresas->getRazonsocialContratista()."-".$empresas->getIdentificacionContatista()."</option>";
         }
         $htmlSelec .="</select>";
         return $htmlSelec;
