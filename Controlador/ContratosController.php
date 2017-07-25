@@ -33,9 +33,21 @@ class ContratosController
             $Contratos = NEW Contratos($arrayContratos);
             $Contratos->insertar();
            header("Location: ../Vista/CreateContratos.php?respuesta=correcto");
-        }catch (Exception $w){
-            header("Location: ../Vista/CreateContratos.php?respuesta=error");
+        }catch (Exception $w){header("Location: ../Vista/CreateContratos.php?respuesta=error");
 
         }
+    }
+
+    static public function selectContratos()
+    {
+        $arrayContratos = Contratos::getAll();
+        $htmlSelec="";
+        $htmlSelec .= "<select name='idContratos'id='idContratos'>";
+        $htmlSelec .="<option>Seleccione</option>";
+        foreach ($arrayContratos as $contrato){
+            $htmlSelec .="<option value='".$contrato->getIdContatosPublicos()."' id='".$contrato->getIdContatosPublicos()."'>".$contrato->getTipoProceso()."-".$contrato->getRC()."</option>";
+        }
+        $htmlSelec .="</select>";
+        return $htmlSelec;
     }
 }

@@ -141,6 +141,7 @@ if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true)
                                             <label class="control-label col-lg-4">Estado</label>
                                             <div class="col-lg-4">
                                                 <select required name="Estado" id="Estado" class="validate[required] form-control">
+                                                    <option ></option>
                                                     <option value="Cancelado">Cancelado</option>
                                                     <option value="En ejecucion">'En ejecucion</option>
                                                     <option  value="Liquidado">Liquidado</option>
