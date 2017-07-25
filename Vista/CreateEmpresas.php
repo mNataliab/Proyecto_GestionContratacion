@@ -134,7 +134,7 @@ if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true)
                                         <div class="form-group">
                                             <label class="control-label col-lg-4">Razon social del contratista </label>
                                             <div class=" col-lg-4">
-                                                <input required placeholder="Razon social del contratita" class="validate[required,custom[number]] form-control" type="number"
+                                                <input required placeholder="Razon social del contratita"  class="validate[required] form-control" type="text"
                                                        name="Razonsocial_contratista" id="Razonsocial_contratista"/>
                                                 <span class="help-block"></span>
                                             </div>

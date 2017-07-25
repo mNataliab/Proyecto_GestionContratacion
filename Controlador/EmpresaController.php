@@ -39,14 +39,14 @@ class EmpresaController
     static public function selectEmpresas()
     {
         $arrayEmpresas = Empresas::getAll();
-        $htmlSelec  ="";
-        $htmlSelec .="<select name='idEmpresas' id='idEmpresas' class='validate[required] form-control'>";
-        $htmlSelec .="<option>Seleccione</option>";
-        foreach ($arrayEmpresas as $empresas){
-            $htmlSelec .="<option value='".$empresas->getIdEmpresas()."' id='".$empresas->getIdEmpresas()."'>".$empresas->getRazonsocialContratista()."-".$empresas->getIdentificacionContatista()."</option>";
+        $htmlSelect  ="";
+        $htmlSelect .="<select name='idEmpresas' id='idEmpresas' class='validate[required] form-control'>";
+        $htmlSelect .="<option>Seleccione</option>";
+        foreach ($arrayEmpresas as $Empresas){
+            $htmlSelect .="<option value='".$Empresas->getIdEmpresas()."' id='".$Empresas->getIdEmpresas()."'>".$Empresas->getRazonsocialContratista()."-".$Empresas->getIdentificacionContatista()."</option>";
         }
-        $htmlSelec .="</select>";
-        return $htmlSelec;
+        $htmlSelect .="</select>";
+        return $htmlSelect;
     }
 
 
