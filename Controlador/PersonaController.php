@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 require_once (__DIR__.'/../Modelo/Persona.php');
 
 if(!empty($_GET['action'])){
@@ -7,7 +7,7 @@ if(!empty($_GET['action'])){
 }else{
     echo "No se encontro ninguna accion...";
 }
-
+//error_reporting(0);
 class PersonaController{
 
     static function main($action){
@@ -20,6 +20,7 @@ class PersonaController{
         }
 
     }
+
 
 
     static public function crear(){
@@ -146,7 +147,7 @@ class PersonaController{
             $htmlSelect .= "<td>".$Persona->getTipoDocumento()."</td>";
             $htmlSelect .= "<td>".$Persona->getDocumento()."</td>";
             $htmlSelect .= "<td>";
-            $htmlSelect .= "<a href='editarEspecialidad.php?id=".$Persona->getIdPersona()."' type='button' data-toggle='tooltip' title='Ver Persona' class='btn docs-tooltip btn-info btn-xs'><i class='fa fa-edit'></i></a>";
+            $htmlSelect .= "<a href='ShowPersona.php?id=".$Persona->getIdPersona()."' type='button' data-toggle='tooltip' title='Ver Persona' class='btn docs-tooltip btn-info btn-xs'><i class='fa fa-edit'></i></a>";
             $htmlSelect .= "<spam> </spam>";
             $htmlSelect .= "<a href='editarEspecialidad.php?id=".$Persona->getIdPersona()."' type='button' data-toggle='tooltip' title='Actualizar' class='btn docs-tooltip btn-primary btn-xs'><i class='fa fa-edit'></i></a>";
             $htmlSelect .= "<spam> </spam>";
@@ -174,11 +175,19 @@ class PersonaController{
         }
     }
        static public function buscarID($id){
-            try{
+
+
+           try {
+               return Persona::buscarForId($id);
+           } catch (Exception $e) {
+               echo "Error en Especialidad controller";
+           }
+          /*  try{
+
                 $arrPersona = Persona::buscarForId($id);
                 $htmlSelect = "";
                 foreach ($arrPersona as $persona){
-                    $htmlSelect .="<label id='idPersona' hidden>".$persona->getidPersona()."</label><br>";
+                    $htmlSelect .="<label id='idPersona' hidden>".$persona->getIdPersona()."</label><br>";
                     $htmlSelect .="<label for='Tipo_Documento'>Tipo de Documento:  </label><label>".$persona->getTipo_Documento()."</label><br>";
                     $htmlSelect .="<label for='Documento'>Documento:  </label><label>".$persona->getDocumento()."</label><br>";
                     $htmlSelect .="<label for='Foto'>Foto:  </label><label>".$persona->getFoto()."</label><br>";
@@ -200,7 +209,7 @@ class PersonaController{
                 return $htmlSelect;
             }catch (Exception $e) {
                 header("Location: ../agregarEspecialidad.php?respuesta=error");
-            }
+            }*/
 
         }
 }

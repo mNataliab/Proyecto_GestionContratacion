@@ -442,7 +442,6 @@ class Persona extends db_abstract_class
             $tmp->Contrasena = $getrow['Contrasena'];
             $tmp->Estado = $getrow['Estado'];
             $tmp->Cargo = $getrow['Cargo'];
-            $tmp->Fecha_Registro = $getrow['Fecha_Registro'];
             $tmp->Disconnect();
             return $tmp;
         }else{
