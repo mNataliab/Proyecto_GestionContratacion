@@ -1,4 +1,5 @@
 <?php session_start();
+require "../Controlador/SecretariaController.php";
 require "../Controlador/PersonaController.php";
 if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true)
 {
@@ -119,18 +120,181 @@ if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true)
 
                                 </header>
 
+                                <div id="collapse2" class="body">
 
-                                        <form class="form-horizontal" id="popup-validation"  enctype="multipart/form-data" action="../Controlador/PersonaController.php?action= buscarID()" method="POST">
-
-
-                                            <?php
-                                            $id->getIdPersona();
-                                            echo PersonaController::buscarID($id);
-                                            ?>
-                                            <div class="form-actions no-margin-bottom">
-                                                <input type="submit" value="Enviar" class="btn btn-primary">
+                                    <?php if(!empty($_GET['respuesta'])){ ?>
+                                        <?php if ($_GET['respuesta'] == "correcto"){ ?>
+                                            <div class="correcto" id="correcto" title="Registro Exitoso" >
+                                                <p> <i class="glyphicon glyphicon-ok-sign"></i>
+                                                    La Persona se ha creado correctamente</p>
                                             </div>
-                                        </form>
+                                        <?php }else {?>
+                                            <div class="error" id="error" title="Registro Fallido!" >
+                                                <p><i class="glyphicon glyphicon-remove-sign"></i>&nbsp;Error! La Persona no se pudo crear correctamente intentalo nuevamente</p>
+                                            </div>
+                                        <?php } ?>
+                                    <?php } ?>
+
+                                    <?php if(!empty($_GET["id"]) && isset($_GET["id"])){ ?>
+                                    <?php
+                                    $DataPersona = PersonaController::buscarID($_GET["id"]);
+
+                                    ?>
+                                    <form class="form-horizontal" id="popup-validation"  enctype="multipart/form-data" action="../Controlador/PersonaController.php?action=buscarForId($id)" method="POST">
+                                        <?php
+                                        $htmlSelect ="<h1> esta es la id'".$_GET["id"]."'</h1>"?>
+
+                                        <div class="form-group">
+                                            <label class="control-label col-lg-4">Nombre</label>
+                                             <div class="col-lg-4">
+
+                                                 <input id="Nombres" value="<?php echo $DataPersona->getNombres(); ?>" class="form-control col-md-7 col-xs-12" name="Nombres"  readonly type="text">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="control-label col-lg-4">Apellido</label>
+                                            <div class="col-lg-4">
+                                                <input type="text" placeholder="Apellidos" readonly class="validate[required] form-control" name="Apellidos" id="Apellidos" value="<?php echo $DataPersona->getApellidos(); ?>" >
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="control-label col-lg-4">Tipo Documento</label>
+                                            <div class="col-lg-4">
+                                                <input type="text" placeholder="Tipo_Documento" readonly class="validate[required] form-control" name="Tipo_Documento" id="Tipo_Documento" value="<?php echo $DataPersona->getTipoDocumento(); ?>" >
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="control-label col-lg-4">N° Documento</label>
+                                            <div class=" col-lg-4">
+                                                <input  placeholder="Documento " required class="validate[required] form-control" readonlytype="text" name="Documento" id="Documento"/ value="<?php echo $DataPersona->getDocumento(); ?>" >
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <label class="control-label col-lg-4">Fecha Nacimiento</label>
+                                            <input style="width: 100px" placeholder="Fecha_Nacimiento " required class="validate[required] form-control" readonly type="text" name="Fecha_Nacimiento" id="Fecha_Nacimiento"/ value="<?php echo $DataPersona->getFechaNacimiento(); ?>" >
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="control-label col-lg-4">Genero</label>
+                                            <div class="col-lg-4">
+                                                <input  placeholder="Genero " readonly class="validate[required] form-control"  name="Genero" id="Genero"/ value="<?php echo $DataPersona->getGenero(); ?>" >
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="control-label col-lg-4">Telefono</label>
+
+                                            <div class=" col-lg-4">
+                                                <input readonly placeholder="Telefono" class="validate[required,custom[number]] form-control" type="number" name="Telefono" id="Telefono"
+                                                       value="<?php echo $DataPersona->getTelefono(); ?>" />
+                                                <span class="help-block"></span>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label  class="control-label col-lg-4">Dirección</label>
+                                            <div class="col-lg-4">
+                                                <input readonly type="text" placeholder="Direccion" class="validate[required] form-control" name="Direccion" id="Direccion"
+                                                       value="<?php echo $DataPersona->getDireccion(); ?>" >
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <label class="control-label col-lg-4">E-mail</label>
+
+                                            <div class=" col-lg-4">
+                                                <input readonly placeholder="E-mail" class="validate[required,custom[email]] form-control" type="email" name="Correo"
+                                                       id="Correo" value="<?php echo $DataPersona->getCorreo(); ?>" />
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="control-label col-lg-4">Usuario</label>
+                                            <div class="col-lg-4">
+                                                <input readonly placeholder="Usuario" type="text" class="validate[required] form-control" name="Usuario" id="Usuario"
+                                                       value="<?php echo $DataPersona->getUsuario(); ?>" >
+
+                                            </div>
+                                        </div>
+
+
+
+
+                                        <div class="form-group">
+                                            <label class="control-label col-lg-4">Numero de Registro Profesional</label>
+
+                                            <div class=" col-lg-4">
+                                                <input READONLY placeholder="Numero Registro Profesional" class="validate[required,custom[number]] form-control" type="text"
+                                                       name="NRP" id="NRP" value="<?php echo $DataPersona->getNRP(); ?>" />
+                                                <span class="help-block"></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group" name="Cargo1" id="Cargo1">
+                                            <label class="control-label col-lg-4">Cargo</label>
+                                            <div class="col-lg-4">
+                                                <input READONLY placeholder="Cargo" class="validate[required,custom[number]] form-control" type="text"
+                                                       name="Cargo" id="Cargo" value="<?php echo $DataPersona->getCargo(); ?>" />
+                                                <span class="help-block"></span>
+
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-group" name="idSecretarias" id="idSecretarias">
+
+                                            <label class="control-label col-lg-4">Secretaria</label>
+                                            <div class="col-lg-4">
+                                                <?php echo SecretariaController::selectSecretaria(true,"form-group"); ?>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="control-label col-lg-4">Contrato</label>
+                                            <div class="col-lg-8">
+                                                <input  type="file" id="ContratoPDF" name="ContratoPDF" readonly value="<?php echo $DataPersona->getContratoPDF(); ?>" />
+
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-lg-4">Foto</label>
+                                            <div class="col-lg-8">
+                                                <div class="fileinput fileinput-new" data-provides="fileinput">
+                                                    <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;" value="<?php echo $DataPersona->getFoto(); ?>"></div>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="control-label col-lg-4">Estado</label>
+                                            <div class="col-lg-4">
+                                                <input READONLY placeholder="Estadp" class="validate[required,custom[number]] form-control" type="text"
+                                                       name="Estado" id="Estado" value="<?php echo $DataPersona->getEstado(); ?>" />
+                                            </div>
+                                        </div>
+
+                                        <div class="form-actions no-margin-bottom">
+                                            <input type="submit" value="Enviar" class="btn btn-primary">
+                                        </div>
+                                    </form>
+                                    <?php }else{ ?>
+                                        <?php if (empty($_GET["respuesta"])){ ?>
+                                            <div class="alert alert-danger alert-dismissible fade in" role="alert">
+                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
+                                                </button>
+                                                <strong>Error!</strong> No se encontro ninguna especialidad con el parametro de busqueda.
+                                                <!--       <//?php $htmlSelect = "";
+                                                       $htmlSelect .="<h1> esta es la id'".$_GET["id"]."'</h1>"?>
+                                                   --></div>
+                                        <?php } ?>
+                                    <?php } ?>
                                 </div>
                             </div>
                         </div>
