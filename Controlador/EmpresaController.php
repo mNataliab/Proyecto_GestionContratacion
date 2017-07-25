@@ -36,7 +36,7 @@ class EmpresaController
         }
     }
 
-    static public function selectContratos()
+    static public function selectEmpresas()
     {
         $arrayEmpresas = Empresas::getAll();
         $htmlSelec  ="";
