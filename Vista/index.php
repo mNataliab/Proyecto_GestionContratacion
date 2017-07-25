@@ -2,7 +2,7 @@
 require "../Controlador/SecretariaController.php";
 if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true){
 }else{
-    header("Location: 403.html");
+    header("Location: login.php");
 }
 ?>
 <!doctype html>
@@ -89,41 +89,41 @@ if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true){
                                             </div>
 
                                             <div class="footer">
-                                                <a href="#" class="btn btn-info btn-rect">Get Started</a>
+                                                <a href="#" class="btn btn-info btn-rect">Ver Secretarias</a>
                                             </div>
                                         </li>
                                         <!-- Active/Hover styles -->
                                         <li class="col-lg-3">
-                                            <h3>Basic</h3>
+                                            <h3>Personas</h3>
                                             <div class="price-body">
-                                                <div >
+                                                <div  >
 
                                                 </div>
                                             </div>
                                             <div class="footer">
-                                                <a href="#" class="btn btn-info btn-rect">Get Started</a>
+                                                <a href="AdministrarPersona.php" class="btn btn-info ">Ver Personas</a>
                                             </div>
                                         </li>
                                         <li class="col-lg-3">
-                                            <h3>Premium</h3>
+                                            <h3>Contratos</h3>
                                             <div class="price-body">
                                                 <div>
 
                                                 </div>
                                             </div>
                                             <div class="footer">
-                                                <a href="#" class="btn btn-info btn-rect">Get Started</a>
+                                                <a href="#" class="btn btn-info btn-rect">Ver Contratos</a>
                                             </div>
                                         </li>
                                         <li class="col-lg-3">
-                                            <h3>Ultra</h3>
+                                            <h3>Empresas</h3>
                                             <div class="price-body">
-                                                <div class="price">
+                                                <div >
 
                                                 </div>
                                             </div>
                                             <div class="footer">
-                                                <a href="#" class="btn btn-info btn-rect">Get Started</a>
+                                                <a href="#" class="btn btn-info btn-rect">Ver Empresas</a>
                                             </div>
                                         </li>
                                         <div class="clearfix"></div>

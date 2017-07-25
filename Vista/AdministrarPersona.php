@@ -3,9 +3,14 @@ require "../Controlador/SecretariaController.php";
 require "../Controlador/PersonaController.php";
 if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true)
 {
+    if(($_SESSION['DataPersona']["Cargo"])=="General"|| ($_SESSION['DataPersona']["Cargo"])=="Subgeneral"|| ($_SESSION['DataPersona']["Cargo"])=="Administrador" ){
+
+    }else{
+        header("Location: 403.html");
+    }
 }else
 {
-    header("Location: 403.html");
+    header("Location: login.php");
 
 }?>
 
@@ -119,6 +124,7 @@ if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true)
                                                         <table id="dataTable" class="table table-bordered table-condensed table-hover table-striped">
                                                             <thead>
                                                             <tr>
+                                                                <th hidden >idPersona</th>
                                                                 <th>Nombres</th>
                                                                 <th>Apellidos</th>
                                                                 <th>Tipo Documento</th>

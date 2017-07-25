@@ -4,9 +4,15 @@ require "../Controlador/EmpresaController.php";
 require "../Controlador/ContratosController.php";
 if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true)
 {
+    if(($_SESSION['DataPersona']["Cargo"])=="General"|| ($_SESSION['DataPersona']["Cargo"])=="Subgeneral" ){
+
+    }else{
+        header("Location: 403.html");
+    }
+
 }else
 {
-    header("Location: 403.html");
+    header("Location: index.php");
 
 }?>
 

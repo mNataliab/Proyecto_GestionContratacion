@@ -1,9 +1,15 @@
 <?php session_start();
 if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true)
 {
+    if(($_SESSION['DataPersona']["Cargo"])=="General"|| ($_SESSION['DataPersona']["Cargo"])=="Subgeneral" || ($_SESSION['DataPersona']["Cargo"])=="Secretari@" ){
+
+    }else{
+        header("Location: 403.html");
+    }
+
 }else
 {
-    header("Location: 403.html");
+    header("Location: index.php");
 
 }?>
 

@@ -141,16 +141,39 @@ class PersonaController{
         $htmlSelect = "";
         foreach ($arrPerson as $Persona) {
             $htmlSelect .= "<tr>";
-            $htmlSelect .= "<td>" . $Persona>getUsuario() . "</td>";
+            $htmlSelect .= "<td hidden  >".$Persona->getIdPersona()."</td>";
+            $htmlSelect .= "<td>" . $Persona->getNombres() . "</td>";
+            $htmlSelect .= "<td>".$Persona->getApellidos()."</td>";
+            $htmlSelect .= "<td>".$Persona->getTipoDocumento()."</td>";
+            $htmlSelect .= "<td>".$Persona->getDocumento()."</td>";
             $htmlSelect .= "<td>";
+            $htmlSelect .= "<a href='editarEspecialidad.php?id=".$Persona->getIdPersona()."' type='button' data-toggle='tooltip' title='Ver Persona' class='btn docs-tooltip btn-info btn-xs'><i class='fa fa-edit'></i></a>";
+            $htmlSelect .= "<spam> </spam>";
+            $htmlSelect .= "<a href='editarEspecialidad.php?id=".$Persona->getIdPersona()."' type='button' data-toggle='tooltip' title='Actualizar' class='btn docs-tooltip btn-primary btn-xs'><i class='fa fa-edit'></i></a>";
+            $htmlSelect .= "<spam> </spam>";
+            if ($Persona->getEstado() != 'Activo') {
+                $htmlSelect .= "<a href='../Controlador/PersonaController.php?action=ActivarPersona&idPersona=".$Persona->getIdPersona()." type='button' data-toggle='tooltip' title='Activar' class='btn docs-tooltip btn-success btn-xs'><i class='fa fa-check-square-o'></i></a>";
+            } else {
+                $htmlSelect .= "<a type='button' href='../Controlador/PersonaController.php?action=InactivarPersona&idPersona=".$Persona->getIdPersona()." data-toggle='tooltip' title='Inactivar' class='btn docs-tooltip btn-danger btn-xs'><i class='fa fa-times-circle-o'></i></a>";
+            }
             $htmlSelect .= "</td>";
             $htmlSelect .= "</tr>";
         }
 
         return  $htmlSelect;
     }
+    static public function ActivarPersona(){
 
+    }
+    static public function InactivarPersona(){
+        try{
+            $objPersona = Persona::buscarForId($_GET['idPersonas']);
 
+            header("Location: ../Vista/AdministrarPersona.php");
+        }catch (Exception $e) {
+            header("Location: ../Vista/AdministrarPersona.php?respuesta=error");
+        }
+    }
        static public function buscarID($id){
             try{
                 $arrPersona = Persona::buscarForId($id);

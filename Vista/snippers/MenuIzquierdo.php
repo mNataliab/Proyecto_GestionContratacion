@@ -6,18 +6,16 @@
         </div>
         <div class="user-wrapper bg-dark">
             <a class="user-link" href="">
-                <img class="media-object img-thumbnail user-img" alt="User Picture" src="assets/img/user.gif">
-                <span class="label label-danger user-label">16</span>
+                <img class="media-object img-thumbnail user-img" alt="Imagen usuario" src="../../Contratos-Fotos/foto.gif" width="64" height="64">
             </a>
 
             <div class="media-body">
-                <h5 class="media-heading">Archie</h5>
-                <ul class="list-unstyled user-info">
-                    <li><a href="">Administrator</a></li>
-                    <li>Estado : <br>
-                        <small><i class="fa fa-calendar"></i><?php echo date("d")." de ",date("F")." del ".date("Y");?>
-                            </small>
-                        <?php echo ($_SESSION['DataPersona']["Cargo"]) ?>
+                        <?php echo "<h5>".($_SESSION['DataPersona']["Nombres"]." ".($_SESSION['DataPersona']["Apellidos"])."</h5>");
+                              echo "<ul class='list-unstyled user-info'>";
+                              echo "<li><a href=''>".($_SESSION['DataPersona']["Cargo"])."</a></li>";
+                              echo "<li>Estado: ".($_SESSION['DataPersona']["Estado"])." <br>";
+                              echo "<small><i class='fa fa-calendar'></i>"; echo date("d")." de ",date("F")." del ".date("Y")."</small>";
+                              ?>
                     </li>
                 </ul>
             </div>
