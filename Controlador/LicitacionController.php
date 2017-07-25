@@ -6,13 +6,12 @@ if(!empty($_GET['action'])){
 }else{
     echo "No se encontro ninguna accion...";
 }
-
 class LicitacionController
 {
     static function main($action)
     {
         if ($action == "crear") {
-            PersonaController::crear();
+            LicitacionController::crear();
         }
 
     }
@@ -21,12 +20,12 @@ class LicitacionController
     static public function crear(){
         try{
             $arrayPersona = array();
-            $arrayPersona['	Fecha_firma_contrato'] = $_POST ['	Fecha_firma_contrato'];
+            $arrayPersona['Fecha_firma_contrato'] = $_POST ['Fecha_firma_contrato'];
             $arrayPersona['Ejecucion_Contrato']=$_POST['Ejecucion_Contrato'];
-            $arrayPersona['Plazo_Ejecucion_Contrato'] = $_POST[' Plazo_Ejecucion_Contrato'];
+            $arrayPersona['Plazo_Ejecucion_Contrato'] = $_POST['Plazo_Ejecucion_Contrato'];
             $arrayPersona['Calificacion']=$_POST['Calificacion'];
             $arrayPersona['Estado'] = $_POST['Estado'];
-            $arrayPersona['	idPersona'] = $_POST['	idPersona'];
+            $arrayPersona['idPersona'] = $_POST['idPersona'];
             $arrayPersona['idEmpresas'] = $_POST['idEmpresas'];
             $arrayPersona['idContratos_Publicos'] = $_POST['idContratos_Publicos'];
             $Persona = new Licitacion($arrayPersona);

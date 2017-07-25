@@ -1,5 +1,4 @@
 <?php
-
 require_once (__DIR__.'/../Modelo/Empresas.php');
 
 if(!empty($_GET['action'])){
@@ -42,8 +41,8 @@ class EmpresaController
         $htmlSelect  ="";
         $htmlSelect .="<select name='idEmpresas' id='idEmpresas' class='validate[required] form-control'>";
         $htmlSelect .="<option>Seleccione</option>";
-        foreach ($arrayEmpresas as $Empresas){
-            $htmlSelect .="<option value='".$Empresas->getIdEmpresas()."' id='".$Empresas->getIdEmpresas()."'>".$Empresas->getRazonsocialContratista()."-".$Empresas->getIdentificacionContatista()."</option>";
+        foreach ($arrayEmpresas as $empresas){
+            $htmlSelect .="<option value='".$empresas->getIdEmpresas()."' id='".$empresas->getIdEmpresas()."'>".$empresas->getRazonsocialContratista()." Nit:".$empresas->getIdentificacionContatista()."</option>";
         }
         $htmlSelect .="</select>";
         return $htmlSelect;
