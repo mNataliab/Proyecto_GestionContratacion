@@ -1,11 +1,12 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: Equipo13
- * Date: 24/07/2017
- * Time: 2:36 PM
- */
+require_once (__DIR__.'../Modelo/Licitacion.php');
+if(!empty($_GET['action'])){
+    LicitacionController::main($_GET['action']);
+}else{
+    echo "No se encontro ninguna accion...";
+}
+
 class LicitacionController
 {
     static function main($action)
