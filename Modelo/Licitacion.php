@@ -257,7 +257,7 @@ class Licitacion extends db_abstract_class
      */
     public function insertar()
     {
-        $this->insertRow("INSERT INTO persona VALUES(NULL,?,?,?,?,?,?,?)", array(
+        $this->insertRow("INSERT INTO proyectophp.licitacion VALUES(NULL,?,?,?,?,?,?,?)", array(
             $this->Fecha_firma_contrato,
             $this->Ejecucion_Contrato,
             $this->Plazo_Ejecucion_Contrato,

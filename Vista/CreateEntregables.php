@@ -1,18 +1,13 @@
 <?php session_start();
-//require "../Controlador/PersonaController.php";
+//require "../Controlador/SecretariaController.php";
 require "../Controlador/EmpresaController.php";
 require "../Controlador/ContratosController.php";
+
 if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true)
 {
-    if(($_SESSION['DataPersona']["Cargo"])=="General"|| ($_SESSION['DataPersona']["Cargo"])=="Subgeneral" ){
-
-    }else{
-        header("Location: 403.html");
-    }
-
 }else
 {
-    header("Location: index.php");
+    header("Location: 403.html");
 
 }?>
 
@@ -26,7 +21,7 @@ if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true)
     <!--Mobile first-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Registro Licitacion</title>
+    <title>Registro Entregables</title>
 
     <meta name="description" content="Free Admin Template Based On Twitter Bootstrap 3.x">
     <meta name="author" content="">
@@ -103,7 +98,7 @@ if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true)
                             <div class="box">
                                 <header class="dark">
                                     <div class="icons"><i class="fa glyphicon-user"></i></div>
-                                    <h5>Registro Licitacion</h5>
+                                    <h5>Registro Entregables</h5>
                                     <!-- .toolbar -->
                                     <div class="toolbar">
                                         <nav style="padding: 8px;">
@@ -126,52 +121,59 @@ if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true)
                                         <?php if ($_GET['respuesta'] == "correcto"){ ?>
                                             <div class="correcto" id="correcto" title="Registro Exitoso" >
                                                 <p> <i class="glyphicon glyphicon-ok-sign"></i>
-                                                    La Licitacion  se ha creado correctamente</p>
+                                                    Los  entrgables se a creado correctamente</p>
                                             </div>
                                         <?php }else {?>
                                             <div class="error" id="error" title="Registro Fallido!" >
-                                                <p><i class="glyphicon glyphicon-remove-sign"></i>&nbsp;Error! La Licitacion no se pudo crear correctamente intentalo nuevamente</p>
+                                                <p><i class="glyphicon glyphicon-remove-sign"></i>&nbsp;Error! Los entregables no se pudo crear correctamente intentalo nuevamente</p>
                                             </div>
                                         <?php } ?>
                                     <?php } ?>
 
-                                    <form class="form-horizontal" id="popup-validation"  enctype="multipart/form-data" action="../Controlador/LicitacionController.php?action=crear" method="POST">
+                                    <form class="form-horizontal" id="popup-validation"  enctype="multipart/form-data" action="../Controlador/PersonaController.php?action=crear" method="POST">
 
 
                                         <div class="form-group">
-                                            <label class="control-label col-lg-4">Fecha Firma de Contratos</label>
-
-                                            <div class=" col-lg-4">
-                                                <input required class="validate[required,custom[date]] form-control" type="date"
-                                                       data-date-format="aaaa/mm/dd" name="Fecha_firma_contrato" id="Fecha_firma_contrato"/>
+                                            <label class="control-label col-lg-4">Actividad de entrega</label>
+                                             <div class="col-lg-4">
+                                                <input type="text" placeholder="" required class="validate[required] form-control" name="	Entregables_Actividad" id="	Entregables_Actividad">
                                             </div>
                                         </div>
+
                                         <div class="form-group">
-                                            <label class="control-label col-lg-4">Ejecución de contrato</label>
+                                            <label class="control-label col-lg-4">Fecha de Cumplimiento</label>
 
                                             <div class=" col-lg-4">
                                                 <input required class="validate[required,custom[date]] form-control" type="date"
-                                                       data-date-format="aaaa/mm/dd" name="Ejecucion_Contrato" id="Ejecucion_Contrato"/>
+                                                       data-date-format="aaaa/mm/dd" name="Fecha_Cumplimiento" id="Fecha_Cumplimiento"/>
                                             </div>
                                         </div>
+
                                         <div class="form-group">
-                                            <label class="control-label col-lg-4">Plazo de Ejecución</label>
+                                            <label class="control-label col-lg-4">	Fecha de Entrega</label>
 
                                             <div class=" col-lg-4">
                                                 <input required class="validate[required,custom[date]] form-control" type="date"
-                                                       data-date-format="aaaa/mm/dd" name="Plazo_Ejecucion_Contrato" id="Plazo_Ejecucion_Contrato"/>
+                                                       data-date-format="aaaa/mm/dd" name="	Fecha_Entrega" id="	Fecha_Entrega"/>
                                             </div>
                                         </div>
-                                         <div class="form-group">
-                                            <label class="control-label col-lg-4">Calificación</label>
+
+                                        <div class="form-group">
+                                            <label class="control-label col-lg-4">	Porcentaje de Entrega</label>
 
                                             <div class=" col-lg-4">
-                                                <input required placeholder="Calificacion" class="validate[required,custom[number]] form-control" type="number"
-                                                       name="Calificacion" id="Calificacion"/>
+                                                <input required placeholder="" class="validate[required,custom[number]] form-control" type="number"
+                                                       name="	Porcentaje_Entregable" id="	Porcentaje_Entregable"/>
                                                 <span class="help-block"></span>
                                             </div>
                                         </div>
+                                        <div class="form-group" name="Contratos" id="idContatos">
 
+                                            <label class="control-label col-lg-4">Contratos </label>
+                                            <div class="col-lg-4">
+                                                <?php echo ContratosController::selectContratos(); ?>
+                                            </div>
+                                        </div>
 
                                         <div class="form-group">
                                             <label class="control-label col-lg-4">Estado</label>
@@ -181,24 +183,6 @@ if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true)
                                                 </select>
                                             </div>
                                         </div>
-
-
-
-                                        <div class="form-group" name="idEmpresas" id="idEmpresas">
-
-                                            <label class="control-label col-lg-4">Empresa</label>
-                                            <div class="col-lg-4">
-                                                <?php echo EmpresaController::selectEmpresas(); ?>
-                                            </div>
-                                        </div>
-
-                                <div class="form-group" name="Contratos_Publicos" id="idContatos_Publicos">
-
-                                    <label class="control-label col-lg-4">Contratos Publicos</label>
-                                    <div class="col-lg-4">
-                                        <?php echo ContratosController::selectContratos(); ?>
-                                    </div>
-                                </div>
 
 
                                         <div class="form-actions no-margin-bottom">
@@ -217,10 +201,65 @@ if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true)
                 <!-- /#content -->
 
 
-
+                <div id="right" class="onoffcanvas is-right is-fixed bg-light" aria-expanded=false>
+                    <a class="onoffcanvas-toggler" href="#right" data-toggle=onoffcanvas aria-expanded=false></a>
+                    <br>
+                    <br>
+                    <div class="alert alert-danger">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        <strong>Warning!</strong> Best check yo self, you're not looking too good.
+                    </div>
+                    <!-- .well well-small -->
+                    <div class="well well-small dark">
+                        <ul class="list-unstyled">
+                            <li>Visitor <span class="inlinesparkline pull-right">1,4,4,7,5,9,10</span></li>
+                            <li>Online Visitor <span class="dynamicsparkline pull-right">Loading..</span></li>
+                            <li>Popularity <span class="dynamicbar pull-right">Loading..</span></li>
+                            <li>New Users <span class="inlinebar pull-right">1,3,4,5,3,5</span></li>
+                        </ul>
+                    </div>
                     <!-- /.well well-small -->
                     <!-- .well well-small -->
+                    <div class="well well-small dark">
+                        <button class="btn btn-block">Default</button>
+                        <button class="btn btn-primary btn-block">Primary</button>
+                        <button class="btn btn-info btn-block">Info</button>
+                        <button class="btn btn-success btn-block">Success</button>
+                        <button class="btn btn-danger btn-block">Danger</button>
+                        <button class="btn btn-warning btn-block">Warning</button>
+                        <button class="btn btn-inverse btn-block">Inverse</button>
+                        <button class="btn btn-metis-1 btn-block">btn-metis-1</button>
+                        <button class="btn btn-metis-2 btn-block">btn-metis-2</button>
+                        <button class="btn btn-metis-3 btn-block">btn-metis-3</button>
+                        <button class="btn btn-metis-4 btn-block">btn-metis-4</button>
+                        <button class="btn btn-metis-5 btn-block">btn-metis-5</button>
+                        <button class="btn btn-metis-6 btn-block">btn-metis-6</button>
+                    </div>
+                    <!-- /.well well-small -->
+                    <!-- .well well-small -->
+                    <div class="well well-small dark">
+                        <span>Default</span><span class="pull-right"><small>20%</small></span>
 
+                        <div class="progress xs">
+                            <div class="progress-bar progress-bar-info" style="width: 20%"></div>
+                        </div>
+                        <span>Success</span><span class="pull-right"><small>40%</small></span>
+
+                        <div class="progress xs">
+                            <div class="progress-bar progress-bar-success" style="width: 40%"></div>
+                        </div>
+                        <span>warning</span><span class="pull-right"><small>60%</small></span>
+
+                        <div class="progress xs">
+                            <div class="progress-bar progress-bar-warning" style="width: 60%"></div>
+                        </div>
+                        <span>Danger</span><span class="pull-right"><small>80%</small></span>
+
+                        <div class="progress xs">
+                            <div class="progress-bar progress-bar-danger" style="width: 80%"></div>
+                        </div>
+                    </div>
+                </div>
                 <!-- /#right -->
 
             </div>
@@ -261,29 +300,22 @@ if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true)
             <!--jQuery -->
             <script src="assets/lib/jquery/jquery.js"></script>
             <script >
-<<<<<<< HEAD
-               $(document).ready(function() {
-                    $('#Secretarias_idSecretarias').hide();
-                    $('#Cargo').change(function() {
-=======
                 $(document).ready(function() {
-                    $('#Secretaria').hide();
-                    $('#Tipo_Usuario').change(function() {
->>>>>>> d1a223ec51db908e3df5e8632dc0fa161664ee0c
+                    $('#idSecretaria').hide();
+                    $('#Cargo').change(function() {
                         if($(this).val() == 'General'){
-                            $('#Secretarias_idSecretarias').show();
+                            $('#idSecretarias').show();
                         }else if($(this).val() == 'Subgeneral'){
-                            $('#Secretarias_idSecretarias').show();
+                            $('#idSecretarias').show();
                         }else if($(this).val() == 'Secretari@'){
-                            $('#Secretarias_idSecretarias').show();
-                        } else{
-                            $('#Secretarias_idSecretarias').hide();
+                            $('#idSecretarias').show();
+                        } else {
+                            $('#idSecretarias').hide();
                         }
                     });
 
                 });
             </script>
-
 
                 <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
             <script src="//cdnjs.cloudflare.com/ajax/libs/jQuery-Validation-Engine/2.6.4/jquery.validationEngine.min.js"></script>

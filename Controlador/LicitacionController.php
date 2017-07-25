@@ -1,6 +1,6 @@
 <?php
 
-require_once (__DIR__.'../Modelo/Licitacion.php');
+require_once (__DIR__.'/../Modelo/Licitacion.php');
 if(!empty($_GET['action'])){
     LicitacionController::main($_GET['action']);
 }else{
