@@ -12,10 +12,6 @@ class LicitacionController
     {
         if ($action == "crear") {
             PersonaController::crear();
-        } else if ($action == "Login") {
-            PersonaController::Login();
-        } else if ($action == "CerrarSession") {
-            PersonaController::CerrarSession();
         }
 
     }

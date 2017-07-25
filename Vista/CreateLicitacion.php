@@ -1,7 +1,7 @@
 <?php
 require "../Controlador/PersonaController.php";
 //require "../Controlador/EmpresasController.php";
-//require "../Controlador/ContratosPublicosController.php";
+require "../Controlador/ContratosController.php";
 if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true)
 {
 }else
@@ -197,7 +197,7 @@ if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true)
 
                                     <label class="control-label col-lg-4">Contratos Publicos</label>
                                     <div class="col-lg-4">
-                                        <?php //echo ContratosPublicosController::selectContratosPublicos(true,"form-group"); ?>
+                                        <?php echo ContratosController::selectContratos(); ?>
                                     </div>
                                 </div>
 
