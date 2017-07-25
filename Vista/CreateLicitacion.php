@@ -177,19 +177,13 @@ if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true)
                                             </div>
                                         </div>
 
-                                        <div class="form-group" name="idPersona id="idPersona">
 
-                                            <label class="control-label col-lg-4">Persona a cargo</label>
-                                            <div class="col-lg-4">
-                                                <?php //echo PersonaController::selectPersona(true,"form-group"); ?>
-                                            </div>
-                                        </div>
 
                                         <div class="form-group" name="idEmpresas" id="idEmpresas">
 
                                             <label class="control-label col-lg-4">Empresa</label>
                                             <div class="col-lg-4">
-                                                <?php//  echo EmpresaController::selectEmpresa(true,"form-group"); ?>
+                                                <?php echo EmpresaController::selectContratos(); ?>
                                             </div>
                                         </div>
 
