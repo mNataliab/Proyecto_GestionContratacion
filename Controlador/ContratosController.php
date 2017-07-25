@@ -44,8 +44,8 @@ class ContratosController
         $htmlSelec="";
         $htmlSelec .= "<select name='idContratos'id='idContratos'>";
         $htmlSelec .="<option>Seleccione</option>";
-        foreach ($arrayContratos as $contrato){
-            $htmlSelec .="<option value='".$contrato->getIdContatosPublicos()."' id='".$contrato->getIdContatosPublicos()."'>".$contrato->getTipoProceso()."-".$contrato->getRC()."</option>";
+        foreach ($arrayContratos as $contratos){
+            $htmlSelec .="<option value='".$contratos->getIdContatosPublicos()."' id='".$contratos->getIdContatosPublicos()."'>".$contratos->getTipoProceso()."-".$contrato->getRC()."</option>";
         }
         $htmlSelec .="</select>";
         return $htmlSelec;
