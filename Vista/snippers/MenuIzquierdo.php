@@ -80,6 +80,7 @@
                     <a href="CreateContratos.php">
                         <i class="fa  glyphicon-user"></i>&nbsp; Registrar Contratos </a>
                 </li>
+
             </ul>
         </li>
         <li class="">
@@ -92,6 +93,10 @@
                 <li>
                     <a href="CreateEmpresas.php">
                         <i class="fa  glyphicon-user"></i>&nbsp; Registrar Empresas      </a>
+                </li>
+                <li>
+                    <a href="AdministrarEmpresas.php">
+                        <i class="fa  glyphicon-user"></i>&nbsp; Administrar Empresas </a>
                 </li>
             </ul>
         </li>

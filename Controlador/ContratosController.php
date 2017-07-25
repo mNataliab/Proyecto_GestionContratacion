@@ -30,6 +30,7 @@ class ContratosController
             $arrayContratos['Municipio_Obtencion_Documentos']= $_POST['Municipio_Obtencion_Documentos'];
             $arrayContratos['Direccion_Entrega_Documentos']=$_POST['Direccion_Entrega_Documentos'];
             $arrayContratos['Fecha_Hora_Apertura_Proceso']=$_POST['Fecha_Hora_Apertura_Proceso'];
+            $arrayContratos['idPersona']=$_POST['idPersona'];
             $Contratos = NEW Contratos($arrayContratos);
             $Contratos->insertar();
            header("Location: ../Vista/CreateContratos.php?respuesta=correcto");

@@ -223,8 +223,12 @@ if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true)
                                                        data-date-format="aaaa/mm/dd" name="Fecha_Hora_Apertura_Proceso" id="Fecha_Hora_Apertura_Proceso"/>
                                             </div>
                                         </div>
-
-
+                                        <div hidden class="form-group">
+                                            <label  class="control-label col-lg-4">idpersona</label>
+                                            <div class="col-lg-4">
+                                                <input required type="text" value="<?php echo ($_SESSION['DataPersona']["idPersona"]);?>"  class="validate[required] form-control" name="idPersona" id="idPersona">
+                                            </div>
+                                        </div>
 
                                         <div class="form-group">
 
