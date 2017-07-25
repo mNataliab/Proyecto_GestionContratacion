@@ -1,6 +1,6 @@
 <?php
 require "../Controlador/PersonaController.php";
-//require "../Controlador/EmpresasController.php";
+require "../Controlador/EmpresaController.php";
 require "../Controlador/ContratosController.php";
 if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true)
 {
@@ -183,7 +183,7 @@ if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true)
 
                                             <label class="control-label col-lg-4">Empresa</label>
                                             <div class="col-lg-4">
-                                                <?php echo EmpresaController::selectContratos(); ?>
+                                                <?php echo EmpresaController::selectEmpresas(); ?>
                                             </div>
                                         </div>
 
