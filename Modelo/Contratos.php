@@ -329,7 +329,7 @@ class Contratos extends db_abstract_class
 
     public static function buscar($query)
     {
-        $arrPacientes = array();
+        $arrContratos = array();
         $tmp = new Contratos();
         $getrows = $tmp->getRows($query);
 
@@ -349,10 +349,11 @@ class Contratos extends db_abstract_class
             $Contratos->Direccion_Entrega_Documentos = $valor['Direccion_Entrega_Documentos'];
             $Contratos->Fecha_Hora_Apertura_Proceso = $valor['Fecha_Hora_Apertura_Proceso'];
             $Contratos->IdPersona = $valor['idPersona'];
-
-            $tmp->Disconnect();
-            return $arrPacientes;
+            array_push($arrContratos, $Contratos);
         }
+            $tmp->Disconnect();
+            return $arrContratos;
+
     }
 
 
