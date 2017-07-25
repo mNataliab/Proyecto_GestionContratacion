@@ -37,7 +37,7 @@ try{
     {
         $arrSecretaria = Secretaria::getAll();
         $htmlSelect = "";
-        $htmlSelect = "<select  name='idSecretarias' id='idSecretarias'>";
+        $htmlSelect = "<select  name='idSecretarias' id='idSecretarias' class='validate[required] form-control'>";
         $htmlSelect .= "<option>Seleccione</option>";
         foreach ($arrSecretaria as $Secretarias) {
             $htmlSelect .= "<option value='".$Secretarias->getidSecretarias()."' id='".$Secretarias->getidSecretarias()."'>".$Secretarias->getNombre()."</option>";

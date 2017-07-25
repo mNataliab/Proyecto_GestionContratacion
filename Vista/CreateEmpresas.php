@@ -1,5 +1,4 @@
 <?php session_start();
-require "../Controlador/SecretariaController.php";
 if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true)
 {
 }else
@@ -130,7 +129,7 @@ if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true)
                                         <?php } ?>
                                     <?php } ?>
 
-                                    <form class="form-horizontal" id="popup-validation"  enctype="multipart/form-data" action="../Controlador/EmpresasController.php?action=crear" method="POST">
+                                    <form class="form-horizontal" id="popup-validation"  enctype="multipart/form-data" action="../Controlador/EmpresaController.php?action=crear" method="POST">
 
                                         <div class="form-group">
                                             <label class="control-label col-lg-4">Razon social del contratista </label>
@@ -153,7 +152,7 @@ if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true)
                                             <label class="control-label col-lg-4">Pais del contratista</label>
                                             <div class="col-lg-4">
                                                 <select required name="Pais_Contatrista" id="Pais_Contatrista" class="validate[required] form-control">
-
+                                                    <option>Colombia</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -162,7 +161,7 @@ if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true)
                                             <label class="control-label col-lg-4">Departamento del contratista</label>
                                             <div class="col-lg-4">
                                                 <select required name="Departamento_Contatista" id="Departamento_Contatista" class="validate[required] form-control">
-
+                                                    <option>Casanare</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -170,7 +169,7 @@ if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true)
                                             <label class="control-label col-lg-4">Provincia/Municipio del contratista</label>
                                             <div class="col-lg-4">
                                                 <select required name="Provincia_Contratista" id="Provincia_Contratista" class="validate[required] form-control">
-
+                                                    <option>Yopal</option>
                                                 </select>
                                             </div>
                                         </div>

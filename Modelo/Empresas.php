@@ -227,7 +227,6 @@ class Empresas extends db_abstract_class
     public function insertar()
     {
         $this->insertRow("INSERT INTO proyectophp.empresas VALUES(NULL,?,?,?,?,?,?,?,?,?,?)",array(
-            $this->idEmpresas,
             $this->Razonsocial_contratista,
             $this->Identificacion_Contatista,
             $this->Pais_Contatrista,
@@ -305,7 +304,7 @@ class Empresas extends db_abstract_class
 
     public static function getAll()
     {
-
+        return Empresas::buscar("SELECT * FROM proyectophp.empresas");
     }
 
 

@@ -42,7 +42,7 @@ class ContratosController
     {
         $arrayContratos = Contratos::getAll();
         $htmlSelec  ="";
-        $htmlSelec .="<select name='idContratos'id='idContratos' class='validate[required] form-control'>";
+        $htmlSelec .="<select name='idContratos' id='idContratos' class='validate[required] form-control'>";
         $htmlSelec .="<option>Seleccione</option>";
         foreach ($arrayContratos as $contratos){
             $htmlSelec .="<option value='".$contratos->getIdContatosPublicos()."' id='".$contratos->getIdContatosPublicos()."'>".$contratos->getTipoProceso()."-".$contratos->getRC()."</option>";
