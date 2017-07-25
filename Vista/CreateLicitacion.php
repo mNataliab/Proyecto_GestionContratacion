@@ -1,4 +1,4 @@
-<?php session_start();
+<?php
 require "../Controlador/PersonaController.php";
 //require "../Controlador/EmpresasController.php";
 //require "../Controlador/ContratosPublicosController.php";
@@ -181,7 +181,7 @@ if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true)
 
                                             <label class="control-label col-lg-4">Persona a cargo</label>
                                             <div class="col-lg-4">
-                                                <?php echo PersonaController::selectPersona(true,"form-group"); ?>
+                                                <?php //echo PersonaController::selectPersona(true,"form-group"); ?>
                                             </div>
                                         </div>
 
