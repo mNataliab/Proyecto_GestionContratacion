@@ -30,7 +30,7 @@ class EmpresaController
             $arrayEmpresas['Representante_Contaratista'] = $_POST['Representante_Contaratista'];
             $arrayEmpresas['Identificacion_Representante'] = $_POST['Identificacion_Representante'];
             $arrayEmpresas['Estado'] = $_POST['Estado'];
-           // $arrayEmpresas['idPersona'] = $_POST['idPersona'];
+            $arrayEmpresas['idPersona'] = $_POST['idPersona'];
             $empresas = new Empresas($arrayEmpresas);
             $empresas->insertar();
             header("Location: ../Vista/CreateEmpresas.php?respuesta=correcto");
@@ -44,9 +44,9 @@ class EmpresaController
         $arrayEmpresas = Empresas::getAll();
         $htmlSelect  ="";
         $htmlSelect .="<select name='idEmpresas' id='idEmpresas' class='validate[required] form-control'>";
-        $htmlSelect .="<option value='1'>Seleccione</option>";
+        $htmlSelect .="<option>Seleccione</option>";
         foreach ($arrayEmpresas as $empresas){
-            $htmlSelect .="<option value='".$empresas->getIdEmpresas()."' id='".$empresas->getIdEmpresas()."'>".$empresas->getRazonsocialContratista()."1".$empresas->getIdentificacionContatista()."</option>";
+            $htmlSelect .="<option value='".$empresas->getIdEmpresas()."' id='".$empresas->getIdEmpresas()."'>".$empresas->getRazonsocialContratista()." Nit: ".$empresas->getIdentificacionContatista()."</option>";
         }
         $htmlSelect .="</select>";
         return $htmlSelect;

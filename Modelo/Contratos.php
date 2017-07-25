@@ -311,7 +311,15 @@ class Contratos extends db_abstract_class
         $this->Disconnect();
 
     }
-
+    public static function showCount()
+    {
+        $tmp = new Secretaria();
+        $getRow = $tmp->getRow("SELECT COUNT(contatos_publicos.idContatos_Publicos) as NumSecretarias FROM proyectophp.contatos_publicos");
+        $html ="";
+        print_r($getRow['NumSecretarias']);
+        $tmp->Disconnect();
+        return $html;
+    }
     protected function editar()
     {
         // TODO: Implement editar() method.

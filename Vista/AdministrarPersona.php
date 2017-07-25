@@ -6,7 +6,7 @@ if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true)
     if(($_SESSION['DataPersona']["Cargo"])=="General"|| ($_SESSION['DataPersona']["Cargo"])=="Subgeneral"|| ($_SESSION['DataPersona']["Cargo"])=="Administrador" ){
 
     }else{
-        header("Location: 403.html");
+        header("Location: 503.html");
     }
 }else
 {

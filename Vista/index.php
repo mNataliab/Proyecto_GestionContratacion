@@ -1,6 +1,15 @@
 <?php session_start();
 require "../Controlador/SecretariaController.php";
+require "../Modelo/Persona.php";
+require "../Modelo/Contratos.php";
+require "../Modelo/Empresas.php";
 if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true){
+    if (($_SESSION['DataPersona']["Estado"])=="Activo")
+    {
+
+    }else{
+        header("location: 403.html");
+    }
 }else{
     header("Location: login.php");
 }
@@ -79,25 +88,25 @@ if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true){
                                 <div class="col-lg-12">
                                     <h2>Registros <small>Todos los usuarios</small> </h2>
 
-                                    <ul class="pricing-table" contenteditable id="light">
+                                    <ul class="pricing-table"  id="light">
                                         <li class="col-lg-3">
                                             <h3>Secretarias</h3>
                                             <div class="price-body">
-                                                <div >
+                                                <div class="price" >
                                                 <?php Secretaria::showCount(); ?>
                                                 </div>
                                             </div>
 
                                             <div class="footer">
-                                                <a href="#" class="btn btn-info btn-rect">Ver Secretarias</a>
+                                                <a href="#" class="btn btn-info ">Ver Secretarias</a>
                                             </div>
                                         </li>
                                         <!-- Active/Hover styles -->
                                         <li class="col-lg-3">
                                             <h3>Personas</h3>
                                             <div class="price-body">
-                                                <div  >
-
+                                                <div class="price" >
+                                                    <?php Persona::showCount(); ?>
                                                 </div>
                                             </div>
                                             <div class="footer">
@@ -107,23 +116,23 @@ if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true){
                                         <li class="col-lg-3">
                                             <h3>Contratos</h3>
                                             <div class="price-body">
-                                                <div>
-
+                                                <div class="price">
+                                                    <?php Contratos::showCount(); ?>
                                                 </div>
                                             </div>
                                             <div class="footer">
-                                                <a href="#" class="btn btn-info btn-rect">Ver Contratos</a>
+                                                <a href="#" class="btn btn-info ">Ver Contratos</a>
                                             </div>
                                         </li>
                                         <li class="col-lg-3">
                                             <h3>Empresas</h3>
                                             <div class="price-body">
-                                                <div >
-
+                                                <div class="price" >
+                                                    <?php Empresas::showCount(); ?>
                                                 </div>
                                             </div>
                                             <div class="footer">
-                                                <a href="#" class="btn btn-info btn-rect">Ver Empresas</a>
+                                                <a href="#" class="btn btn-info ">Ver Empresas</a>
                                             </div>
                                         </li>
                                         <div class="clearfix"></div>

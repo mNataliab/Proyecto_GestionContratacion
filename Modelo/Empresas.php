@@ -259,7 +259,7 @@ class Empresas extends db_abstract_class
         $getrows = $tmp->getRows($query);
 
         foreach ($getrows as $valor) {
-            $Empresa = new Empresas();
+            $tmp = new Empresas();
             $tmp->idEmpresas =$valor['idEmpresas'];
             $tmp->Razonsocial_contratista =$valor['Razonsocial_contratista'];
             $tmp->Identificacion_Contatista =$valor['Identificacion_Contatista'];
@@ -271,10 +271,19 @@ class Empresas extends db_abstract_class
             $tmp->Identificacion_Representante =  $valor['Identificacion_Representante'];
             $tmp->Estado =  $valor['Estado'];
             $tmp->idPersona = $valor['idPersona'];
-            array_push($arrEmpresas, $Empresa);
+            array_push($arrEmpresas, $tmp);
         }
         $tmp->Disconnect();
         return $arrEmpresas;
+    }
+    public static function showCount()
+    {
+        $tmp = new Secretaria();
+        $getRow = $tmp->getRow("SELECT COUNT(empresas.idEmpresas) as NumSecretarias FROM proyectophp.empresas");
+        $html ="";
+        print_r($getRow['NumSecretarias']);
+        $tmp->Disconnect();
+        return $html;
     }
 
     public static function buscarForId($id)
@@ -282,7 +291,7 @@ class Empresas extends db_abstract_class
         $tmp = new Empresas();
         if ($id > 0) {
             $getrow = $tmp->getRow("SELECT * FROM proyectophp.empresas WHERE empresas.idEmpresas = ?", array($id));
-            $Empresa = new Empresas();
+            $tmp = new Empresas();
             $tmp->idEmpresas =$getrow['idEmpresas'];
             $tmp->Razonsocial_contratista =$getrow['Razonsocial_contratista'];
             $tmp->Identificacion_Contatista =$getrow['Identificacion_Contatista'];

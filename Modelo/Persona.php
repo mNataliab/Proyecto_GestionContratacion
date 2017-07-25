@@ -483,7 +483,15 @@ class Persona extends db_abstract_class
         return $arrPacientes;
     }
 
-
+    public static function showCount()
+    {
+        $tmp = new Secretaria();
+        $getRow = $tmp->getRow("SELECT COUNT(persona.idPersona) as NumSecretarias FROM proyectophp.persona");
+        $html ="";
+        print_r($getRow['NumSecretarias']);
+        $tmp->Disconnect();
+        return $html;
+    }
     public static function getAll()
     {
         return Persona::buscar("SELECT * FROM proyectophp.persona");

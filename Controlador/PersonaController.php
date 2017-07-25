@@ -130,7 +130,6 @@ class PersonaController{
 
 
     public function CerrarSession (){
-
         unset($_COOKIE);
         header("Location: ../Vista/login.php");
         session_destroy();

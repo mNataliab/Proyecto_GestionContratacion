@@ -30,12 +30,12 @@ class LicitacionController
             $arrayPersona['idContratos_Publicos'] = $_POST['idContratos_Publicos'];
             $Persona = new Licitacion($arrayPersona);
             $Persona->insertar();
-            header("Location: ../Vista/CreateLicitacion.php?respuesta=correcto");
+           header("Location: ../Vista/CreateLicitacion.php?respuesta=correcto");
 
 
 
         }catch(Exception $e){
-            header("Location: ../Vista/CreateLicitacion.php?respuesta=error");
+            //header("Location: ../Vista/CreateLicitacion.php?respuesta=error");
         }
     }
 

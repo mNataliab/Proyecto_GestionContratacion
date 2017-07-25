@@ -7,7 +7,7 @@ if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true)
     if(($_SESSION['DataPersona']["Cargo"])=="General"|| ($_SESSION['DataPersona']["Cargo"])=="Subgeneral" ){
 
     }else{
-        header("Location: 403.html");
+        header("Location: 503.html");
     }
 
 }else
@@ -184,7 +184,7 @@ if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true)
 
 
 
-                                        <div class="form-group" name="idEmpresas" id="idEmpresas">
+                                        <div class="form-group" >
 
                                             <label class="control-label col-lg-4">Empresa</label>
                                             <div class="col-lg-4">
@@ -192,14 +192,19 @@ if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true)
                                             </div>
                                         </div>
 
-                                <div class="form-group" name="Contratos_Publicos" id="idContatos_Publicos">
+                                <div class="form-group" >
 
                                     <label class="control-label col-lg-4">Contratos Publicos</label>
                                     <div class="col-lg-4">
                                         <?php echo ContratosController::selectContratos(); ?>
                                     </div>
                                 </div>
-
+                                        <div hidden class="form-group">
+                                            <label  class="control-label col-lg-4">idpersona</label>
+                                            <div class="col-lg-4">
+                                                <input required type="text" value="<?php echo ($_SESSION['DataPersona']["idPersona"]);?>"  class="validate[required] form-control" name="idPersona" id="idPersona">
+                                            </div>
+                                        </div>
 
                                         <div class="form-actions no-margin-bottom">
                                             <input type="submit" value="Enviar" class="btn btn-primary">
