@@ -6,11 +6,11 @@
         </div>
         <div class="user-wrapper bg-dark">
             <a class="user-link" href="">
-                <img class="media-object img-thumbnail user-img" alt="Imagen usuario" src="../../Contratos-Fotos/foto.gif" width="64" height="64">
+                <img class="media-object img-thumbnail user-img" alt="Imagen usuario" src="<?= $_SESSION["DataPersona"]["Foto"]; ?>" width="64" height="64">
             </a>
 
             <div class="media-body">
-                        <?php echo "<h5>".($_SESSION['DataPersona']["Nombres"]." ".($_SESSION['DataPersona']["Apellidos"])."</h5>");
+                        <?php echo "<h5>".($_SESSION['DataPersona']["Nombres"])." ".($_SESSION['DataPersona']["Apellidos"])."</h5>";
                               echo "<ul class='list-unstyled user-info'>";
                               echo "<li><a href=''>".($_SESSION['DataPersona']["Cargo"])."</a></li>";
                               echo "<li>Estado: ".($_SESSION['DataPersona']["Estado"])." <br>";
@@ -27,20 +27,20 @@
         <li class="nav-divider"></li>
         <li class="">
             <a href="javascript:;">
-                <i class="fa fa-building "></i>
+                <i class="glyphicon  glyphicon-home "></i>
                 <span class="link-title">Inicio</span>
                 <span class="fa arrow"></span>
             </a>
             <ul class="collapse">
                 <li>
                     <a href="index.php">
-                        <i class="fa  glyphicon-user"></i> Volver al inicio </a>
+                        <i class="glyphicon  glyphicon-home"></i> Volver al inicio </a>
                 </li>
             </ul>
         </li>
         <li class="">
             <a href="javascript:;">
-                <i class="fa fa-building "></i>
+                <i class="glyphicon glyphicon-user"></i>
                 <span class="link-title">Personas</span>
                 <span class="fa arrow"></span>
             </a>
@@ -58,7 +58,7 @@
 
         <li class="">
             <a href="javascript:;">
-                <i class="fa fa-building "></i>
+                <i class="glyphicon glyphicon-list-alt"></i>
                 <span class="link-title">Secretaria</span>
                 <span class="fa arrow"></span>
             </a>
@@ -113,6 +113,20 @@
                 </li>
             </ul>
         </li>
+        <li class="">
+            <a href="javascript:;">
+                <i class="glyphicon glyphicon-file"></i>
+                <span class="link-title">Documento</span>
+                <span class="fa arrow"></span>
+            </a>
+            <ul class="collapse">
+                <li>
+                    <a href="CreateDocumentos.php">
+                        <i class="fa  glyphicon-user"></i>&nbsp; Registrar Documentos </a>
+                </li>
+            </ul>
+        </li>
+
     </ul>
     <!-- /#menu -->
 </div>

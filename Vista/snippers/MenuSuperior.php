@@ -28,13 +28,13 @@
                 <div class="btn-group">
                     <a href="../Controlador/PersonaController.php?action=CerrarSession" data-toggle="tooltip" data-original-title="Cerrar sesion" data-placement="bottom"
                        class="btn btn-metis-1 btn-sm">
-                        <i class="fa fa-power-off"></i>
+                        <i class="glyphicon glyphicon-off"></i>
                     </a>
                 </div>
                 <div class="btn-group">
                     <a data-placement="bottom" data-original-title="Mostar / Esconder Menu" data-toggle="tooltip"
                        class="btn btn-primary btn-sm toggle-left" id="menu-toggle">
-                        <i class="fa fa-bars"></i>
+                        <i class="glyphicon glyphicon-log-in"></i>
                     </a>
 
                 </div>

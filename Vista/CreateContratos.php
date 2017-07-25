@@ -1,5 +1,5 @@
 <?php session_start();
-//require "../Controlador/SecretariaController.php";
+
 if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true)
 {
     if(($_SESSION['DataPersona']["Cargo"])=="General"|| ($_SESSION['DataPersona']["Cargo"])=="Subgeneral" ){

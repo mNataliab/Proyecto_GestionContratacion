@@ -1,11 +1,11 @@
 <?php
-
+session_start();
 require_once (__DIR__.'/../Modelo/Persona.php');
 
 if(!empty($_GET['action'])){
     PersonaController::main($_GET['action']);
 }else{
-    echo "No se encontro ninguna accion...";
+
 }
 //error_reporting(0);
 class PersonaController{
@@ -78,11 +78,11 @@ class PersonaController{
             $arrayPesona= array();
             if(!empty($Usuario) && !empty($Contrasena)){
                 $respuesta = PersonaController::validLogin($Usuario, $Contrasena);
-                if (is_array($respuesta)) {
+                if (count($respuesta)>0) {
                     $_SESSION['verificar']=true;
                     $_SESSION['DataPersona'] = $respuesta;
+                 // var_dump($_SESSION['DataPersona']);
                     echo TRUE;
-
                 }else if($respuesta == "Password Incorrecto"){
                     echo "<div class='alert alert-danger alert-dismissable'>";
                     echo "    <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>";
@@ -131,7 +131,6 @@ class PersonaController{
 
 
     public function CerrarSession (){
-        unset($_COOKIE);
         header("Location: ../Vista/login.php");
         session_destroy();
     }
