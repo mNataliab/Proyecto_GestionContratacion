@@ -409,10 +409,31 @@ class Persona extends db_abstract_class
 
     }
 
-    protected function editar()
+    public function editar()
     {
-        // TODO: Implement editar() method.
+        $this->updateRow("UPDATE persona SET Tipo_Documento = ?, Documento = ?, Foto = ?, Fecha_Nacimiento = ?, Genero = ?, Nombres = ?, Apellidos = ?, Telefono = ?, Direccion = ?, Correo = ?, Contrato_PDF = ?, NRP= ?, Usuario = ?, Contrasena = ?, Estado = ?, Cargo = ?, idSecretarias = ? WHERE idPersona = ?", array(
+            $this->Tipo_Documento,
+            $this->Documento,
+            $this->Foto,
+            $this->Fecha_Nacimiento,
+            $this->Genero,
+            $this->Nombres,
+            $this->Apellidos,
+            $this->Telefono,
+            $this->Direccion,
+            $this->Correo,
+            $this->Contrato_PDF,
+            $this->NRP,
+            $this->Usuario,
+            $this->Contrasena,
+            $this->Estado,
+            $this->Cargo,
+            $this->idSecretarias,
+
+        ));
+        $this->Disconnect();
     }
+
 
     protected function eliminar($id)
     {

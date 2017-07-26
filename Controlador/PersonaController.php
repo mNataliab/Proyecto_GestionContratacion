@@ -173,6 +173,7 @@ class PersonaController{
             header("Location: ../Vista/AdministrarPersona.php?respuesta=error");
         }
     }
+  
        static public function buscarID($id){
 
 
@@ -211,4 +212,49 @@ class PersonaController{
             }*/
 
         }
+
+    static public function editar (){
+        try {
+            $arrayPersona = array();
+            $Documento=$_POST['Documento'];
+            if (is_uploaded_file($_FILES['ContratoPDF']['tmp_name'])&& is_uploaded_file($_FILES['imagen']['tmp_name']))
+            {
+                $nombreDirectorio = "../Contratos-Fotos/";
+                $nombreFichero = $_FILES['ContratoPDF']['name'];
+                $nombrefoto=$_FILES['imagen']['name'];
+                $nuevo_path="../Contratos-Fotos/".$Documento.$nombrefoto;
+                $nuevo_path2="../Contratos-Fotos/".$Documento.$nombreFichero;
+
+                move_uploaded_file($_FILES['ContratoPDF']['tmp_name'], $nombreDirectorio.$Documento.$nombreFichero);
+                move_uploaded_file($_FILES['imagen']['tmp_name'], $nombreDirectorio.$Documento.$nombrefoto);
+
+            } else{
+                echo ("No se ha podido subir el fichero");
+                header("Location: ../Vista/createPersona.php?respuesta=errorFoto");
+
+            }
+            $arrayPersona['Tipo_Documento'] = $_POST['TipoDocumento'];
+            $arrayPersona['Documento']=$Documento;
+            $arrayPersona['Foto'] = $nuevo_path;
+            $arrayPersona['Fecha_Nacimiento']=$_POST['Fecha_Nacimiento'];
+            $arrayPersona['Genero'] = $_POST['Genero'];
+            $arrayPersona['Nombres'] = $_POST['Nombres'];
+            $arrayPersona['Apellidos'] = $_POST['Apellidos'];
+            $arrayPersona['Telefono'] = $_POST['Telefono'];
+            $arrayPersona['Direccion'] = $_POST['Direccion'];
+            $arrayPersona['Correo'] = $_POST['Correo'];
+            $arrayPersona['Contrato_PDF'] = $nuevo_path2;
+            $arrayPersona['NRP'] = $_POST['NRP'];
+            $arrayPersona['Usuario'] = $_POST['Usuario'];
+            $arrayPersona['Contrasena'] = $_POST['Contrasena'];
+            $arrayPersona['Estado'] = $_POST['Estado'];
+            $arrayPersona['Cargo'] = $_POST['Cargo'];
+            $arrayPersona['idSecretarias'] = $_POST['idSecretarias'];
+            $Persona = new Persona($arrayPersona);
+            $Persona->editar();
+            header("Location: ../Vista/editarEspecialidad.php?respuesta=correcto");
+        } catch (Exception $e) {
+            header("Location: ../Vista/editarEspecialidad.php?respuesta=error");
+        }
+    }
 }
