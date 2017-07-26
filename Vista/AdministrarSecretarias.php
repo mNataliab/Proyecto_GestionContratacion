@@ -1,5 +1,4 @@
-<?php  session_start();
-
+<?php session_start();
 require "../Controlador/SecretariaController.php";
 require "../Controlador/PersonaController.php";
 if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true)
@@ -25,7 +24,7 @@ if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true)
     <!--Mobile first-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Administrar Persona</title>
+    <title>Administrar Secretarias</title>
 
     <meta name="description" content="Free Admin Template Based On Twitter Bootstrap 3.x">
     <meta name="author" content="">
@@ -119,21 +118,20 @@ if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true)
                                                 <div class="box">
                                                     <header>
                                                         <div class="icons"><i class="fa fa-table"></i></div>
-                                                        <h5>Adiministrar Personas</h5>
+                                                        <h5>Adiministrar Secretarias</h5>
                                                     </header>
                                                     <div id="collapse4" class="body">
                                                         <table id="dataTable" class="table table-bordered table-condensed table-hover table-striped">
                                                             <thead>
                                                             <tr>
                                                                 <th hidden >idPersona</th>
-                                                                <th>Nombres</th>
-                                                                <th>Apellidos</th>
-                                                                <th>Tipo Documento</th>
-                                                                <th>Documento</th>
+                                                                <th>Nombre</th>
+                                                                <th>Telefono</th>
+                                                                <th>Direccion</th>
                                                                 <th>Acciones</th>
                                                             </tr>
                                                             </thead>
-                                                            <?php echo PersonaController::tablaPersona(); ?>
+                                                            <?php echo SecretariaController::tablaSecretaria(); ?>
                                                         </table>
                                                     </div>
                                                 </div>

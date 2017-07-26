@@ -1,4 +1,5 @@
-<?php session_start();
+<?php
+session_start();
 require "../Controlador/SecretariaController.php";
 require "../Controlador/PersonaController.php";
 if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true)
@@ -25,7 +26,7 @@ if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true)
     <!--Mobile first-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Ver Personas</title>
+    <title>Ver Secretaría</title>
 
     <meta name="description" content="Free Admin Template Based On Twitter Bootstrap 3.x">
     <meta name="author" content="">
@@ -102,7 +103,7 @@ if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true)
                             <div class="box">
                                 <header class="dark">
                                     <div class="icons"><i class="fa glyphicon-user"></i></div>
-                                    <h5>Ver Persona</h5>
+                                    <h5>Ver Secretaría</h5>
                                     <!-- .toolbar -->
                                     <div class="toolbar">
                                         <nav style="padding: 8px;">
@@ -126,173 +127,79 @@ if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true)
                                         <?php if ($_GET['respuesta'] == "correcto"){ ?>
                                             <div class="correcto" id="correcto" title="Registro Exitoso" >
                                                 <p> <i class="glyphicon glyphicon-ok-sign"></i>
-                                                    La Actualización se ha creado correctamente</p>
+                                                    La Persona se ha creado correctamente</p>
                                             </div>
                                         <?php }else {?>
                                             <div class="error" id="error" title="Registro Fallido!" >
-                                                <p><i class="glyphicon glyphicon-remove-sign"></i>&nbsp;Error! La Actualización no se pudo crear correctamente intentalo nuevamente</p>
+                                                <p><i class="glyphicon glyphicon-remove-sign"></i>&nbsp;Error! La Persona no se pudo crear correctamente intentalo nuevamente</p>
                                             </div>
                                         <?php } ?>
                                     <?php } ?>
 
                                     <?php if(!empty($_GET["id"]) && isset($_GET["id"])){ ?>
-                                    <?php
-                                    $DataPersona = PersonaController::buscarID($_GET["id"]);
-
-                                    ?>
-                                    <form class="form-horizontal" id="popup-validation"  enctype="multipart/form-data" action="../Controlador/PersonaController.php?action=editar()" method="POST">
                                         <?php
-                                        $htmlSelect ="<h1> esta es la id'".$_GET["id"]."'</h1>"?>
+                                        $DataSecretaria = SecretariaController::buscarID($_GET["id"]);
 
-                                        <div class="form-group">
-                                            <label class="control-label col-lg-4">Nombre</label>
-                                             <div class="col-lg-4">
+                                        ?>
+                                        <form class="form-horizontal" id="popup-validation"  enctype="multipart/form-data" action="../Controlador/SecretariaController.php?action=buscarForId($id)" method="POST">
+                                            <?php
+                                            $htmlSelect ="<h1> esta es la id'".$_GET["id"]."'</h1>"?>
 
-                                                 <input required id="Nombres" value="<?php echo $DataPersona->getNombres(); ?>" class="form-control col-md-7 col-xs-12" name="Nombres"  type="text">
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label class="control-label col-lg-4">Apellido</label>
-                                            <div class="col-lg-4">
-                                                <input type="text" placeholder="Apellidos" class="validate[required] form-control"  required name="Apellidos" id="Apellidos" value="<?php echo $DataPersona->getApellidos(); ?>" >
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label class="control-label col-lg-4">Tipo Documento</label>
-                                            <div class="col-lg-4">
-                                                <input type="text" placeholder="Tipo_Documento"  required class="validate[required] form-control" name="Tipo_Documento" id="Tipo_Documento" value="<?php echo $DataPersona->getTipoDocumento(); ?>" >
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label class="control-label col-lg-4">N° Documento</label>
-                                            <div class=" col-lg-4">
-                                                <input  placeholder="Documento " required class="validate[required] form-control" type="text" name="Documento" id="Documento"/ value="<?php echo $DataPersona->getDocumento(); ?>" >
-                                            </div>
-                                        </div>
-
-
-                                        <div class="form-group">
-                                            <label class="control-label col-lg-4">Fecha Nacimiento</label>
-                                            <input style="width: 100px" placeholder="Fecha_Nacimiento " required class="validate[required] form-control"  type="text" name="Fecha_Nacimiento" id="Fecha_Nacimiento"/ value="<?php echo $DataPersona->getFechaNacimiento(); ?>" >
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label class="control-label col-lg-4">Género</label>
-                                            <div class="col-lg-4">
-                                                <input  placeholder="Genero " required class="validate[required] form-control"  name="Genero" id="Genero"/ value="<?php echo $DataPersona->getGenero(); ?>" >
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label class="control-label col-lg-4">Teléfono</label>
-
-                                            <div class=" col-lg-4">
-                                                <input required placeholder="Telefono" class="validate[required,custom[number]] form-control" type="number" name="Telefono" id="Telefono"
-                                                       value="<?php echo $DataPersona->getTelefono(); ?>" />
-                                                <span class="help-block"></span>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label  class="control-label col-lg-4">Dirección</label>
-                                            <div class="col-lg-4">
-                                                <input required type="text" placeholder="Direccion" class="validate[required] form-control" name="Direccion" id="Direccion"
-                                                       value="<?php echo $DataPersona->getDireccion(); ?>" >
-                                            </div>
-                                        </div>
-
-
-                                        <div class="form-group">
-                                            <label class="control-label col-lg-4">E-mail</label>
-
-                                            <div class=" col-lg-4">
-                                                <input required placeholder="E-mail" class="validate[required,custom[email]] form-control" type="email" name="Correo"
-                                                       id="Correo" value="<?php echo $DataPersona->getCorreo(); ?>" />
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label class="control-label col-lg-4">Usuario</label>
-                                            <div class="col-lg-4">
-                                                <input required placeholder="Usuario" type="text" class="validate[required] form-control" name="Usuario" id="Usuario"
-                                                       value="<?php echo $DataPersona->getUsuario(); ?>" >
-
-                                            </div>
-                                        </div>
-
-
-
-
-                                        <div class="form-group">
-                                            <label class="control-label col-lg-4">Número de Registro Profesional</label>
-
-                                            <div class=" col-lg-4">
-                                                <input required placeholder="Numero Registro Profesional" class="validate[required,custom[number]] form-control" type="text"
-                                                       name="NRP" id="NRP" value="<?php echo $DataPersona->getNRP(); ?>" />
-                                                <span class="help-block"></span>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label class="control-label col-lg-4">Cargo</label>
-                                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                                <select id="Estado" name="Estado" class="form-control">
-                                                    <option <?php if($DataPersona->getCargo() == "Administrador"){ echo "selected"; } ?>>Administrador</option>
-                                                    <option <?php if($DataPersona->getCargo() == "Secretari@"){ echo "selected"; } ?>>Secretari@</option>
-                                                    <option <?php if($DataPersona->getCargo() == "General"){ echo "selected"; } ?>>General</option>
-                                                    <option <?php if($DataPersona->getCargo() == "Subgeneral"){ echo "selected"; } ?>>Subgeneral</option>
-
-
-                                                </select>
-                                        </div>
-                                        </div>
-                                            </br>
-
-                                        <?php if ($DataPersona->getCargo() != "Administrador"){ ?>
-                                        <div class="form-group" name="idSecretarias" id="idSecretarias">
-
-                                            <label class="control-label col-lg-4">Secretaría</label>
-                                            <div class="col-lg-4">
-                                                <?php echo SecretariaController::selectSecretaria(true,"form-group"); ?>
-                                            </div>
-                                        </div>
-            <?php } ?>
-                                        <div class="form-group">
-                                            <label class="control-label col-lg-4">Contrato</label>
-                                            <div class="col-lg-8">
-                                                <input  type="file" id="ContratoPDF" name="ContratoPDF" required value="<?php echo $DataPersona->getContratoPDF(); ?>" />
-
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="control-label col-lg-4">Foto</label>
-                                            <div class="col-lg-8">
-                                                <div class="fileinput fileinput-new" data-provides="fileinput">
-                                                    <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;"></div>
-                                                    <div>
-                                                        <span class="btn btn-default btn-file"><span class="fileinput-exists">Change</span><input type="file" id="imagen" name="imagen" value="<?php echo $DataPersona->getFoto(); ?>"></span>
-
-                                                    </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-lg-4">Nombre</label>
+                                                <div class="col-lg-4">
+                                                    <input id="Nombres" value="<?php echo $DataSecretaria->getNombre(); ?>" class="form-control col-md-7 col-xs-12" name="Nombres"  readonly type="text">
                                                 </div>
+                                            </div>
+
+                                            <div id="div-1" class="body">
+                                                <label class="control-label col-lg-4">Misión</label>
+                                                <textarea readonly name="Mision" id="Mision"    class="form-control" rows="10" style="height: 100px;width: 330px;position: static "  ><?php echo $DataSecretaria->getMision(); ?></textarea>
 
                                             </div>
-                                        </div>
 
 
-                                        <div class="form-actions no-margin-bottom">
-                                            <a href="AdministrarPersona.php" class="btn btn-info ">Cancelar</a>
-                                            <button id="send" type="submit" class="btn btn-success" style="float: right">Enviar</button>
-                                        </div>
-                                    </form>
+                                            <div id="div-1" class="body">
+                                                <label class="control-label col-lg-4">Visión</label>
+                                                <textarea readonly id="Vision" name="Vision" class="form-control" rows="10" style="height: 100px;width: 330px;position: static "  ><?php echo $DataSecretaria->getVision(); ?></textarea>
+
+                                            </div>
+
+                                            <div id="div-1" class="body">
+                                                <label class="control-label col-lg-4">Objetivos</label>
+                                                <textarea id="Objetivos" readonly name="Objetivos" class="form-control" rows="10" style="height: 100px;width: 330px;position: static "  ><?php echo $DataSecretaria->getNombre(); ?></textarea>
+
+                                            </div>
+
+
+
+                                            <div class="form-group">
+                                                <label class="control-label col-lg-4">Teléfono</label>
+
+                                                <div class=" col-lg-4">
+                                                    <input readonly placeholder="Telefono" class="validate[required,custom[number]] form-control" type="number"
+                                                           name="Telefono" id="Telefono" value="<?php echo $DataSecretaria->getTelefono(); ?>"/>
+                                                    <span class="help-block"></span>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label  class="control-label col-lg-4">Dirección</label>
+                                                <div class="col-lg-4">
+                                                    <input readonly type="text" placeholder="Direccion" class="validate[required] form-control" name="Direccion" id="Direccion" value="<?php echo $DataSecretaria->getDireccion(); ?>">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-actions no-margin-bottom">
+                                                <a href="AdministrarSecretarias.php" class="btn btn-info ">Volver</a>
+                                            </div>
+                                        </form>
                                     <?php }else{ ?>
                                         <?php if (empty($_GET["respuesta"])){ ?>
                                             <div class="alert alert-danger alert-dismissible fade in" role="alert">
                                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
                                                 </button>
-                                                <strong>Error!</strong> No se encontró ninguna Persona con el párametro de búsqueda.
+                                                <strong>Error!</strong> No se encontró ninguna Persona con el parámetro de búsqueda.
                                                 <!--       <//?php $htmlSelect = "";
                                                        $htmlSelect .="<h1> esta es la id'".$_GET["id"]."'</h1>"?>
                                                    --></div>

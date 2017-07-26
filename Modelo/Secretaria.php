@@ -160,9 +160,24 @@ class Secretaria extends db_abstract_class
 
 
 
-    protected static function buscarForId($id)
+    public static function buscarForId($id)
     {
-        // TODO: Implement buscarForId() method.
+        $tmp = new Persona();
+        if ($id > 0) {
+            $getrow = $tmp->getRow("SELECT * FROM secretarias WHERE idSecretarias =?", array($id));
+            $tmp = new Secretaria();
+            $tmp->idSecretarias = $getrow['idSecretarias'];
+            $tmp->Nombre = $getrow['Nombre'];
+            $tmp->Mision = $getrow['Mision'];
+            $tmp->Vision = $getrow['Vision'];
+            $tmp->Objetivos = $getrow['Objetivos'];
+            $tmp->Telefono = $getrow['Telefono'];
+            $tmp->Direccion = $getrow['Direccion'];
+            $tmp->Disconnect();
+            return $tmp;
+        }else{
+            return NULL;
+        }
     }
 
     public static function buscar($query)

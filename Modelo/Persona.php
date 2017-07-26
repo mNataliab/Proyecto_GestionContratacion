@@ -463,6 +463,7 @@ class Persona extends db_abstract_class
             $tmp->Contrasena = $getrow['Contrasena'];
             $tmp->Estado = $getrow['Estado'];
             $tmp->Cargo = $getrow['Cargo'];
+            $tmp->idSecretarias = $getrow['idSecretarias'];
             $tmp->Disconnect();
             return $tmp;
         }else{
@@ -516,6 +517,12 @@ class Persona extends db_abstract_class
     {
         return Persona::buscar("SELECT * FROM proyectophp.persona");
     }
+
+    public static function getAllS()
+    {
+        return Persona::buscar("SELECT * FROM proyectophp.persona WHERE Cargo = 'Secretari@'");
+    }
+
 
 
 

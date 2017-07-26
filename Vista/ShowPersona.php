@@ -1,4 +1,4 @@
-<?php
+<?php session_start();
 require "../Controlador/SecretariaController.php";
 require "../Controlador/PersonaController.php";
 if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true)
@@ -246,13 +246,15 @@ if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true)
                                             </div>
 
 
-                                            <div class="form-group" name="idSecretarias" id="idSecretarias">
+                                            <?php if ($DataPersona->getCargo() != "Administrador"){ ?>
+                                                <div class="form-group" name="idSecretarias" id="idSecretarias">
 
-                                                <label class="control-label col-lg-4">Secretaría</label>
-                                                <div class="col-lg-4">
-                                                    <?php echo SecretariaController::selectSecretaria(true,"form-group"); ?>
+                                                    <label class="control-label col-lg-4">Secretaría</label>
+                                                    <div class="col-lg-4">
+                                                        <?php echo SecretariaController::selectSecretaria(true,"form-group"); ?>
+                                                    </div>
                                                 </div>
-                                            </div>
+                                            <?php } ?>
 
                                             <div class="form-group">
                                                 <label class="control-label col-lg-4">Contrato</label>

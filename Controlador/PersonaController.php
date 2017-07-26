@@ -1,11 +1,11 @@
 <?php
-session_start();
+
 require_once (__DIR__.'/../Modelo/Persona.php');
 
 if(!empty($_GET['action'])){
     PersonaController::main($_GET['action']);
 }else{
-
+    echo "No se encontro ninguna accion...";
 }
 //error_reporting(0);
 class PersonaController{
@@ -148,7 +148,7 @@ class PersonaController{
             $htmlSelect .= "<td>";
             $htmlSelect .= "<a href='ShowPersona.php?id=".$Persona->getIdPersona()."' type='button' data-toggle='tooltip' title='Ver Persona' class='btn docs-tooltip btn-info btn-xs'><i class='fa fa-edit'></i></a>";
             $htmlSelect .= "<spam> </spam>";
-            $htmlSelect .= "<a href='editarEspecialidad.php?id=".$Persona->getIdPersona()."' type='button' data-toggle='tooltip' title='Actualizar' class='btn docs-tooltip btn-primary btn-xs'><i class='fa fa-edit'></i></a>";
+            $htmlSelect .= "<a href='UpdatePersona.php?id=".$Persona->getIdPersona()."' type='button' data-toggle='tooltip' title='Actualizar' class='btn docs-tooltip btn-primary btn-xs'><i class='fa fa-edit'></i></a>";
             $htmlSelect .= "<spam> </spam>";
             if ($Persona->getEstado() != 'Activo') {
                 $htmlSelect .= "<a href='../Controlador/PersonaController.php?action=ActivarPersona&idPersona=".$Persona->getIdPersona()." type='button' data-toggle='tooltip' title='Activar' class='btn docs-tooltip btn-success btn-xs'><i class='fa fa-check-square-o'></i></a>";
@@ -180,7 +180,7 @@ class PersonaController{
            try {
                return Persona::buscarForId($id);
            } catch (Exception $e) {
-               echo "Error en Especialidad controller";
+               echo "Error en Persona controller";
            }
           /*  try{
 
@@ -252,9 +252,24 @@ class PersonaController{
             $arrayPersona['idSecretarias'] = $_POST['idSecretarias'];
             $Persona = new Persona($arrayPersona);
             $Persona->editar();
-            header("Location: ../Vista/editarEspecialidad.php?respuesta=correcto");
+            header("Location: ../Vista/UpdatePersona.php?respuesta=correcto");
         } catch (Exception $e) {
-            header("Location: ../Vista/editarEspecialidad.php?respuesta=error");
+            header("Location: ../Vista/UpdatePersona.php?respuesta=error");
         }
+    }
+
+
+    static public function selectPersona ($isRequired=true, $class="")
+    {
+        $arrPersona = Persona::getAllS();
+        $htmlSelect = "";
+        $htmlSelect = "<select  name='idPersona' id='idPersona' class='validate[required] form-control'>";
+        $htmlSelect .= "<option>Seleccione</option>";
+        foreach ($arrPersona as $Persona) {
+            $htmlSelect .= "<option value='".$Persona->getIdPersona()."' id='".$Persona->getIdPersona()."'>".$Persona->getNombres()." ".$Persona->getApellidos()."</option>";
+
+        }
+        $htmlSelect .= "</select>";
+        return $htmlSelect;
     }
 }

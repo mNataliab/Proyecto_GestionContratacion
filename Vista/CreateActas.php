@@ -1,5 +1,6 @@
 <?php session_start();
-require "../Controlador/SecretariaController.php";
+require "../Controlador/ActasController.php";
+require "../Controlador/PersonaController.php";
 if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true)
 {
     if(($_SESSION['DataPersona']["Cargo"])=="General"|| ($_SESSION['DataPersona']["Cargo"])=="Subgeneral"|| ($_SESSION['DataPersona']["Cargo"])=="Administrador" ){
@@ -24,7 +25,7 @@ if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true)
     <!--Mobile first-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Registro Secretaria</title>
+    <title>Registro Actas</title>
 
     <meta name="description" content="Free Admin Template Based On Twitter Bootstrap 3.x">
     <meta name="author" content="">
@@ -72,7 +73,7 @@ if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true)
         };
     </script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="/resources/demos/style.css">
+    <!--link rel="stylesheet" href="/resources/demos/style.css"-->
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
@@ -102,7 +103,7 @@ if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true)
                             <div class="box">
                                 <header class="dark">
                                     <div class="icons"><i class="fa glyphicon-user"></i></div>
-                                    <h5>Registro Secretaria</h5>
+                                    <h5>Registro Actas</h5>
                                     <!-- .toolbar -->
                                     <div class="toolbar">
                                         <nav style="padding: 8px;">
@@ -125,63 +126,75 @@ if(isset($_SESSION['verificar'])&&$_SESSION['verificar']==true)
                                         <?php if ($_GET['respuesta'] == "correcto"){ ?>
                                             <div id="correcto" title="Registro Exitoso"  >
                                                 <p> <i class="glyphicon glyphicon-ok-sign"></i>
-                                               La secretaria se ha creado correctamente</p>
+                                               Acta  se ha creado correctamente</p>
                                             </div>
                                         <?php }else {?>
                                             <div class="error" id="error" title="Registro Fallido!" >
-                                                <p><i class="glyphicon glyphicon-remove-sign"></i>&nbsp;Error! La secretaria no se pudo crear correctamente intentalo nuevamente</p>
+                                                <p><i class="glyphicon glyphicon-remove-sign"></i>&nbsp;Error! Acta no se pudo crear correctamente intentalo nuevamente</p>
                                             </div>
                                         <?php } ?>
                                     <?php } ?>
 
 
-                                    <form class="form-horizontal" id="popup-validation"  action="../Controlador/SecretariaController.php?action=crear" method="POST"    >
+                                    <form class="form-horizontal" id="popup-validation"  action="../Controlador/ActasController.php?action=crear" method="POST"    >
 
                                         <div class="form-group">
-                                            <label class="control-label col-lg-4">Nombre</label>
-                                             <div class="col-lg-4">
-                                                <input type="text" placeholder="Nombre" required class="validate[required] form-control" name="Nombre" id="Nombre">
-                                            </div>
-                                        </div>
-
-                                        <div id="div-1" class="body">
-                                            <label class="control-label col-lg-4">Mision</label>
-                                            <textarea required name="Mision" id="Mision" class="form-control" rows="10" style="height: 100px;width: 330px;position: static "  ></textarea>
-
-                                        </div>
-
-                                        <div id="div-1" class="body">
-                                            <label class="control-label col-lg-4">Vision</label>
-                                            <textarea required id="Vision" name="Vision" class="form-control" rows="10" style="height: 100px;width: 330px;position: static "  ></textarea>
-
-                                        </div>
-
-                                        <div id="div-1" class="body">
-                                            <label class="control-label col-lg-4">Objetivos</label>
-                                            <textarea required id="Objetivos" name="Objetivos" class="form-control" rows="10" style="height: 100px;width: 330px;position: static "  ></textarea>
-
-                                        </div>
-
-
-
-                                        <div class="form-group">
-                                            <label class="control-label col-lg-4">Telefono</label>
+                                            <label class="control-label col-lg-4">Fecha</label>
 
                                             <div class=" col-lg-4">
-                                                <input required placeholder="Telefono" class="validate[required,custom[number]] form-control" type="number"
-                                                       name="Telefono" id="Telefono"/>
-                                                <span class="help-block"></span>
+                                                <input required class="validate[required,custom[date]] form-control" type="date"
+                                                       data-date-format="aaaa/mm/dd" name="Fecha" id="Fecha"/>
                                             </div>
                                         </div>
 
                                         <div class="form-group">
-                                            <label  class="control-label col-lg-4">Dirección</label>
-                                            <div class="col-lg-4">
-                                                <input required type="text" placeholder="Direccion" class="validate[required] form-control" name="Direccion" id="Direccion">
+                                            <label class="control-label col-lg-4">Hora</label>
+                                            <div class=" col-lg-4">
+                                                <input type="text" required name="Hora" id="Hora">
+                                                <!--  <input style="width: 60px;float: left" placeholder="Hora" required class="validate[required] form-control" type="number" name="Hora" id="Hora" max="12" min="1" />
+                                                <label for="separacion" style="float: left;width:5px;font-size: 20px; margin: 5px" > :</label>
+                                                <input  style="width: 60px;float: left" placeholder="Hora1" required class="validate[required] form-control" type="number" name="Hora1" id="Hora1" max="5" min="0"/>
+                                                <input   style="width: 60px;float: left" placeholder="Hora2" required class="validate[required] form-control" type="number" name="Hora2" id="Hora2" max="9" min="0"/>
+                                                <select style="width: 80px" required name="Periodo" id="Periodo" class="validate[required] form-control">
+                                                    <option value="AM">AM</option>
+                                                    <option value="FM">FM</option>
+                                                </select>-->
                                             </div>
                                         </div>
 
+                                        <div class="form-group">
+                                            <label  class="control-label col-lg-4">Lugar</label>
+                                            <div class="col-lg-4">
+                                                <input required type="text" placeholder="Lugar" class="validate[required] form-control" name="Lugar_Reunion" id="Lugar_Reunion">
+                                            </div>
+                                        </div>
 
+                                        <div id="div-1" class="body">
+                                            <label class="control-label col-lg-4">Puntos Tratados</label>
+                                            <textarea name="Puntos_Tratados" id="Puntos_Tratados" class="form-control" rows="10" style="height: 100px;width: 330px;position: static "  ></textarea>
+
+                                        </div>
+
+
+                                        <div id="div-1" class="body">
+                                            <label class="control-label col-lg-4">Acuerdos Tomados</label>
+                                            <textarea id="Acuerdos_Tomados" name="Acuerdos_Tomados" class="form-control" rows="10" style="height: 100px;width: 330px;position: static "  ></textarea>
+
+                                        </div>
+
+                                        <div id="div-1" class="body">
+                                            <label class="control-label col-lg-4">Observaciones</label>
+                                            <textarea id="Observaciones" name="Observasiones" class="form-control" rows="10" style="height: 100px;width: 330px;position: static "  ></textarea>
+
+                                        </div>
+
+                                        <div class="form-group" >
+
+                                            <label class="control-label col-lg-4">Persona Responsable de Registrar las Actas</label>
+                                            <div class="col-lg-4">
+                                                <?php echo PersonaController::selectPersona(); ?>
+                                            </div>
+                                        </div>
 
                                         <div class="form-actions no-margin-bottom">
                                             <input type="submit" id="dialogo" value="Enviar" class="btn btn-primary">
