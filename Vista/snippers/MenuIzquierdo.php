@@ -116,7 +116,20 @@
         <li class="">
             <a href="javascript:;">
                 <i class="glyphicon glyphicon-file"></i>
-                <span class="link-title">Documento</span>
+                <span class="link-title">Entregables</span>
+                <span class="fa arrow"></span>
+            </a>
+            <ul class="collapse">
+                <li>
+                    <a href="CreateEntregables.php">
+                        <i class="fa  glyphicon-user"></i>&nbsp; Registrar Entregables </a>
+                </li>
+            </ul>
+        </li>
+        <li class="">
+            <a href="javascript:;">
+                <i class="glyphicon glyphicon-file"></i>
+                <span class="link-title">Documentos</span>
                 <span class="fa arrow"></span>
             </a>
             <ul class="collapse">
